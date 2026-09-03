@@ -50,8 +50,8 @@
 <body class="bg-[#0A1428] text-white overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav class="sticky top-0 z-50 bg-[#0A1428]/95 backdrop-blur-lg border-b border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+    <nav class="sticky top-0 z-50 py-4 bg-[#0A1428]/95 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 py-3 flex items-center justify-between h-14">
             <a href="/" class="flex items-center gap-3 [text-decoration:none]">
                 <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-12 md:h-16 w-auto object-contain" width="160" height="64">
             </a>
@@ -116,8 +116,11 @@
                 </div>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                <a href="/contact-us/" class="px-8 py-3 bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-2xl flex items-center gap-2 transition-all [text-decoration:none]">
-                    Book Free Demo
+                <a href="/#video" class="p-4 text-sm font-semibold border border-white/30 hover:border-white rounded-xl transition-all text-white flex items-center gap-2 [text-decoration:none]">
+                    <i class="fas fa-play text-xs text-[#00E6C3]"></i> Watch 2-min video
+                </a>
+                <a href="/contact-us/" class="p-4 text-sm bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-xl flex items-center gap-2 transition-all [text-decoration:none]">
+                    <i class="fas fa-calendar"></i> Book Free Demo
                 </a>
             </div>
             <button id="hamburger" class="md:hidden text-3xl p-2" aria-label="Open menu">
@@ -136,14 +139,14 @@
                 <a href="/nycon/" class="hover:text-[#00E6C3]">NYCON Members</a>
                 <a href="/faq/" class="hover:text-[#00E6C3]">FAQs</a>
                 <a href="/contact-us/" class="hover:text-[#00E6C3]">Contact Us</a>
-                <a href="/contact-us/" class="mt-4 px-8 py-4 bg-[#00E6C3] text-[#0A1428] font-semibold rounded-2xl text-center [text-decoration:none]">Book Free Demo</a>
+                <a href="/contact-us/" class="mt-4 p-4 text-sm bg-[#00E6C3] text-[#0A1428] font-semibold rounded-xl text-center flex items-center justify-center gap-2 [text-decoration:none]"><i class="fas fa-calendar"></i> Book Free Demo</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section class="hero-bg min-h-[85vh] flex items-center relative">
-        <div class="max-w-screen-2xl mx-auto px-6 pt-20 pb-20 relative z-10 w-full">
+    <section class="hero-bg min-h-[60vh] flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-6 pt-16 pb-16 relative z-10 w-full">
             <div class="max-w-3xl mx-auto text-center">
                 <div class="inline-flex items-center gap-2 bg-[#00E6C3]/15 border border-[#00E6C3]/40 text-[#00E6C3] px-5 py-2 rounded-full text-sm font-semibold mb-8">
                     Exclusive for NYCON Members
@@ -428,5 +431,7 @@
         }
     </script>
 
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="d89bae14-3399-4c55-a3fd-235eaf41fdb8" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiZDg5YmFlMTQtMzM5OS00YzU1LWEzZmQtMjM1ZWFmNDFmZGI4IiwiYWNjb3VudF9pZCI6IjY5OThiNWNkZmVlMjMzMTU5YzkxMmZhZSIsImRlcGxveV9pZCI6IjZhOTliNGE2ZmE3ZTcyMDAwOTJjZTY5ZiIsImlzc3VlciI6Im5mc2VydmVyIn0.siykMrGNgVacpDlVk2BrsiGHVNc7o4ETSZzu5k4hBSs"></script>
 </body>
 </html>
