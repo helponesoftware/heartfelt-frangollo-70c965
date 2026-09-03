@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://helponesoftware.com/sitemap.xml
+Sitemap: https://www.helponesoftware.com/sitemap.xml
