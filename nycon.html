@@ -52,10 +52,9 @@
     <!-- NAVBAR -->
     <nav class="sticky top-0 z-50 bg-[#0A1428]/95 backdrop-blur-lg border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-[#00E6C3] rounded-2xl flex items-center justify-center text-[#0A1428] font-bold text-2xl">H</div>
-                <span class="heading-font text-3xl font-semibold tracking-tighter">HelpOne</span>
-            </div>
+            <a href="/" class="flex items-center gap-3 [text-decoration:none]">
+                <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-12 md:h-16 w-auto object-contain" width="160" height="64">
+            </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <div class="dropdown">
                     <button class="nav-link flex items-center gap-1.5">Platform <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
@@ -70,15 +69,12 @@
                             <a href="/hr-solutions/" class="hover:text-[#00E6C3]">HR Solutions</a>
                             <a href="/policies-and-procedures/" class="hover:text-[#00E6C3]">Policies & Procedures</a>
                             <a href="/training-tracking/" class="hover:text-[#00E6C3]">Training Tracking</a>
-                            <a href="/it-asset-tracking-management/" class="hover:text-[#00E6C3]">IT Asset Tracking</a>
-                            <a href="/payments/" class="hover:text-[#00E6C3]">Payments</a>
-                            <a href="/switching-to-helpone-payments/" class="hover:text-[#00E6C3]">Switching to HelpOne Payments</a>
                             <a href="/my-helpone/" class="hover:text-[#00E6C3]">My HelpOne</a>
                         </div>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="nav-link flex items-center gap-1.5">Who It’s For <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <button class="nav-link flex items-center gap-1.5">Who It's For <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
                     <div class="dropdown-content w-80">
                         <a href="/faith-communities/" class="block py-2 hover:text-[#00E6C3]">Faith Communities</a>
                         <a href="/schools-youth/" class="block py-2 hover:text-[#00E6C3]">Schools & Youth</a>
@@ -87,6 +83,7 @@
                         <a href="/community-groups/" class="block py-2 hover:text-[#00E6C3]">Community Groups</a>
                         <a href="/small-nonprofits/" class="block py-2 hover:text-[#00E6C3]">Small Nonprofits</a>
                         <a href="/environmental-causes/" class="block py-2 hover:text-[#00E6C3]">Environmental Causes</a>
+                        <a href="/nycon/" class="block py-2 hover:text-[#00E6C3]">NYCON Members</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -97,40 +94,49 @@
                     </div>
                 </div>
                 <a href="/pricing/" class="nav-link">Pricing</a>
-                <a href="/getting-started/" class="nav-link">Getting Started</a>
+                <div class="dropdown">
+                    <button class="nav-link flex items-center gap-1.5">Resources <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <div class="dropdown-content w-64">
+                        <a href="/getting-started/" class="block py-2 hover:text-[#00E6C3]">Getting Started</a>
+                        <a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block py-2 hover:text-[#00E6C3]">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a>
+                        <a href="/faq/" class="block py-2 hover:text-[#00E6C3]">FAQs</a>
+                        <a href="/contact-us/" class="block py-2 hover:text-[#00E6C3]">Contact Us</a>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button class="nav-link flex items-center gap-1.5">Company <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
                     <div class="dropdown-content w-64">
-                        <a href="/faq/" class="block py-2 hover:text-[#00E6C3]">FAQs</a>
                         <a href="/about-us/" class="block py-2 hover:text-[#00E6C3]">About Us</a>
+                        <a href="/compare/" class="block py-2 hover:text-[#00E6C3]">Compare</a>
                         <a href="/partners/" class="block py-2 hover:text-[#00E6C3]">Partners</a>
                         <a href="/security/" class="block py-2 hover:text-[#00E6C3]">Security</a>
                         <a href="/terms-and-conditions/" class="block py-2 hover:text-[#00E6C3]">Terms & Conditions</a>
                         <a href="/privacy-policy/" class="block py-2 hover:text-[#00E6C3]">Privacy Policy</a>
-                        <a href="/contact-us/" class="block py-2 hover:text-[#00E6C3]">Contact Us</a>
                     </div>
                 </div>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                <button onclick="bookSession()" class="px-8 py-3 bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-2xl flex items-center gap-2 transition-all">
-                    Book 20-Min Session
-                </button>
+                <a href="/contact-us/" class="px-8 py-3 bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-2xl flex items-center gap-2 transition-all [text-decoration:none]">
+                    Book Free Demo
+                </a>
             </div>
-            <button id="hamburger" class="md:hidden text-3xl p-2">
+            <button id="hamburger" class="md:hidden text-3xl p-2" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <div id="mobile-backdrop" class="mobile-backdrop" onclick="closeMobileMenu()"></div>
         <div id="mobile-menu" class="bg-[#0A1428] border-t border-white/10 px-6 py-8 text-lg">
             <div class="flex justify-end mb-6">
-                <button onclick="closeMobileMenu()" class="text-4xl text-white/70 hover:text-white"><i class="fas fa-times"></i></button>
+                <button onclick="closeMobileMenu()" class="text-4xl text-white/70 hover:text-white" aria-label="Close menu"><i class="fas fa-times"></i></button>
             </div>
             <div class="flex flex-col gap-6">
                 <a href="/volunteer-management/" class="hover:text-[#00E6C3]">Volunteer Management</a>
                 <a href="/pricing/" class="hover:text-[#00E6C3]">Pricing</a>
                 <a href="/getting-started/" class="hover:text-[#00E6C3]">Getting Started</a>
+                <a href="/nycon/" class="hover:text-[#00E6C3]">NYCON Members</a>
+                <a href="/faq/" class="hover:text-[#00E6C3]">FAQs</a>
                 <a href="/contact-us/" class="hover:text-[#00E6C3]">Contact Us</a>
-                <button onclick="bookSession()" class="mt-4 px-8 py-4 bg-[#00E6C3] text-[#0A1428] font-semibold rounded-2xl">Book 20-Min Session</button>
+                <a href="/contact-us/" class="mt-4 px-8 py-4 bg-[#00E6C3] text-[#0A1428] font-semibold rounded-2xl text-center [text-decoration:none]">Book Free Demo</a>
             </div>
         </div>
     </nav>
@@ -341,10 +347,9 @@
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="grid md:grid-cols-5 gap-12">
                 <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-8 h-8 bg-[#00E6C3] rounded-2xl flex items-center justify-center text-[#0A1428] font-bold">H</div>
-                        <span class="heading-font text-3xl font-semibold tracking-tighter">HelpOne</span>
-                    </div>
+                    <a href="/" class="flex items-center mb-6 [text-decoration:none]">
+                        <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-16 w-auto object-contain" width="160" height="64">
+                    </a>
                     <p class="text-white/60 text-sm">The operating system for world-changing nonprofits.</p>
                     <div class="mt-8 text-xs text-white/40">© 2026 HelpOne Software, Inc.</div>
                 </div>
@@ -360,13 +365,13 @@
                         <a href="/hr-solutions/" class="block hover:text-white">HR Solutions</a>
                         <a href="/policies-and-procedures/" class="block hover:text-white">Policies & Procedures</a>
                         <a href="/training-tracking/" class="block hover:text-white">Training Tracking</a>
-                        <a href="/it-asset-tracking-management/" class="block hover:text-white">IT Asset Tracking</a>
                         <a href="/payments/" class="block hover:text-white">Payments</a>
+                        <a href="/switching-to-helpone-payments/" class="block hover:text-white">Switching to HelpOne Payments</a>
                         <a href="/getting-started/" class="block hover:text-white">Getting Started</a>
                     </div>
                 </div>
                 <div>
-                    <div class="font-medium mb-6 text-[#00E6C3]">Who It’s For</div>
+                    <div class="font-medium mb-6 text-[#00E6C3]">Who It's For</div>
                     <div class="space-y-3 text-sm text-white/70">
                         <a href="/faith-communities/" class="block hover:text-white">Faith Communities</a>
                         <a href="/schools-youth/" class="block hover:text-white">Schools & Youth</a>
@@ -375,13 +380,17 @@
                         <a href="/community-groups/" class="block hover:text-white">Community Groups</a>
                         <a href="/small-nonprofits/" class="block hover:text-white">Small Nonprofits</a>
                         <a href="/environmental-causes/" class="block hover:text-white">Environmental Causes</a>
+                        <a href="/nycon/" class="block hover:text-white">NYCON Members</a>
                     </div>
                 </div>
                 <div>
-                    <div class="font-medium mb-6 text-[#00E6C3]">Company</div>
+                    <div class="font-medium mb-6 text-[#00E6C3]">Company | Resources</div>
                     <div class="space-y-3 text-sm text-white/70">
+                        <a href="/getting-started/" class="block hover:text-white">Getting Started</a>
+                        <a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block hover:text-white">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a>
                         <a href="/faq/" class="block hover:text-white">FAQs</a>
                         <a href="/about-us/" class="block hover:text-white">About Us</a>
+                        <a href="/compare/" class="block hover:text-white">Compare</a>
                         <a href="/partners/" class="block hover:text-white">Partners</a>
                         <a href="/security/" class="block hover:text-white">Security</a>
                         <a href="/terms-and-conditions/" class="block hover:text-white">Terms & Conditions</a>
@@ -391,10 +400,8 @@
                 </div>
                 <div>
                     <div class="font-medium mb-6 text-[#00E6C3]">Get in touch</div>
-                    <div class="text-sm text-white/70 mb-6">hello@helponesoftware.com</div>
-                    <button onclick="bookSession()" class="w-full py-4 border border-white/30 hover:bg-white/10 rounded-2xl text-sm font-medium">
-                        Book a Free Demo
-                    </button>
+                    <a href="mailto:hello@helponesoftware.com" class="text-sm text-white/70 hover:text-[#00E6C3] transition-colors mb-6 block [text-decoration:none]">hello@helponesoftware.com</a>
+                    <a href="/contact-us/" class="block w-full py-4 text-center border border-white/30 hover:bg-white/10 rounded-2xl text-sm font-medium text-white transition-colors [text-decoration:none]">Book a Free Demo</a>
                 </div>
             </div>
         </div>
@@ -420,5 +427,6 @@
             window.location.href = "/contact-us/";
         }
     </script>
+
 </body>
 </html>
