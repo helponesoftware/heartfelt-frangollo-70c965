@@ -13,6 +13,12 @@
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://www.helponesoftware.com/affiliations</loc>
+<lastmod>2026-09-05T22:21:14.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
 <loc>https://www.helponesoftware.com/animal-rescues</loc>
 <lastmod>2026-09-03T19:34:46.000Z</lastmod>
 <changefreq>weekly</changefreq>
@@ -186,4 +192,4 @@
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
-</urlset>
+  </urlset>
