@@ -127,6 +127,12 @@
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://www.helponesoftware.com/partners/apply</loc>
+<lastmod>2026-09-09T20:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://www.helponesoftware.com/payments</loc>
 <lastmod>2026-09-03T19:34:46.000Z</lastmod>
 <changefreq>weekly</changefreq>
