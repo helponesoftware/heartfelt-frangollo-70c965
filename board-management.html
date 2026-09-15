@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HelpOne — Board Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<style>
+  :root {
+    --nav-blue: #2C5AA0;
+    --nav-blue-alt: #2c6db3;
+    --nav-active: #4fa3d1;
+    --green: #7FB250;
+    --green-hover: #6ea043;
+    --bg: #eef1f4;
+    --card: #ffffff;
+    --border: #d5dbe3;
+    --border-soft: #e3e8ee;
+    --text: #2a2f36;
+    --text-muted: #6b7280;
+    --label: #6b7a8c;
+    --link: #2C6DB3;
+    --badge-green: #5fa83a;
+    --badge-orange: #e08a2e;
+    --badge-gray: #8a93a0;
+    --badge-brown: #a67c52;
+    --select-bar: #3a8fd0;
+    --sidebar-w: 320px;
+    --radius: 4px;
+    --shadow: 0 1px 2px rgba(30, 40, 60, 0.06);
+    --font: system-ui, -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.4;
+    overflow: hidden;
+  }
+  button, input, select, textarea { font-family: inherit; font-size: inherit; }
+  button { cursor: pointer; border: none; background: none; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { display: block; max-width: 100%; }
+
+  .top-nav {
+    display: flex; align-items: stretch; height: 64px;
+    background: var(--nav-blue); color: #fff; padding: 0 8px;
+    flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,.18); z-index: 40;
+  }
+  .nav-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 3px; min-width: 78px; padding: 6px 12px; color: #fff; text-decoration: none;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em; border-radius: 3px;
+    margin: 6px 2px; transition: background .15s;
+  }
+  .nav-item i { font-size: 18px; opacity: .95; }
+  .nav-item:hover { background: rgba(255,255,255,.12); text-decoration: none; color: #fff; }
+  .nav-item.active { background: var(--nav-active); }
+  .nav-brand {
+    display: flex; align-items: center; gap: 8px; padding: 0 14px 0 8px;
+    margin-right: 6px; border-right: 1px solid rgba(255,255,255,.2);
+  }
+  .nav-brand .logo-mark {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: linear-gradient(135deg, #7FB250, #5a9a30);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px; color: #fff;
+  }
+  .nav-brand span { font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+  .nav-spacer { flex: 1; }
+  .nav-user { display: flex; align-items: center; gap: 10px; padding: 0 14px; color: #fff; font-size: 12px; }
+  .nav-user img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(255,255,255,.4); }
+
+  .portal-bar {
+    display: none; align-items: center; gap: 4px; background: #3d6fa8;
+    padding: 0 12px; height: 40px; color: #fff; flex-shrink: 0;
+  }
+  .portal-bar.visible { display: flex; }
+  .portal-bar .portal-label { font-size: 11px; font-weight: 600; opacity: .85; margin-right: 12px; white-space: nowrap; }
+  .portal-bar a { color: #fff; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 3px; }
+  .portal-bar a:hover { background: rgba(255,255,255,.15); text-decoration: none; }
+  .portal-bar a.active { background: rgba(255,255,255,.22); }
+  .view-toggle { display: flex; align-items: center; gap: 8px; margin-right: 10px; }
+  .view-toggle label { font-size: 10px; font-weight: 600; letter-spacing: .04em; color: rgba(255,255,255,.85); text-transform: uppercase; }
+  .switch {
+    position: relative; width: 36px; height: 18px;
+    background: rgba(0,0,0,.25); border-radius: 999px; cursor: pointer;
+  }
+  .switch::after {
+    content: ""; position: absolute; top: 2px; left: 2px;
+    width: 14px; height: 14px; border-radius: 50%; background: #fff; transition: transform .15s;
+  }
+  .switch.on { background: var(--green); }
+  .switch.on::after { transform: translateX(18px); }
+
+  .app { display: flex; height: calc(100vh - 64px); overflow: hidden; }
+  .app.portal-mode { height: calc(100vh - 64px - 40px); }
+
+  .sidebar {
+    width: var(--sidebar-w); flex-shrink: 0; background: var(--bg);
+    border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden;
+  }
+  .sidebar-head { padding: 12px 12px 8px; flex-shrink: 0; }
+  .sidebar-title { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; }
+  .btn-row { display: flex; gap: 8px; margin-bottom: 10px; }
+  .btn-green {
+    display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: #fff;
+    font-weight: 700; font-size: 12px; padding: 8px 12px; border-radius: var(--radius);
+    box-shadow: var(--shadow); transition: background .12s;
+  }
+  .btn-green:hover { background: var(--green-hover); }
+  .btn-green.sm { padding: 6px 10px; font-size: 11px; }
+  .btn-green.block { width: 100%; justify-content: center; }
+  .btn-olive { background: #8aad5a; }
+  .btn-olive:hover { background: #7a9a4e; }
+
+  .filter-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .filter-tab {
+    flex: 1 1 auto; min-width: calc(50% - 4px); padding: 7px 8px; background: #4a8fc4;
+    color: #fff; font-size: 11px; font-weight: 700; border-radius: 3px; text-align: center;
+    transition: background .12s, box-shadow .12s;
+  }
+  .filter-tab:hover { background: #3d7fb0; }
+  .filter-tab.active { background: var(--nav-active); box-shadow: inset 0 0 0 2px rgba(255,255,255,.35); }
+
+  .sort-search { display: flex; gap: 6px; margin-bottom: 4px; }
+  .sort-search select, .sort-search .search-wrap { flex: 1; }
+  .field-ctrl {
+    width: 100%; border: 1px solid var(--border); background: #fff; border-radius: 3px;
+    padding: 7px 10px; color: var(--text); outline: none;
+  }
+  .field-ctrl:focus { border-color: var(--nav-active); box-shadow: 0 0 0 2px rgba(79,163,209,.2); }
+  .search-wrap { position: relative; }
+  .search-wrap i {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted); font-size: 12px; pointer-events: none;
+  }
+  .search-wrap input { padding-right: 28px; }
+
+  .member-list { flex: 1; overflow-y: auto; padding: 8px 10px 16px; }
+  .member-list::-webkit-scrollbar { width: 8px; }
+  .member-list::-webkit-scrollbar-thumb { background: #c5ccd6; border-radius: 4px; }
+
+  .member-card {
+    position: relative; display: flex; gap: 10px; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--border-soft); border-radius: var(--radius);
+    padding: 10px 14px 10px 10px; margin-bottom: 8px; cursor: pointer;
+    box-shadow: var(--shadow); transition: border-color .12s, box-shadow .12s;
+  }
+  .member-card:hover { border-color: #c5d0dc; }
+  .member-card.selected { border-color: #b8cfe3; box-shadow: 0 0 0 1px rgba(58,143,208,.15); }
+  .member-card.selected::after {
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 6px;
+    background: var(--select-bar); border-radius: 0 3px 3px 0;
+  }
+  .member-card.selected::before {
+    content: ""; position: absolute; top: 50%; right: 6px; transform: translateY(-50%);
+    border: 5px solid transparent; border-right-color: var(--select-bar);
+  }
+
+  .status-rail {
+    writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9px; font-weight: 800;
+    letter-spacing: .06em; text-transform: uppercase; color: #fff; padding: 6px 3px;
+    border-radius: 2px; align-self: stretch; display: flex; align-items: center;
+    justify-content: center; min-height: 52px; flex-shrink: 0;
+  }
+  .status-rail.active, .status-rail.current, .status-rail.completed { background: var(--badge-green); }
+  .status-rail.on-hold, .status-rail.under-review, .status-rail.prospective { background: var(--badge-orange); }
+  .status-rail.draft, .status-rail.not-started { background: var(--badge-gray); }
+  .status-rail.missing, .status-rail.expired { background: var(--badge-brown); }
+  .status-rail.ending { background: #d4a017; }
+
+  .mc-photo { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid #e8eef4; }
+  .mc-body { flex: 1; min-width: 0; padding-right: 8px; }
+  .mc-name { font-weight: 700; font-size: 13px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mc-role { color: var(--link); font-size: 12px; font-weight: 600; margin-top: 1px; }
+  .mc-meta { color: var(--text-muted); font-size: 11px; margin-top: 3px; }
+  .mc-badge { display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; color: #fff; }
+  .mc-badge.green { background: var(--badge-green); }
+  .mc-badge.orange { background: var(--badge-orange); }
+  .mc-badge.gray { background: var(--badge-gray); }
+  .mc-badge.brown { background: var(--badge-brown); }
+  .mc-badge.gold { background: #d4a017; }
+  .empty-list { text-align: center; padding: 36px 16px; color: var(--text-muted); }
+  .empty-list i { font-size: 28px; margin-bottom: 8px; opacity: .45; }
+
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
+  .main-scroll { flex: 1; overflow-y: auto; padding: 14px 16px 24px; }
+  .main-scroll::-webkit-scrollbar { width: 10px; }
+  .main-scroll::-webkit-scrollbar-thumb { background: #c5ccd6; border-radius: 5px; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 14px; align-items: start; }
+  @media (max-width: 1100px) { .detail-grid { grid-template-columns: 1fr; } }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .card-pad { padding: 14px 16px; }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--nav-blue-alt); margin-bottom: 12px; }
+
+  .contact-header { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+  .photo-wrap { position: relative; flex-shrink: 0; }
+  .photo-lg { width: 110px; height: 110px; border-radius: 6px; object-fit: cover; border: 1px solid var(--border); background: #f0f3f7; }
+  .photo-actions { display: flex; gap: 4px; margin-top: 6px; }
+  .photo-actions button {
+    flex: 1; font-size: 10px; font-weight: 600; padding: 4px; background: #f3f6f9;
+    border: 1px solid var(--border); border-radius: 3px; color: var(--label);
+  }
+  .photo-actions button:hover { background: #e8eef4; }
+  .contact-meta { flex: 1; min-width: 0; }
+  .contact-name { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 999px; color: #fff;
+  }
+  .pill.board { background: var(--nav-blue); }
+  .pill.role { background: var(--nav-active); }
+  .pill.status-active { background: var(--badge-green); }
+  .pill.status-prospective { background: var(--badge-orange); }
+  .pill.status-ending { background: #d4a017; }
+  .contact-quick { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 12px; }
+  .contact-quick .q-label { color: var(--label); font-weight: 600; }
+  .contact-quick .q-val { color: var(--text); }
+
+  .form-grid { display: grid; grid-template-columns: 140px 1fr; gap: 8px 12px; align-items: center; }
+  .form-label { text-align: right; color: var(--label); font-weight: 600; font-size: 12px; }
+  .form-label.top { align-self: start; padding-top: 8px; }
+  .input, .select, .textarea {
+    width: 100%; border: 1px solid var(--border); background: #fff; border-radius: 3px;
+    padding: 7px 10px; color: var(--text); outline: none;
+  }
+  .input:focus, .select:focus, .textarea:focus {
+    border-color: var(--nav-active); box-shadow: 0 0 0 2px rgba(79,163,209,.18);
+  }
+  .textarea { min-height: 90px; resize: vertical; line-height: 1.45; }
+  .date-wrap { position: relative; }
+  .date-wrap i { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; font-size: 12px; }
+  .date-wrap input { padding-right: 28px; }
+  .hidden { display: none !important; }
+  .form-actions {
+    display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .subtabs {
+    display: flex; gap: 2px; background: #e8eef4; border: 1px solid var(--border);
+    border-bottom: none; border-radius: 4px 4px 0 0; padding: 4px 4px 0; margin-top: 4px;
+  }
+  .subtab {
+    padding: 8px 14px; font-size: 12px; font-weight: 700; color: var(--label);
+    border-radius: 3px 3px 0 0; background: transparent; transition: background .12s, color .12s;
+  }
+  .subtab:hover { background: rgba(255,255,255,.6); color: var(--text); }
+  .subtab.active {
+    background: #fff; color: var(--nav-blue); box-shadow: 0 -1px 0 #fff;
+    border: 1px solid var(--border); border-bottom-color: #fff; margin-bottom: -1px;
+  }
+  .subpanel {
+    display: none; background: #fff; border: 1px solid var(--border);
+    border-radius: 0 0 4px 4px; padding: 14px 16px 16px;
+  }
+  .subpanel.active { display: block; }
+
+  .committee-list { display: flex; flex-direction: column; gap: 10px; }
+  .committee-item {
+    display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px;
+    border: 1px solid var(--border-soft); border-radius: var(--radius); background: #fafbfc;
+    transition: border-color .12s, background .12s;
+  }
+  .committee-item:hover { border-color: #c5d0dc; }
+  .committee-item.checked { background: #f3f9ec; border-color: #c5dfa8; }
+  .committee-item input[type="checkbox"] { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+  .committee-item .ci-name { font-weight: 700; font-size: 13px; color: var(--text); }
+  .committee-item .ci-desc { font-size: 11.5px; color: var(--text-muted); margin-top: 3px; line-height: 1.45; }
+  .add-committee { margin-top: 10px; padding: 12px; border: 1px dashed var(--border); border-radius: var(--radius); background: #fafbfc; }
+  .add-committee-toggle { color: var(--link); font-weight: 700; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; }
+  .add-committee-form { margin-top: 10px; display: none; }
+  .add-committee-form.open { display: block; }
+
+  .coi-q { margin-bottom: 10px; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: var(--radius); background: #fafbfc; }
+  .coi-q .q-text { font-weight: 600; font-size: 12px; margin-bottom: 6px; color: var(--text); }
+  .coi-answers { display: flex; gap: 14px; flex-wrap: wrap; }
+  .coi-answers label { display: flex; align-items: center; gap: 5px; font-size: 12px; cursor: pointer; }
+  .sig-box { margin-top: 12px; padding: 12px; background: #f7f9fb; border: 1px solid var(--border-soft); border-radius: var(--radius); }
+  .sig-name {
+    font-family: "Segoe Script", "Brush Script MT", cursive; font-size: 22px; color: #1a3a6b;
+    border-bottom: 1px solid #c5d0dc; padding: 4px 0 6px; margin-bottom: 4px;
+  }
+
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-chip {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
+    border: 1px solid var(--border); border-radius: 999px; background: #fff;
+    font-size: 12px; font-weight: 600; color: var(--label); cursor: pointer;
+    transition: all .12s; user-select: none;
+  }
+  .skill-chip:hover { border-color: var(--nav-active); color: var(--nav-blue); }
+  .skill-chip.selected { background: #e8f4fc; border-color: var(--nav-active); color: var(--nav-blue); }
+  .skill-chip.selected i { color: var(--green); }
+  .skill-other-wrap { margin-top: 12px; display: none; }
+  .skill-other-wrap.open { display: block; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+  .stat-box { background: #f7f9fb; border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 12px; text-align: center; }
+  .stat-box .sv { font-size: 20px; font-weight: 800; color: var(--nav-blue); }
+  .stat-box .sl { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
+  .activity-list { list-style: none; }
+  .activity-list li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border-soft); }
+  .activity-list li:last-child { border-bottom: none; }
+  .activity-list .ai {
+    width: 28px; height: 28px; border-radius: 50%; background: #e8f4fc; color: var(--nav-blue);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px;
+  }
+  .activity-list .at { font-weight: 700; font-size: 12.5px; }
+  .activity-list .am { color: var(--text-muted); font-size: 11.5px; margin-top: 2px; }
+  .access-toggle { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; }
+  .access-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .access-dot.on { background: var(--badge-green); }
+  .access-dot.off { background: var(--badge-gray); }
+
+  .summary-card .summary-top {
+    display: flex; gap: 12px; align-items: center; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-soft); margin-bottom: 12px;
+  }
+  .summary-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(145deg, #4fa3d1, #2C5AA0); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+  }
+  .summary-title-bar {
+    flex: 1; background: var(--nav-blue); color: #fff; font-weight: 700;
+    font-size: 14px; padding: 10px 14px; border-radius: 3px;
+  }
+  .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+  .metric { background: #f7f9fb; border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 10px; text-align: center; }
+  .metric .mv { font-size: 18px; font-weight: 800; color: var(--nav-blue); }
+  .metric .ml { font-size: 11px; color: var(--text-muted); font-weight: 600; margin-top: 2px; }
+  .term-alert {
+    display: none; margin-bottom: 12px; padding: 10px 12px; background: #fff8e6;
+    border: 1px solid #f0d78c; border-radius: var(--radius); color: #7a5a10; font-size: 12px; font-weight: 600;
+  }
+  .term-alert.visible { display: flex; align-items: center; gap: 8px; }
+
+  .refs-strip { margin-top: 16px; padding: 12px 14px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); }
+  .refs-strip h4 { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+  .refs-row { display: flex; gap: 10px; overflow-x: auto; }
+  .refs-row a { flex-shrink: 0; border: 1px solid var(--border); border-radius: 3px; overflow: hidden; width: 140px; background: #f7f9fb; }
+  .refs-row img { width: 140px; height: 78px; object-fit: cover; object-position: top; }
+  .refs-row span { display: block; padding: 4px 6px; font-size: 10px; color: var(--text-muted); font-weight: 600; text-align: center; }
+
+  .fab {
+    position: fixed; right: 22px; bottom: 22px; width: 48px; height: 48px; border-radius: 8px;
+    background: var(--green); color: #fff; font-size: 22px; display: flex; align-items: center;
+    justify-content: center; box-shadow: 0 4px 14px rgba(127,178,80,.45); z-index: 50;
+    transition: background .12s, transform .12s;
+  }
+  .fab:hover { background: var(--green-hover); transform: scale(1.05); }
+  .toast {
+    position: fixed; bottom: 80px; right: 22px; background: #2a2f36; color: #fff;
+    padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 600;
+    opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 60;
+  }
+  .toast.show { opacity: 1; }
+  .empty-detail {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 420px; color: var(--text-muted); text-align: center;
+  }
+  .empty-detail i { font-size: 48px; opacity: .3; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<header class="top-nav" id="adminNav">
+  <div class="nav-brand">
+    <div class="logo-mark">H1</div>
+    <span>HelpOne</span>
+  </div>
+  <a class="nav-item" href="#" title="Menu"><i class="fa-solid fa-house"></i>MENU</a>
+  <a class="nav-item active" href="#" data-nav="board"><i class="fa-solid fa-users-gear"></i>BOARD</a>
+  <a class="nav-item" href="#" data-nav="committees"><i class="fa-solid fa-people-group"></i>COMMITTEES</a>
+  <a class="nav-item" href="#" data-nav="meetings"><i class="fa-solid fa-calendar-days"></i>MEETINGS</a>
+  <a class="nav-item" href="#" data-nav="documents"><i class="fa-solid fa-file-lines"></i>DOCUMENTS</a>
+  <a class="nav-item" href="#" data-nav="votes"><i class="fa-solid fa-check-to-slot"></i>VOTES</a>
+  <a class="nav-item" href="#" data-nav="compliance"><i class="fa-solid fa-shield-halved"></i>COMPLIANCE</a>
+  <a class="nav-item" href="#" data-nav="tasks"><i class="fa-solid fa-clipboard-list"></i>TASKS</a>
+  <a class="nav-item" href="#" data-nav="support"><i class="fa-solid fa-headset"></i>SUPPORT</a>
+  <div class="nav-spacer"></div>
+  <div class="view-toggle">
+    <label for="portalSwitch">External Portal</label>
+    <div class="switch" id="portalSwitch" role="switch" aria-checked="false" title="Toggle External Board Portal view"></div>
+  </div>
+  <div class="nav-user">
+    <span>Admin · E. Zaremba</span>
+    <img src="https://ui-avatars.com/api/?name=Edward+Zaremba&amp;background=7FB250&amp;color=fff&amp;size=64" alt="Admin" />
+  </div>
+</header>
+
+<nav class="portal-bar" id="portalBar" aria-label="External Board Portal">
+  <span class="portal-label"><i class="fa-solid fa-globe"></i> External Board Portal (WebDirect)</span>
+  <a href="#" class="active">Home</a>
+  <a href="#">Meetings</a>
+  <a href="#">Documents</a>
+  <a href="#">Votes</a>
+  <a href="#">My Tasks</a>
+  <a href="#">My Profile</a>
+</nav>
+
+<div class="app" id="appShell">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-title">Board Members</div>
+      <div class="btn-row">
+        <button type="button" class="btn-green" id="btnNewMember"><i class="fa-solid fa-plus"></i> NEW BOARD MEMBER</button>
+        <button type="button" class="btn-green btn-olive" id="btnShowAllQuick"><i class="fa-solid fa-list"></i> Show All</button>
+      </div>
+      <div class="filter-tabs" role="tablist">
+        <button type="button" class="filter-tab" data-filter="all">Show All Board Members</button>
+        <button type="button" class="filter-tab active" data-filter="active">Active Board</button>
+        <button type="button" class="filter-tab" data-filter="ending">Term Ending Soon</button>
+        <button type="button" class="filter-tab" data-filter="prospective">Prospective</button>
+      </div>
+      <div class="sort-search">
+        <select class="field-ctrl" id="sortSelect" aria-label="Sort">
+          <option value="name">Sort: Name</option>
+          <option value="role">Sort: Role</option>
+          <option value="termEnd">Sort: Term End</option>
+          <option value="status">Sort: Status</option>
+        </select>
+        <div class="search-wrap">
+          <input class="field-ctrl" type="search" id="searchInput" placeholder="Search" aria-label="Search members" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+    <div class="member-list" id="memberList" role="listbox" aria-label="Board member list"></div>
+  </aside>
+
+  <main class="main">
+    <div class="main-scroll" id="detailPane">
+      <div class="empty-detail" id="emptyDetail">
+        <i class="fa-solid fa-users"></i>
+        <div style="font-weight:700;font-size:15px;margin-bottom:4px;">Select a board member</div>
+        <div>Choose someone from the list to view and edit their board profile.</div>
+      </div>
+
+      <div id="detailContent" class="hidden">
+        <div class="detail-grid">
+          <div>
+            <div class="card card-pad" style="margin-bottom:12px;">
+              <div class="contact-header">
+                <div class="photo-wrap">
+                  <img class="photo-lg" id="dPhoto" src="" alt="" />
+                  <div class="photo-actions">
+                    <button type="button" title="Change photo"><i class="fa-solid fa-camera"></i></button>
+                    <button type="button" title="Remove photo"><i class="fa-solid fa-trash"></i></button>
+                  </div>
+                </div>
+                <div class="contact-meta">
+                  <div class="contact-name" id="dName">—</div>
+                  <div class="badge-row" id="dBadges"></div>
+                  <div class="contact-quick">
+                    <span class="q-label">Email</span><span class="q-val" id="dEmail">—</span>
+                    <span class="q-label">Phone</span><span class="q-val" id="dPhone">—</span>
+                    <span class="q-label">Org</span><span class="q-val" id="dOrg">—</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-title">Board Member Info</div>
+              <div class="form-grid">
+                <label class="form-label" for="fBoardMember">Board Member</label>
+                <select class="select" id="fBoardMember">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+
+                <label class="form-label" for="fBoardStatus">Board Status</label>
+                <select class="select" id="fBoardStatus">
+                  <option value="Active">Active</option>
+                  <option value="Prospective">Prospective</option>
+                  <option value="On Hold">On Hold</option>
+                  <option value="Draft">Draft</option>
+                </select>
+
+                <label class="form-label" for="fPrimaryRole">Primary Role</label>
+                <div>
+                  <select class="select" id="fPrimaryRole">
+                    <option>Chair</option>
+                    <option>Vice Chair</option>
+                    <option>Treasurer</option>
+                    <option>Secretary</option>
+                    <option>Member</option>
+                    <option>Ex-Officio</option>
+                    <option>Honorary</option>
+                    <option>Other</option>
+                  </select>
+                  <input class="input hidden" id="fPrimaryRoleOther" placeholder="Specify other role…" style="margin-top:6px;" />
+                </div>
+
+                <label class="form-label" for="fTermStart">Term Start</label>
+                <div class="date-wrap">
+                  <input class="input" type="date" id="fTermStart" />
+                  <i class="fa-regular fa-calendar"></i>
+                </div>
+
+                <label class="form-label" for="fTermEnd">Term End</label>
+                <div class="date-wrap">
+                  <input class="input" type="date" id="fTermEnd" />
+                  <i class="fa-regular fa-calendar"></i>
+                </div>
+
+                <label class="form-label" for="fTermLength">Term Length</label>
+                <select class="select" id="fTermLength">
+                  <option>1 Year</option>
+                  <option>2 Years</option>
+                  <option>3 Years</option>
+                  <option>Other</option>
+                </select>
+
+                <label class="form-label" for="fConsecutive">Consecutive Terms</label>
+                <input class="input" type="number" id="fConsecutive" min="0" max="20" />
+
+                <label class="form-label" for="fTermLimit">Term Limit Reached?</label>
+                <select class="select" id="fTermLimit">
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+
+                <label class="form-label" for="fPortalAccess">Portal Access</label>
+                <select class="select" id="fPortalAccess">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+
+                <label class="form-label" for="fPosition">Current Position</label>
+                <input class="input" type="text" id="fPosition" />
+
+                <label class="form-label top" for="fBio">Bio</label>
+                <textarea class="textarea" id="fBio" rows="5"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn-green" id="btnSave"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+              </div>
+            </div>
+
+            <div class="subtabs" role="tablist">
+              <button type="button" class="subtab active" data-tab="committee">Committee</button>
+              <button type="button" class="subtab" data-tab="coi">COI</button>
+              <button type="button" class="subtab" data-tab="skills">Skills</button>
+              <button type="button" class="subtab" data-tab="portal">Portal activity</button>
+            </div>
+
+            <div class="subpanel active" id="tab-committee" role="tabpanel">
+              <div class="committee-list" id="committeeList"></div>
+              <div class="add-committee">
+                <button type="button" class="add-committee-toggle" id="btnAddCommittee">
+                  <i class="fa-solid fa-plus"></i> Add committee
+                </button>
+                <div class="add-committee-form" id="addCommitteeForm">
+                  <div class="form-grid" style="grid-template-columns:100px 1fr;">
+                    <label class="form-label" for="newCommName">Name</label>
+                    <input class="input" id="newCommName" placeholder="Committee name" />
+                    <label class="form-label top" for="newCommDesc">Description</label>
+                    <textarea class="textarea" id="newCommDesc" rows="2" placeholder="Brief description…"></textarea>
+                  </div>
+                  <button type="button" class="btn-green sm" id="btnSaveCommittee"><i class="fa-solid fa-check"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="subpanel" id="tab-coi" role="tabpanel">
+              <div class="form-grid" style="margin-bottom:14px;">
+                <label class="form-label" for="fCoiSubmitted">Date Submitted</label>
+                <div class="date-wrap">
+                  <input class="input" type="date" id="fCoiSubmitted" />
+                  <i class="fa-regular fa-calendar"></i>
+                </div>
+                <label class="form-label" for="fCoiExpiration">Expiration Date</label>
+                <div class="date-wrap">
+                  <input class="input" type="date" id="fCoiExpiration" />
+                  <i class="fa-regular fa-calendar"></i>
+                </div>
+                <label class="form-label" for="fCoiStatus">Status</label>
+                <select class="select" id="fCoiStatus">
+                  <option value="Current">Current</option>
+                  <option value="Expired">Expired</option>
+                  <option value="Missing">Missing</option>
+                </select>
+              </div>
+
+              <div style="font-weight:700;color:var(--nav-blue-alt);margin-bottom:8px;font-size:13px;">Disclosure Questions</div>
+              <div class="coi-q">
+                <div class="q-text">1. Do you or any family member have a financial interest in any entity that does business with this organization?</div>
+                <div class="coi-answers">
+                  <label><input type="radio" name="coi1" value="No" /> No</label>
+                  <label><input type="radio" name="coi1" value="Yes" /> Yes</label>
+                </div>
+              </div>
+              <div class="coi-q">
+                <div class="q-text">2. Do you hold any employment, board, or consulting role with a competing or related organization?</div>
+                <div class="coi-answers">
+                  <label><input type="radio" name="coi2" value="No" /> No</label>
+                  <label><input type="radio" name="coi2" value="Yes" /> Yes</label>
+                </div>
+              </div>
+              <div class="coi-q">
+                <div class="q-text">3. Are you aware of any other actual or potential conflicts of interest that should be disclosed?</div>
+                <div class="coi-answers">
+                  <label><input type="radio" name="coi3" value="No" /> No</label>
+                  <label><input type="radio" name="coi3" value="Yes" /> Yes</label>
+                </div>
+              </div>
+
+              <div class="form-grid" style="margin-top:12px;">
+                <label class="form-label top" for="fCoiDisclosure">Text Disclosures</label>
+                <textarea class="textarea" id="fCoiDisclosure" rows="3" placeholder="Describe any disclosures…"></textarea>
+              </div>
+
+              <div class="sig-box">
+                <div style="font-size:11px;font-weight:700;color:var(--label);margin-bottom:4px;">ELECTRONIC SIGNATURE</div>
+                <div class="sig-name" id="fCoiSigName">—</div>
+                <div style="font-size:11px;color:var(--text-muted);">Signed at: <span id="fCoiSignedAt">—</span></div>
+              </div>
+            </div>
+
+            <div class="subpanel" id="tab-skills" role="tabpanel">
+              <p style="color:var(--text-muted);font-size:12px;margin-bottom:12px;">Select all that apply. Skills help with committee matching and nominations.</p>
+              <div class="skills-wrap" id="skillsWrap"></div>
+              <div class="skill-other-wrap" id="skillOtherWrap">
+                <label class="form-label" style="text-align:left;display:block;margin-bottom:4px;" for="fSkillOther">Other skill</label>
+                <input class="input" id="fSkillOther" placeholder="Describe other expertise…" />
+              </div>
+            </div>
+
+            <div class="subpanel" id="tab-portal" role="tabpanel">
+              <div class="stat-row">
+                <div class="stat-box">
+                  <div class="sv" id="pAccessLabel">—</div>
+                  <div class="sl">Portal Access</div>
+                </div>
+                <div class="stat-box">
+                  <div class="sv" style="font-size:14px;" id="pLastLogin">—</div>
+                  <div class="sl">Last Portal Login</div>
+                </div>
+                <div class="stat-box">
+                  <div class="sv" id="pOpenCount">0</div>
+                  <div class="sl">Open Items</div>
+                </div>
+              </div>
+              <div style="font-weight:700;color:var(--nav-blue-alt);margin-bottom:6px;">Open Tasks Assigned</div>
+              <ul class="activity-list" id="pTasks"></ul>
+              <div style="font-weight:700;color:var(--nav-blue-alt);margin:14px 0 6px;">Pending Votes</div>
+              <ul class="activity-list" id="pVotes"></ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="card card-pad summary-card" style="margin-bottom:12px;">
+              <div class="term-alert" id="termAlert">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Term ends within 90 days — consider succession planning.</span>
+              </div>
+              <div class="summary-top">
+                <div class="summary-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="summary-title-bar" id="sTitle">Board Member</div>
+              </div>
+              <div class="metrics">
+                <div class="metric"><div class="mv" id="sCommittees">0</div><div class="ml">Committees</div></div>
+                <div class="metric"><div class="mv" id="sSkills">0</div><div class="ml">Skills</div></div>
+                <div class="metric"><div class="mv" id="sCoi">—</div><div class="ml">COI Status</div></div>
+                <div class="metric"><div class="mv" id="sTermEnd" style="font-size:14px;">—</div><div class="ml">Term End</div></div>
+              </div>
+              <div class="btn-row" style="margin:0;">
+                <button type="button" class="btn-green block" id="btnInvite"><i class="fa-solid fa-envelope"></i> Invite to Portal</button>
+              </div>
+            </div>
+
+            <div class="card card-pad">
+              <div class="card-title">Quick Notes</div>
+              <textarea class="textarea" id="fNotes" rows="4" placeholder="Internal notes about this board member…"></textarea>
+              <div class="form-actions" style="border:none;padding-top:8px;margin-top:0;">
+                <button type="button" class="btn-green sm" id="btnSaveNotes"><i class="fa-solid fa-check"></i> Save Notes</button>
+              </div>
+            </div>
+
+            <div class="refs-strip">
+              <h4>Module screenshots (reference)</h4>
+              <div class="refs-row">
+                <a href="board-assets/committees-module.png" target="_blank" title="Committees module">
+                  <img src="board-assets/committees-module.png" alt="Committees module screenshot" />
+                  <span>Committees</span>
+                </a>
+                <a href="board-assets/compliance-module.png" target="_blank" title="Compliance / COI module">
+                  <img src="board-assets/compliance-module.png" alt="Compliance module screenshot" />
+                  <span>Compliance</span>
+                </a>
+                <a href="board-assets/tasks-module.png" target="_blank" title="Tasks module">
+                  <img src="board-assets/tasks-module.png" alt="Tasks module screenshot" />
+                  <span>Tasks</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<button type="button" class="fab" id="fab" title="Quick add"><i class="fa-solid fa-plus"></i></button>
+<div class="toast" id="toast"></div>
+
+<script>
+
+(function () {
+  "use strict";
+
+  const TODAY = new Date();
+  const DAY_MS = 86400000;
+  const NINETY_DAYS = 90 * DAY_MS;
+
+  const DEFAULT_COMMITTEES = [
+    { id: "exec", name: "Executive Committee", desc: "Acts on behalf of the full board between meetings. Usually officers. Handles urgent matters and sets board agendas." },
+    { id: "finance", name: "Finance Committee", desc: "Oversees financial health; budgets, reports, audits, internal controls." },
+    { id: "gov", name: "Governance / Nominating Committee", desc: "Board health/structure; recruits, orientations, bylaws, evaluations, nominations." },
+    { id: "dev", name: "Development / Fundraising Committee", desc: "Fundraising strategy, donor engagement, events." },
+    { id: "program", name: "Program Committee", desc: "Programs/services effectiveness and mission alignment." }
+  ];
+
+  const ALL_SKILLS = [
+    "Finance/Accounting", "Legal", "Fundraising/Development", "Marketing & Communications",
+    "Human Resources", "Program/Mission Expertise", "Technology/IT", "Governance/Board Development",
+    "Strategic Planning", "Community Relations", "Real Estate/Facilities", "Healthcare",
+    "Education", "Nonprofit Leadership", "Other"
+  ];
+
+  let members = [
+    {
+      id: "m1", name: "Elena Martinez", email: "elena.martinez@example.org", phone: "(212) 555-0142",
+      org: "Martinez & Associates LLP", photo: "https://i.pravatar.cc/220?img=47",
+      boardMember: "Yes", boardStatus: "Active", primaryRole: "Chair", primaryRoleOther: "",
+      termStart: "2024-01-15", termEnd: "2027-01-14", termLength: "3 Years", consecutiveTerms: 2,
+      termLimitReached: "No", portalAccess: "Yes", currentPosition: "Managing Partner",
+      bio: "Elena is a nonprofit governance attorney with 18 years advising boards on fiduciary duty, bylaws, and COI policies. She has chaired HelpOne's board since 2024.",
+      committees: ["exec", "gov"], skills: ["Legal", "Governance/Board Development", "Strategic Planning"], skillOther: "",
+      coi: { submitted: "2026-09-01", expiration: "2027-09-01", status: "Current", q1: "No", q2: "No", q3: "No", disclosure: "", sigName: "Elena Martinez", signedAt: "2026-09-01 10:14 AM ET" },
+      lastPortalLogin: "2026-09-14 4:22 PM ET",
+      openTasks: [{ title: "Review Q3 financial packet", due: "2026-09-20" }, { title: "Approve annual meeting agenda", due: "2026-09-25" }],
+      pendingVotes: [{ title: "Bylaw amendment — term limits", closes: "2026-09-22" }],
+      notes: "Strong facilitator. Pair with new members for mentoring."
+    },
+    {
+      id: "m2", name: "Jamal Carter", email: "jamal.carter@example.org", phone: "(718) 555-0198",
+      org: "Carter Community Health", photo: "https://i.pravatar.cc/220?img=12",
+      boardMember: "Yes", boardStatus: "Active", primaryRole: "Vice Chair", primaryRoleOther: "",
+      termStart: "2023-06-01", termEnd: "2026-11-30", termLength: "3 Years", consecutiveTerms: 1,
+      termLimitReached: "No", portalAccess: "Yes", currentPosition: "CEO",
+      bio: "Jamal leads a community health nonprofit and brings deep program and mission expertise. He is Vice Chair and sits on Finance and Program committees.",
+      committees: ["finance", "program"], skills: ["Healthcare", "Program/Mission Expertise", "Nonprofit Leadership", "Strategic Planning"], skillOther: "",
+      coi: { submitted: "2026-08-12", expiration: "2027-08-12", status: "Current", q1: "No", q2: "Yes", q3: "No", disclosure: "Serves as CEO of Carter Community Health, a partner organization for two joint programs.", sigName: "Jamal Carter", signedAt: "2026-08-12 9:03 AM ET" },
+      lastPortalLogin: "2026-09-13 11:05 AM ET",
+      openTasks: [{ title: "Draft program outcomes summary", due: "2026-09-18" }],
+      pendingVotes: [{ title: "Bylaw amendment — term limits", closes: "2026-09-22" }, { title: "Approve FY27 budget framework", closes: "2026-09-28" }],
+      notes: "Term ending soon — discuss re-nomination at Oct governance meeting."
+    },
+    {
+      id: "m3", name: "Priya Shah", email: "priya.shah@example.org", phone: "(646) 555-0177",
+      org: "North River Capital", photo: "https://i.pravatar.cc/220?img=32",
+      boardMember: "Yes", boardStatus: "Active", primaryRole: "Treasurer", primaryRoleOther: "",
+      termStart: "2025-01-01", termEnd: "2028-01-01", termLength: "3 Years", consecutiveTerms: 1,
+      termLimitReached: "No", portalAccess: "Yes", currentPosition: "CFO",
+      bio: "Priya is a finance executive with audit committee experience across three nonprofits. She chairs the Finance Committee and owns the annual audit relationship.",
+      committees: ["exec", "finance"], skills: ["Finance/Accounting", "Strategic Planning", "Nonprofit Leadership"], skillOther: "",
+      coi: { submitted: "2026-01-10", expiration: "2027-01-10", status: "Current", q1: "No", q2: "No", q3: "No", disclosure: "", sigName: "Priya Shah", signedAt: "2026-01-10 3:41 PM ET" },
+      lastPortalLogin: "2026-09-15 8:12 AM ET", openTasks: [],
+      pendingVotes: [{ title: "Approve FY27 budget framework", closes: "2026-09-28" }], notes: ""
+    },
+    {
+      id: "m4", name: "Liam Foster", email: "liam.foster@example.org", phone: "(917) 555-0133",
+      org: "Foster Education Partners", photo: "https://i.pravatar.cc/220?img=15",
+      boardMember: "Yes", boardStatus: "Active", primaryRole: "Secretary", primaryRoleOther: "",
+      termStart: "2024-09-01", termEnd: "2026-10-31", termLength: "2 Years", consecutiveTerms: 1,
+      termLimitReached: "No", portalAccess: "Yes", currentPosition: "Education Consultant",
+      bio: "Liam documents board actions and maintains minutes quality. Background in K–12 education policy and nonprofit board development.",
+      committees: ["gov", "program"], skills: ["Education", "Governance/Board Development", "Community Relations"], skillOther: "",
+      coi: { submitted: "", expiration: "", status: "Missing", q1: "", q2: "", q3: "", disclosure: "", sigName: "", signedAt: "" },
+      lastPortalLogin: "2026-09-10 2:50 PM ET",
+      openTasks: [{ title: "Upload August meeting minutes", due: "2026-09-16" }, { title: "Complete COI disclosure", due: "2026-09-17" }],
+      pendingVotes: [], notes: "COI overdue — send reminder."
+    },
+    {
+      id: "m5", name: "Aisha Okonkwo", email: "aisha.okonkwo@example.org", phone: "(347) 555-0164",
+      org: "BrightPath Foundation", photo: "https://i.pravatar.cc/220?img=45",
+      boardMember: "Yes", boardStatus: "Active", primaryRole: "Member", primaryRoleOther: "",
+      termStart: "2025-03-15", termEnd: "2028-03-14", termLength: "3 Years", consecutiveTerms: 1,
+      termLimitReached: "No", portalAccess: "Yes", currentPosition: "VP Development",
+      bio: "Aisha specializes in major gifts and campaign strategy. She joined the Development Committee in 2025 and co-led the spring gala.",
+      committees: ["dev"], skills: ["Fundraising/Development", "Marketing & Communications", "Community Relations"], skillOther: "",
+      coi: { submitted: "2025-04-02", expiration: "2026-04-02", status: "Expired", q1: "No", q2: "No", q3: "No", disclosure: "", sigName: "Aisha Okonkwo", signedAt: "2025-04-02 1:18 PM ET" },
+      lastPortalLogin: "2026-09-08 6:40 PM ET",
+      openTasks: [{ title: "Renew COI disclosure", due: "2026-09-19" }],
+      pendingVotes: [{ title: "Bylaw amendment — term limits", closes: "2026-09-22" }],
+      notes: "COI expired April 2026 — follow up."
+    },
+    {
+      id: "m6", name: "Marcus Chen", email: "marcus.chen@example.org", phone: "(929) 555-0119",
+      org: "ChenTech Solutions", photo: "https://i.pravatar.cc/220?img=33",
+      boardMember: "No", boardStatus: "Prospective", primaryRole: "Member", primaryRoleOther: "",
+      termStart: "", termEnd: "", termLength: "3 Years", consecutiveTerms: 0,
+      termLimitReached: "No", portalAccess: "No", currentPosition: "CTO",
+      bio: "Prospective board member with deep technology and digital transformation experience. Introduced by Elena; coffee meeting completed Aug 2026.",
+      committees: [], skills: ["Technology/IT", "Strategic Planning", "Human Resources"], skillOther: "",
+      coi: { submitted: "", expiration: "", status: "Missing", q1: "", q2: "", q3: "", disclosure: "", sigName: "", signedAt: "" },
+      lastPortalLogin: "", openTasks: [], pendingVotes: [],
+      notes: "Nominating slate for Jan 2027. Needs orientation packet."
+    }
+  ];
+
+  let committees = DEFAULT_COMMITTEES.map(c => Object.assign({}, c));
+  let currentFilter = "active";
+  let selectedId = null;
+  let coiExpUserEdited = false;
+
+  const el = (id) => document.getElementById(id);
+
+  function parseDate(s) {
+    if (!s) return null;
+    const d = new Date(s + "T12:00:00");
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  function formatDisplayDate(s) {
+    const d = parseDate(s);
+    if (!d) return "—";
+    return (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+  }
+
+  function isTermEndingSoon(m) {
+    if (m.boardStatus !== "Active") return false;
+    const end = parseDate(m.termEnd);
+    if (!end) return false;
+    const diff = end - TODAY;
+    return diff >= 0 && diff <= NINETY_DAYS;
+  }
+
+  function listStatus(m) {
+    if (m.boardStatus === "Prospective") return { key: "prospective", label: "Prospective", badge: "orange" };
+    if (isTermEndingSoon(m)) return { key: "ending", label: "Ending Soon", badge: "gold" };
+    if (m.boardStatus === "Active") return { key: "active", label: "Active", badge: "green" };
+    if (m.boardStatus === "On Hold") return { key: "on-hold", label: "On Hold", badge: "orange" };
+    return { key: "draft", label: m.boardStatus || "Draft", badge: "gray" };
+  }
+
+  function roleLabel(m) {
+    if (m.primaryRole === "Other" && m.primaryRoleOther) return m.primaryRoleOther;
+    if (m.primaryRole === "Chair") return "Board Chair";
+    if (m.primaryRole === "Vice Chair") return "Board Vice Chair";
+    return "Board " + m.primaryRole;
+  }
+
+  function matchesFilter(m) {
+    if (currentFilter === "all") return true;
+    if (currentFilter === "active") return m.boardStatus === "Active";
+    if (currentFilter === "ending") return isTermEndingSoon(m);
+    if (currentFilter === "prospective") return m.boardStatus === "Prospective";
+    return true;
+  }
+
+  function getFiltered() {
+    const q = (el("searchInput").value || "").trim().toLowerCase();
+    let list = members.filter(matchesFilter);
+    if (q) {
+      list = list.filter(m =>
+        m.name.toLowerCase().includes(q) ||
+        m.primaryRole.toLowerCase().includes(q) ||
+        (m.email || "").toLowerCase().includes(q) ||
+        (m.org || "").toLowerCase().includes(q)
+      );
+    }
+    const sort = el("sortSelect").value;
+    list.sort((a, b) => {
+      if (sort === "role") return a.primaryRole.localeCompare(b.primaryRole) || a.name.localeCompare(b.name);
+      if (sort === "termEnd") return (a.termEnd || "9999").localeCompare(b.termEnd || "9999");
+      if (sort === "status") return listStatus(a).label.localeCompare(listStatus(b).label) || a.name.localeCompare(b.name);
+      return a.name.localeCompare(b.name);
+    });
+    return list;
+  }
+
+  function escapeHtml(s) {
+    return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function renderList() {
+    const list = getFiltered();
+    const box = el("memberList");
+    if (!list.length) {
+      box.innerHTML = '<div class="empty-list"><i class="fa-solid fa-user-slash"></i><div>No members match this filter.</div></div>';
+      return;
+    }
+    box.innerHTML = list.map(m => {
+      const st = listStatus(m);
+      const sel = m.id === selectedId ? " selected" : "";
+      return (
+        '<div class="member-card' + sel + '" role="option" aria-selected="' + (m.id === selectedId) + '" data-id="' + m.id + '">' +
+          '<div class="status-rail ' + st.key + '">' + st.label + '</div>' +
+          '<img class="mc-photo" src="' + m.photo + '" alt="" />' +
+          '<div class="mc-body">' +
+            '<div class="mc-name">' + escapeHtml(m.name) + '</div>' +
+            '<div class="mc-role">' + escapeHtml(m.primaryRole) + '</div>' +
+            '<div class="mc-meta">' + (m.termEnd ? "Term ends " + formatDisplayDate(m.termEnd) : "No term set") + '</div>' +
+            '<span class="mc-badge ' + st.badge + '">' + st.label + '</span>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+  }
+
+  function selectMember(id) {
+    selectedId = id;
+    coiExpUserEdited = false;
+    renderList();
+    const m = members.find(x => x.id === id);
+    if (!m) {
+      el("emptyDetail").classList.remove("hidden");
+      el("detailContent").classList.add("hidden");
+      return;
+    }
+    el("emptyDetail").classList.add("hidden");
+    el("detailContent").classList.remove("hidden");
+    fillDetail(m);
+  }
+
+  function fillDetail(m) {
+    el("dPhoto").src = m.photo;
+    el("dPhoto").alt = m.name;
+    el("dName").textContent = m.name;
+    el("dEmail").textContent = m.email || "—";
+    el("dPhone").textContent = m.phone || "—";
+    el("dOrg").textContent = m.org || "—";
+
+    const st = listStatus(m);
+    const badges = [];
+    if (m.boardMember === "Yes") badges.push('<span class="pill board"><i class="fa-solid fa-id-badge"></i> Board Member</span>');
+    badges.push('<span class="pill role">' + escapeHtml(roleLabel(m)) + '</span>');
+    const statusClass = st.key === "ending" ? "status-ending" : (st.key === "prospective" ? "status-prospective" : "status-active");
+    badges.push('<span class="pill ' + statusClass + '">' + escapeHtml(st.label) + '</span>');
+    el("dBadges").innerHTML = badges.join("");
+
+    el("fBoardMember").value = m.boardMember;
+    el("fBoardStatus").value = m.boardStatus;
+    el("fPrimaryRole").value = m.primaryRole;
+    el("fPrimaryRoleOther").value = m.primaryRoleOther || "";
+    el("fPrimaryRoleOther").classList.toggle("hidden", m.primaryRole !== "Other");
+    el("fTermStart").value = m.termStart || "";
+    el("fTermEnd").value = m.termEnd || "";
+    el("fTermLength").value = m.termLength;
+    el("fConsecutive").value = m.consecutiveTerms;
+    el("fTermLimit").value = m.termLimitReached;
+    el("fPortalAccess").value = m.portalAccess;
+    el("fPosition").value = m.currentPosition || "";
+    el("fBio").value = m.bio || "";
+    el("fNotes").value = m.notes || "";
+
+    el("sTitle").textContent = m.name;
+    el("sCommittees").textContent = (m.committees || []).length;
+    el("sSkills").textContent = (m.skills || []).length;
+    el("sCoi").textContent = (m.coi && m.coi.status) || "—";
+    el("sTermEnd").textContent = formatDisplayDate(m.termEnd);
+    el("termAlert").classList.toggle("visible", isTermEndingSoon(m));
+
+    renderCommittees(m);
+    renderCoi(m);
+    renderSkills(m);
+    renderPortal(m);
+  }
+
+  function renderCommittees(m) {
+    const selected = new Set(m.committees || []);
+    el("committeeList").innerHTML = committees.map(c => {
+      const checked = selected.has(c.id);
+      return (
+        '<label class="committee-item' + (checked ? " checked" : "") + '">' +
+          '<input type="checkbox" data-cid="' + c.id + '"' + (checked ? " checked" : "") + " />" +
+          '<div><div class="ci-name">' + escapeHtml(c.name) + '</div>' +
+          '<div class="ci-desc">' + escapeHtml(c.desc) + '</div></div>' +
+        "</label>"
+      );
+    }).join("");
+  }
+
+  function renderCoi(m) {
+    const c = m.coi || {};
+    el("fCoiSubmitted").value = c.submitted || "";
+    el("fCoiExpiration").value = c.expiration || "";
+    el("fCoiStatus").value = c.status || "Missing";
+    el("fCoiDisclosure").value = c.disclosure || "";
+    el("fCoiSigName").textContent = c.sigName || "—";
+    el("fCoiSignedAt").textContent = c.signedAt || "—";
+    ["1", "2", "3"].forEach(n => {
+      document.querySelectorAll('input[name="coi' + n + '"]').forEach(r => {
+        r.checked = r.value === c["q" + n];
+      });
+    });
+  }
+
+  function renderSkills(m) {
+    const selected = new Set(m.skills || []);
+    el("skillsWrap").innerHTML = ALL_SKILLS.map(s => {
+      const on = selected.has(s);
+      return (
+        '<button type="button" class="skill-chip' + (on ? " selected" : "") + '" data-skill="' + escapeHtml(s) + '">' +
+          (on ? '<i class="fa-solid fa-check"></i> ' : "") + escapeHtml(s) +
+        "</button>"
+      );
+    }).join("");
+    const otherOn = selected.has("Other");
+    el("skillOtherWrap").classList.toggle("open", otherOn);
+    el("fSkillOther").value = m.skillOther || "";
+  }
+
+  function renderPortal(m) {
+    const enabled = m.portalAccess === "Yes";
+    el("pAccessLabel").innerHTML =
+      '<span class="access-toggle"><span class="access-dot ' + (enabled ? "on" : "off") + '"></span>' +
+      (enabled ? "Enabled" : "Disabled") + "</span>";
+    el("pLastLogin").textContent = m.lastPortalLogin || "Never";
+    const tasks = m.openTasks || [];
+    const votes = m.pendingVotes || [];
+    el("pOpenCount").textContent = String(tasks.length + votes.length);
+
+    el("pTasks").innerHTML = tasks.length
+      ? tasks.map(t =>
+          '<li><div class="ai"><i class="fa-solid fa-clipboard-check"></i></div>' +
+          '<div><div class="at">' + escapeHtml(t.title) + '</div>' +
+          '<div class="am">Due ' + formatDisplayDate(t.due) + "</div></div></li>"
+        ).join("")
+      : '<li style="color:var(--text-muted);padding:8px 0;">No open tasks.</li>';
+
+    el("pVotes").innerHTML = votes.length
+      ? votes.map(v =>
+          '<li><div class="ai"><i class="fa-solid fa-check-to-slot"></i></div>' +
+          '<div><div class="at">' + escapeHtml(v.title) + '</div>' +
+          '<div class="am">Closes ' + formatDisplayDate(v.closes) + "</div></div></li>"
+        ).join("")
+      : '<li style="color:var(--text-muted);padding:8px 0;">No pending votes.</li>';
+  }
+
+  function currentMember() {
+    return members.find(m => m.id === selectedId);
+  }
+
+  function toast(msg) {
+    const t = el("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => t.classList.remove("show"), 2200);
+  }
+
+  function readFormIntoMember(m) {
+    m.boardMember = el("fBoardMember").value;
+    m.boardStatus = el("fBoardStatus").value;
+    m.primaryRole = el("fPrimaryRole").value;
+    m.primaryRoleOther = el("fPrimaryRoleOther").value;
+    m.termStart = el("fTermStart").value;
+    m.termEnd = el("fTermEnd").value;
+    m.termLength = el("fTermLength").value;
+    m.consecutiveTerms = Number(el("fConsecutive").value) || 0;
+    m.termLimitReached = el("fTermLimit").value;
+    m.portalAccess = el("fPortalAccess").value;
+    m.currentPosition = el("fPosition").value;
+    m.bio = el("fBio").value;
+    m.notes = el("fNotes").value;
+
+    m.committees = Array.from(document.querySelectorAll("#committeeList input[type=checkbox]:checked"))
+      .map(cb => cb.getAttribute("data-cid"));
+
+    m.skills = Array.from(document.querySelectorAll(".skill-chip.selected"))
+      .map(b => b.getAttribute("data-skill"));
+    m.skillOther = el("fSkillOther").value;
+
+    m.coi = m.coi || {};
+    m.coi.submitted = el("fCoiSubmitted").value;
+    m.coi.expiration = el("fCoiExpiration").value;
+    m.coi.status = el("fCoiStatus").value;
+    m.coi.disclosure = el("fCoiDisclosure").value;
+    ["1", "2", "3"].forEach(n => {
+      const r = document.querySelector('input[name="coi' + n + '"]:checked');
+      m.coi["q" + n] = r ? r.value : "";
+    });
+  }
+
+  function addYears(dateStr, years) {
+    const d = parseDate(dateStr);
+    if (!d) return "";
+    d.setFullYear(d.getFullYear() + years);
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const dd = String(d.getDate()).padStart(2, "0");
+    return d.getFullYear() + "-" + mm + "-" + dd;
+  }
+
+  document.querySelectorAll(".filter-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-tab").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentFilter = btn.getAttribute("data-filter");
+      renderList();
+    });
+  });
+
+  el("btnShowAllQuick").addEventListener("click", () => {
+    document.querySelectorAll(".filter-tab").forEach(b => {
+      b.classList.toggle("active", b.getAttribute("data-filter") === "all");
+    });
+    currentFilter = "all";
+    renderList();
+  });
+
+  el("searchInput").addEventListener("input", renderList);
+  el("sortSelect").addEventListener("change", renderList);
+
+  el("memberList").addEventListener("click", (e) => {
+    const card = e.target.closest(".member-card");
+    if (!card) return;
+    selectMember(card.getAttribute("data-id"));
+  });
+
+  document.querySelectorAll(".subtab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".subtab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".subpanel").forEach(p => p.classList.remove("active"));
+      tab.classList.add("active");
+      el("tab-" + tab.getAttribute("data-tab")).classList.add("active");
+    });
+  });
+
+  el("fPrimaryRole").addEventListener("change", () => {
+    el("fPrimaryRoleOther").classList.toggle("hidden", el("fPrimaryRole").value !== "Other");
+  });
+
+  el("fCoiSubmitted").addEventListener("change", () => {
+    if (!coiExpUserEdited) {
+      el("fCoiExpiration").value = addYears(el("fCoiSubmitted").value, 1);
+    }
+    const expD = parseDate(el("fCoiExpiration").value);
+    if (el("fCoiSubmitted").value && expD) {
+      el("fCoiStatus").value = expD >= TODAY ? "Current" : "Expired";
+    } else if (!el("fCoiSubmitted").value) {
+      el("fCoiStatus").value = "Missing";
+    }
+  });
+
+  el("fCoiExpiration").addEventListener("change", () => {
+    coiExpUserEdited = true;
+    const expD = parseDate(el("fCoiExpiration").value);
+    if (expD) el("fCoiStatus").value = expD >= TODAY ? "Current" : "Expired";
+  });
+
+  el("committeeList").addEventListener("change", (e) => {
+    const item = e.target.closest(".committee-item");
+    if (item) item.classList.toggle("checked", e.target.checked);
+    const m = currentMember();
+    if (m) {
+      m.committees = Array.from(document.querySelectorAll("#committeeList input[type=checkbox]:checked"))
+        .map(cb => cb.getAttribute("data-cid"));
+      el("sCommittees").textContent = m.committees.length;
+    }
+  });
+
+  el("btnAddCommittee").addEventListener("click", () => {
+    el("addCommitteeForm").classList.toggle("open");
+  });
+
+  el("btnSaveCommittee").addEventListener("click", () => {
+    const name = el("newCommName").value.trim();
+    const desc = el("newCommDesc").value.trim();
+    if (!name) { toast("Enter a committee name"); return; }
+    const id = "c" + Date.now();
+    committees.push({ id: id, name: name, desc: desc || "Custom committee." });
+    el("newCommName").value = "";
+    el("newCommDesc").value = "";
+    el("addCommitteeForm").classList.remove("open");
+    const m = currentMember();
+    if (m) renderCommittees(m);
+    toast("Committee added");
+  });
+
+  el("skillsWrap").addEventListener("click", (e) => {
+    const chip = e.target.closest(".skill-chip");
+    if (!chip) return;
+    chip.classList.toggle("selected");
+    const skill = chip.getAttribute("data-skill");
+    const on = chip.classList.contains("selected");
+    chip.innerHTML = (on ? '<i class="fa-solid fa-check"></i> ' : "") + escapeHtml(skill);
+    if (skill === "Other") el("skillOtherWrap").classList.toggle("open", on);
+    const m = currentMember();
+    if (m) {
+      m.skills = Array.from(document.querySelectorAll(".skill-chip.selected")).map(b => b.getAttribute("data-skill"));
+      el("sSkills").textContent = m.skills.length;
+    }
+  });
+
+  el("btnSave").addEventListener("click", () => {
+    const m = currentMember();
+    if (!m) return;
+    readFormIntoMember(m);
+    fillDetail(m);
+    renderList();
+    toast("Board member saved");
+  });
+
+  el("btnSaveNotes").addEventListener("click", () => {
+    const m = currentMember();
+    if (!m) return;
+    m.notes = el("fNotes").value;
+    toast("Notes saved");
+  });
+
+  el("btnInvite").addEventListener("click", () => {
+    const m = currentMember();
+    if (!m) return;
+    m.portalAccess = "Yes";
+    el("fPortalAccess").value = "Yes";
+    renderPortal(m);
+    toast("Portal invite queued for " + m.name);
+  });
+
+  function newMember() {
+    const id = "m" + Date.now();
+    const m = {
+      id: id, name: "New Board Member", email: "", phone: "", org: "",
+      photo: "https://ui-avatars.com/api/?name=New+Member&background=2C5AA0&color=fff&size=220",
+      boardMember: "Yes", boardStatus: "Draft", primaryRole: "Member", primaryRoleOther: "",
+      termStart: "", termEnd: "", termLength: "3 Years", consecutiveTerms: 0,
+      termLimitReached: "No", portalAccess: "No", currentPosition: "", bio: "",
+      committees: [], skills: [], skillOther: "",
+      coi: { submitted: "", expiration: "", status: "Missing", q1: "", q2: "", q3: "", disclosure: "", sigName: "", signedAt: "" },
+      lastPortalLogin: "", openTasks: [], pendingVotes: [], notes: ""
+    };
+    members.unshift(m);
+    document.querySelectorAll(".filter-tab").forEach(b => {
+      b.classList.toggle("active", b.getAttribute("data-filter") === "all");
+    });
+    currentFilter = "all";
+    renderList();
+    selectMember(id);
+    toast("New board member created");
+  }
+
+  el("btnNewMember").addEventListener("click", newMember);
+  el("fab").addEventListener("click", newMember);
+
+  const portalSwitch = el("portalSwitch");
+  portalSwitch.addEventListener("click", () => {
+    const on = !portalSwitch.classList.contains("on");
+    portalSwitch.classList.toggle("on", on);
+    portalSwitch.setAttribute("aria-checked", on ? "true" : "false");
+    el("portalBar").classList.toggle("visible", on);
+    el("appShell").classList.toggle("portal-mode", on);
+  });
+
+  document.querySelectorAll(".nav-item[data-nav]").forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
+      item.classList.add("active");
+      if (item.getAttribute("data-nav") !== "board") {
+        toast(item.textContent.trim() + " module (prototype — Board view stays active)");
+        setTimeout(() => {
+          document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
+          document.querySelector('.nav-item[data-nav="board"]').classList.add("active");
+        }, 900);
+      }
+    });
+  });
+
+  renderList();
+  const firstActive = members.find(m => m.boardStatus === "Active" && !isTermEndingSoon(m)) || members[0];
+  if (firstActive) selectMember(firstActive.id);
+})();
+</script>
+</body>
+</html>
