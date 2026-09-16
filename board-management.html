@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Management Software for Nonprofits | HelpOne</title>
+    <meta name="robots" content="index, follow"/>
+    <meta name="keywords" content="nonprofit board management software, board governance, conflict of interest, COI tracking, board committees, board meetings, board votes, board portal, HelpOne Board"/>
+    <meta name="description" content="Nonprofit board governance in one hub—members, committees, meetings, documents, votes, COI compliance &amp; a member portal. Built for real boards.">
+    <meta property="og:title" content="Board Management Software for Nonprofits | HelpOne"/>
+    <meta property="og:description" content="Nonprofit board governance in one hub—members, committees, meetings, documents, votes, COI compliance &amp; a member portal."/>
+    <meta property="og:url" content="https://www.helponesoftware.com/board-management"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="HelpOne"/>
+    <meta property="og:image" content="https://www.helponesoftware.com/assets/Logo-06.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Board Management Software for Nonprofits | HelpOne"/>
+    <meta name="twitter:description" content="Nonprofit board governance in one hub—members, committees, meetings, documents, votes, COI compliance &amp; a member portal."/>
+    <meta name="twitter:image" content="https://www.helponesoftware.com/assets/Logo-06.png"/>
+    <link rel="canonical" href="https://www.helponesoftware.com/board-management">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #0A1428 0%, #1A2338 100%); }
+        .module-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .module-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgb(0 230 195 / 0.2); }
+        .nav-link { position: relative; }
+        .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #00E6C3; transition: width 0.3s ease; }
+        .nav-link:hover:after { width: 100%; }
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0A1428;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 24px;
+            width: 520px;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+            z-index: 50;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        #mobile-menu {
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: min(100%, 24rem);
+            z-index: 50;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            pointer-events: none;
+        }
+        #mobile-menu.show { transform: translateX(0); pointer-events: auto; }
+        .mobile-backdrop {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 45;
+            display: none; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .mobile-backdrop.show { display: block; opacity: 1; }
+        .shot-frame {
+            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.55);
+        }
+        .shot-frame img { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body class="bg-[#0A1428] text-white overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 py-4 bg-[#0A1428]/95 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 py-3 flex items-center justify-between h-14 min-h-0">
+            <a href="/" class="flex items-center gap-3 [text-decoration:none]">
+                <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-16 w-auto object-contain" width="160" height="64">
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium flex-nowrap whitespace-nowrap">
+                <div class="dropdown">
+                    <button class="nav-link flex items-center gap-1.5">Platform <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <div class="dropdown-content">
+                        <div class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                            <a href="/volunteer-management/" class="hover:text-[#00E6C3]">Volunteer Management</a>
+                            <a href="/event-management/" class="hover:text-[#00E6C3]">Event Management</a>
+                            <a href="/fundraising/" class="hover:text-[#00E6C3]">Fundraising</a>
+                            <a href="/board-management/" class="hover:text-[#00E6C3] text-[#00E6C3]">Board Management</a>
+                            <a href="/participants/" class="hover:text-[#00E6C3]">Participants</a>
+                            <a href="/donors-and-contacts/" class="hover:text-[#00E6C3]">Donors &amp; Contacts</a>
+                            <a href="/finances/" class="hover:text-[#00E6C3]">Finances</a>
+                            <a href="/hr-solutions/" class="hover:text-[#00E6C3]">HR Solutions</a>
+                            <a href="/policies-and-procedures/" class="hover:text-[#00E6C3]">Policies &amp; Procedures</a>
+                            <a href="/training-tracking/" class="hover:text-[#00E6C3]">Training Tracking</a>
+                            <a href="/my-helpone/" class="hover:text-[#00E6C3]">My HelpOne</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-link flex items-center gap-1.5">Who It's For <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <div class="dropdown-content w-80">
+                        <a href="/faith-communities/" class="block py-2 hover:text-[#00E6C3]">Faith Communities</a>
+                        <a href="/schools-youth/" class="block py-2 hover:text-[#00E6C3]">Schools &amp; Youth</a>
+                        <a href="/animal-rescues/" class="block py-2 hover:text-[#00E6C3]">Animal Rescues</a>
+                        <a href="/arts-culture/" class="block py-2 hover:text-[#00E6C3]">Arts &amp; Culture</a>
+                        <a href="/community-groups/" class="block py-2 hover:text-[#00E6C3]">Community Groups</a>
+                        <a href="/small-nonprofits/" class="block py-2 hover:text-[#00E6C3]">Small Nonprofits</a>
+                        <a href="/environmental-causes/" class="block py-2 hover:text-[#00E6C3]">Environmental Causes</a>
+                        <a href="/nycon/" class="block py-2 hover:text-[#00E6C3]">NYCON Members</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-link flex items-center gap-1.5">Payments <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <div class="dropdown-content w-80">
+                        <a href="/payments/" class="block py-2 hover:text-[#00E6C3]">Payments</a>
+                        <a href="/switching-to-helpone-payments/" class="block py-2 hover:text-[#00E6C3]">Switching to HelpOne Payments</a>
+                    </div>
+                </div>
+                <a href="/pricing/" class="nav-link">Pricing</a>
+                <div class="dropdown">
+                    <button class="nav-link flex items-center gap-1.5">Resources <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <div class="dropdown-content w-64">
+                        <a href="/getting-started/" class="block py-2 hover:text-[#00E6C3]">Getting Started</a>
+                        <a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block py-2 hover:text-[#00E6C3]">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a>
+                        <a href="/faq/" class="block py-2 hover:text-[#00E6C3]">FAQs</a>
+                        <a href="/affiliations/" class="block py-2 hover:text-[#00E6C3]">Affiliations</a>
+                        <a href="/contact-us/" class="block py-2 hover:text-[#00E6C3]">Contact Us</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-link flex items-center gap-1.5">Company <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
+                    <div class="dropdown-content w-64">
+                        <a href="/about-us/" class="block py-2 hover:text-[#00E6C3]">About Us</a>
+                        <a href="/compare/" class="block py-2 hover:text-[#00E6C3]">Compare</a>
+                        <a href="/partners/" class="block py-2 hover:text-[#00E6C3]">Partners</a>
+                        <a href="/affiliations/" class="block py-2 hover:text-[#00E6C3]">Affiliations</a>
+                        <a href="/security/" class="block py-2 hover:text-[#00E6C3]">Security</a>
+                        <a href="/terms-and-conditions/" class="block py-2 hover:text-[#00E6C3]">Terms &amp; Conditions</a>
+                        <a href="/privacy-policy/" class="block py-2 hover:text-[#00E6C3]">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="/#video" class="p-4 text-sm font-semibold border border-white/30 hover:border-white rounded-xl transition-all text-white flex items-center gap-2 [text-decoration:none]">
+                    <i class="fas fa-play text-xs text-[#00E6C3]"></i> Watch 2-min video
+                </a>
+                <a href="/contact-us/" class="p-4 text-sm bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-xl flex items-center gap-2 transition-all [text-decoration:none]">
+                    <i class="fas fa-calendar"></i> Book Free Demo
+                </a>
+            </div>
+            <button id="hamburger" class="md:hidden text-3xl p-2" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-backdrop" class="mobile-backdrop" onclick="closeMobileMenu()"></div>
+    <div id="mobile-menu" class="bg-[#0A1428] border-l border-white/10 px-6 py-8 text-lg shadow-2xl">
+            <div class="flex justify-end mb-6">
+                <button onclick="closeMobileMenu()" class="text-4xl text-white/70 hover:text-white" aria-label="Close menu"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="flex flex-col gap-6">
+                <a href="/board-management/" class="hover:text-[#00E6C3] text-[#00E6C3]">Board Management</a>
+                <a href="/volunteer-management/" class="hover:text-[#00E6C3]">Volunteer Management</a>
+                <a href="/pricing/" class="hover:text-[#00E6C3]">Pricing</a>
+                <a href="/getting-started/" class="hover:text-[#00E6C3]">Getting Started</a>
+                <a href="/nycon/" class="hover:text-[#00E6C3]">NYCON Members</a>
+                <a href="/affiliations/" class="hover:text-[#00E6C3]">Affiliations</a>
+                <a href="/faq/" class="hover:text-[#00E6C3]">FAQs</a>
+                <a href="/contact-us/" class="hover:text-[#00E6C3]">Contact Us</a>
+                <a href="/contact-us/" class="mt-4 p-4 text-sm bg-[#00E6C3] text-[#0A1428] font-semibold rounded-xl text-center flex items-center justify-center gap-2 [text-decoration:none]"><i class="fas fa-calendar"></i> Book Free Demo</a>
+            </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-[65vh] flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.07]" style="background-image:radial-gradient(circle at 20% 20%, #00E6C3 0%, transparent 40%), radial-gradient(circle at 80% 60%, #3B82F6 0%, transparent 35%);"></div>
+        <div class="max-w-screen-2xl mx-auto px-6 pt-16 pb-14 relative z-10 w-full">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 bg-[#1a2640]/60 border border-white/10 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-8">
+                    <div class="w-2 h-2 bg-[#00E6C3] rounded-full animate-pulse"></div>
+                    <span class="font-medium text-white/90">Platform • Board Management</span>
+                </div>
+                <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.95] tracking-tighter mb-6">
+                    Board governance,<br/>built for <span class="text-[#00E6C3]">nonprofits.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/75 max-w-2xl mb-8 leading-relaxed">
+                    One hub for board members, committees, meetings, documents, votes, COI compliance, and tasks—plus a simpler portal for board members outside the admin desk.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+                    <a href="/contact-us/" class="px-8 py-4 md:px-10 md:py-5 bg-[#00E6C3] hover:bg-white text-[#0A1428] text-base md:text-lg font-semibold rounded-2xl flex items-center justify-center gap-3 transition-colors [text-decoration:none]">
+                        <i class="fas fa-calendar"></i> Book Free Demo
+                    </a>
+                    <a href="/contact-us/" class="px-8 py-4 md:px-10 md:py-5 bg-transparent border border-white/50 hover:border-[#00E6C3] hover:bg-white/5 text-white text-base md:text-lg font-semibold rounded-2xl flex items-center justify-center gap-2 transition-all [text-decoration:none]">
+                        Contact us <span class="text-[#00E6C3]">→</span>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80"><i class="fas fa-users text-[#00E6C3]"></i> Terms &amp; roles</span>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80"><i class="fas fa-shield-alt text-[#00E6C3]"></i> COI compliance</span>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80"><i class="fas fa-vote-yea text-[#00E6C3]"></i> Votes &amp; quorum</span>
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80"><i class="fas fa-door-open text-[#00E6C3]"></i> Board portal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-black/50 py-4 md:py-5 border-y border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 opacity-80 text-xs md:text-sm text-center text-white/80">
+            <div class="flex items-center justify-center gap-2"><i class="fas fa-id-card text-[#00E6C3]"></i> Board roster</div>
+            <div class="flex items-center justify-center gap-2"><i class="fas fa-people-group text-[#00E6C3]"></i> Committees</div>
+            <div class="flex items-center justify-center gap-2"><i class="fas fa-calendar-check text-[#00E6C3]"></i> Meetings</div>
+            <div class="flex items-center justify-center gap-2"><i class="fas fa-file-signature text-[#00E6C3]"></i> COI &amp; votes</div>
+        </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="py-16 sm:py-24 bg-[#0A1428] text-white border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                <div class="lg:col-span-5">
+                    <h3 class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-6">MOST BOARD TOOLS ARE</h3>
+                    <h2 class="heading-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight">
+                        Scattered.<br/>You need one <span class="text-[#00E6C3]">governance hub.</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-7">
+                    <p class="text-base md:text-lg text-white/85 leading-relaxed mb-10">
+                        Spreadsheets for terms. Email for packets. A separate tool for votes. Another folder for COI forms. HelpOne Board keeps roster, committees, meetings, documents, votes, compliance, and tasks in one admin workspace—with a cleaner portal for members.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-[#00E6C3] font-bold text-sm tracking-wide uppercase mb-3">TERM &amp; ROLE CLARITY</h3>
+                            <p class="text-white/70 text-base leading-relaxed">Primary role, term dates, consecutive terms, term limits, and portal access—on every member record.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-[#00E6C3] font-bold text-sm tracking-wide uppercase mb-3">COMPLIANCE THAT STICKS</h3>
+                            <p class="text-white/70 text-base leading-relaxed">COI disclosures with submitted/expiration dates, status filters, questionnaire answers, and signatures.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-[#00E6C3] font-bold text-sm tracking-wide uppercase mb-3">MEETINGS → ACTION</h3>
+                            <p class="text-white/70 text-base leading-relaxed">Agendas, attendees, documents, and open tasks tied to the committees and meetings that own them.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-[#00E6C3] font-bold text-sm tracking-wide uppercase mb-3">VOTES WITH TRACKING</h3>
+                            <p class="text-white/70 text-base leading-relaxed">Open, scheduled, and closed votes with quorum, thresholds, cast status, and portal participation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE FEATURE CARDS -->
+    <section class="py-16 sm:py-24 bg-black/50 border-t border-white/10">
+        <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="heading-font text-3xl md:text-5xl font-bold tracking-tighter mb-4">Core features. Pure governance.</h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto">Admin modules your board office actually uses—screenshots below show the real HelpOne Board product UI.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                <article class="module-card rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-7">
+                    <div class="w-12 h-12 rounded-2xl bg-[#00E6C3]/15 border border-[#00E6C3]/30 flex items-center justify-center text-[#00E6C3] text-xl mb-5"><i class="fas fa-id-badge"></i></div>
+                    <h3 class="heading-font text-xl font-bold mb-2">Board roster</h3>
+                    <p class="text-white/65 text-sm leading-relaxed">Filter Show All / Active / Term Ending Soon / Prospective. Track Board Member Y/N, status, primary role (+ Other), terms, limits, portal access, position, bio, and a Board Member badge by photo.</p>
+                </article>
+                <article class="module-card rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-7">
+                    <div class="w-12 h-12 rounded-2xl bg-[#00E6C3]/15 border border-[#00E6C3]/30 flex items-center justify-center text-[#00E6C3] text-xl mb-5"><i class="fas fa-people-group"></i></div>
+                    <h3 class="heading-font text-xl font-bold mb-2">Committees</h3>
+                    <p class="text-white/65 text-sm leading-relaxed">Multi-select committees with descriptions, chairs, cadence, seats, term length, members, meetings, documents, and open tasks in one view.</p>
+                </article>
+                <article class="module-card rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-7">
+                    <div class="w-12 h-12 rounded-2xl bg-[#00E6C3]/15 border border-[#00E6C3]/30 flex items-center justify-center text-[#00E6C3] text-xl mb-5"><i class="fas fa-calendar-alt"></i></div>
+                    <h3 class="heading-font text-xl font-bold mb-2">Meetings</h3>
+                    <p class="text-white/65 text-sm leading-relaxed">Upcoming, past, and draft meetings with agenda items, presenters, duration, attendance, documents, and minutes tabs.</p>
+                </article>
+                <article class="module-card rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-7">
+                    <div class="w-12 h-12 rounded-2xl bg-[#00E6C3]/15 border border-[#00E6C3]/30 flex items-center justify-center text-[#00E6C3] text-xl mb-5"><i class="fas fa-folder-open"></i></div>
+                    <h3 class="heading-font text-xl font-bold mb-2">Documents</h3>
+                    <p class="text-white/65 text-sm leading-relaxed">Board and committee packets with versions, approvals, access groups, review dates, and status from draft to approved.</p>
+                </article>
+                <article class="module-card rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-7">
+                    <div class="w-12 h-12 rounded-2xl bg-[#00E6C3]/15 border border-[#00E6C3]/30 flex items-center justify-center text-[#00E6C3] text-xl mb-5"><i class="fas fa-check-to-slot"></i></div>
+                    <h3 class="heading-font text-xl font-bold mb-2">Votes</h3>
+                    <p class="text-white/65 text-sm leading-relaxed">Approval votes linked to committees and meetings—quorum, thresholds, eligible voters, cast/pending status, and results.</p>
+                </article>
+                <article class="module-card rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-7">
+                    <div class="w-12 h-12 rounded-2xl bg-[#00E6C3]/15 border border-[#00E6C3]/30 flex items-center justify-center text-[#00E6C3] text-xl mb-5"><i class="fas fa-shield-halved"></i></div>
+                    <h3 class="heading-font text-xl font-bold mb-2">Compliance &amp; tasks</h3>
+                    <p class="text-white/65 text-sm leading-relaxed">COI current/expired/missing filters, +1yr expiration, answers &amp; signatures. Tasks with priority, assignees, and links to committees/meetings.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE STRIP -->
+    <section class="py-10 md:py-14 bg-[#0A1428] border-t border-white/10">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <p class="text-center text-xs uppercase tracking-[0.25em] text-white/45 mb-6">Admin modules</p>
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Board</span>
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Committees</span>
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Meetings</span>
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Documents</span>
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Votes</span>
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Compliance</span>
+                <span class="px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium">Tasks</span>
+            </div>
+            <p class="text-center text-white/40 text-sm mt-5">Plus MENU and SUPPORT in the admin nav—same pattern as the live product.</p>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT: COMMITTEES -->
+    <section class="py-16 sm:py-24 bg-black/40 border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <div>
+                    <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">Committees</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">Chairs, seats, and members in one place.</h2>
+                    <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">Create committees, set cadence and authorized seats, assign chairs and members, and see upcoming meetings and open tasks without leaving the record.</p>
+                    <ul class="space-y-3 text-white/70 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Active / inactive filters with search and sort</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Members tab with roles and term end dates</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Linked meetings, documents, and tasks</li>
+                    </ul>
+                </div>
+                <figure class="shot-frame">
+                    <img src="/assets/board-management/committees.png" alt="HelpOne Board Committees module showing Executive Committees members and overview" loading="lazy" width="1400" height="900">
+                    <figcaption class="px-4 py-3 text-xs text-white/45 border-t border-white/10">Real product UI — Committees module</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT: MEETINGS -->
+    <section class="py-16 sm:py-24 bg-[#0A1428] border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <figure class="shot-frame order-2 lg:order-1">
+                    <img src="/assets/board-management/meetings.png" alt="HelpOne Board Meetings module with agenda items and meeting overview" loading="lazy" width="1400" height="900">
+                    <figcaption class="px-4 py-3 text-xs text-white/45 border-t border-white/10">Real product UI — Meetings module</figcaption>
+                </figure>
+                <div class="order-1 lg:order-2">
+                    <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">Meetings</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">Agendas, attendees, and follow-through.</h2>
+                    <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">Schedule board and committee meetings, build agenda order with presenters and duration, track attendance, and keep documents and minutes attached to the meeting.</p>
+                    <ul class="space-y-3 text-white/70 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Upcoming / past / draft filters</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Location or video link on every meeting</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Open actions counted on the meeting summary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT: DOCUMENTS -->
+    <section class="py-16 sm:py-24 bg-black/40 border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <div>
+                    <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">Documents</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">Packets with versions and approvals.</h2>
+                    <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">Store governance documents tied to committees and meetings. Upload versions, request approvals, manage access groups, and track review dates—without a separate file dump.</p>
+                    <ul class="space-y-3 text-white/70 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Recent / Board / Committee filters</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Draft, under review, and approved statuses</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Version history with uploaders and dates</li>
+                    </ul>
+                </div>
+                <figure class="shot-frame">
+                    <img src="/assets/board-management/documents.png" alt="HelpOne Board Documents module with version history and approvals" loading="lazy" width="1400" height="900">
+                    <figcaption class="px-4 py-3 text-xs text-white/45 border-t border-white/10">Real product UI — Documents module</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT: VOTES -->
+    <section class="py-16 sm:py-24 bg-[#0A1428] border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <figure class="shot-frame order-2 lg:order-1">
+                    <img src="/assets/board-management/votes.png" alt="HelpOne Board Votes module showing open vote results and voter status" loading="lazy" width="1400" height="900">
+                    <figcaption class="px-4 py-3 text-xs text-white/45 border-t border-white/10">Real product UI — Votes module</figcaption>
+                </figure>
+                <div class="order-1 lg:order-2">
+                    <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">Votes</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">Motions with quorum and clear results.</h2>
+                    <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">Run approval votes linked to the right committee and meeting. Set open/close windows, thresholds, eligible voters, and see yes / no / abstain with cast vs pending status—including portal casts.</p>
+                    <ul class="space-y-3 text-white/70 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Open / scheduled / closed filters</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Participation rates and closing dates</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Results, voters, documents, and activity tabs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT: COMPLIANCE -->
+    <section class="py-16 sm:py-24 bg-black/40 border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <div>
+                    <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">Compliance</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">COI disclosures you can actually audit.</h2>
+                    <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">Track conflict-of-interest disclosures per board member—submitted date, expiration (+1 year), reviewed-by, questionnaire answers, and signature details. Filter Current, Expired, or Missing in one glance.</p>
+                    <ul class="space-y-3 text-white/70 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Status badges on the member list</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Disclosure answers with edit history</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Mark reviewed / add disclosure workflows</li>
+                    </ul>
+                </div>
+                <figure class="shot-frame">
+                    <img src="/assets/board-management/compliance.png" alt="HelpOne Board Compliance module with COI disclosures and answers" loading="lazy" width="1400" height="900">
+                    <figcaption class="px-4 py-3 text-xs text-white/45 border-t border-white/10">Real product UI — Compliance (COI) module</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT: TASKS -->
+    <section class="py-16 sm:py-24 bg-[#0A1428] border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+                <figure class="shot-frame order-2 lg:order-1">
+                    <img src="/assets/board-management/tasks.png" alt="HelpOne Board Tasks module with priorities and related committee meeting" loading="lazy" width="1400" height="900">
+                    <figcaption class="px-4 py-3 text-xs text-white/45 border-t border-white/10">Real product UI — Tasks module</figcaption>
+                </figure>
+                <div class="order-1 lg:order-2">
+                    <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">Tasks</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">Action items owned after the meeting.</h2>
+                    <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">Assign board work with priority, due dates, and status. Link tasks to committees and meetings so follow-ups do not vanish into email threads.</p>
+                    <ul class="space-y-3 text-white/70 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Open / overdue / completed filters</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Assign to board members with priority levels</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-[#00E6C3] mt-1"></i> Related committee and meeting fields</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXTERNAL BOARD PORTAL -->
+    <section class="py-16 sm:py-24 bg-black/60 border-t border-white/10">
+        <div class="max-w-screen-xl mx-auto px-6 md:px-10">
+            <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-[#121c33] to-[#0A1428] p-8 md:p-12 overflow-hidden relative">
+                <div class="absolute -right-10 -top-10 w-56 h-56 rounded-full bg-[#00E6C3]/10 blur-3xl"></div>
+                <div class="relative z-10 grid lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7">
+                        <p class="text-[#00E6C3] font-bold text-sm tracking-[0.2em] uppercase mb-4">External Board Portal</p>
+                        <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">A simpler menu for board members.</h2>
+                        <p class="text-white/70 text-base md:text-lg leading-relaxed mb-6">
+                            Admins get the full Board suite. Portal users get a focused member experience—so directors can find meetings, packets, votes, and their own tasks without the admin complexity.
+                        </p>
+                        <p class="text-white/50 text-sm mb-6">Portal menu:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">Home</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">Meetings</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">Documents</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">Votes</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">My Tasks</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">My Profile</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="rounded-2xl border border-white/10 bg-black/40 p-6 space-y-4">
+                            <div class="flex items-center gap-3 text-sm text-white/80"><i class="fas fa-user-check text-[#00E6C3]"></i> Portal access controlled per member</div>
+                            <div class="flex items-center gap-3 text-sm text-white/80"><i class="fas fa-clipboard-list text-[#00E6C3]"></i> Skills, COI, and portal activity on the record</div>
+                            <div class="flex items-center gap-3 text-sm text-white/80"><i class="fas fa-image text-[#00E6C3]"></i> Board Member badge beside photo</div>
+                            <p class="text-xs text-white/40 pt-2 border-t border-white/10">Screenshots on this page are from the admin Board product UI—not a mock.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="py-16 sm:py-24 bg-[#0A1428] border-t border-white/10">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <h2 class="heading-font text-3xl md:text-5xl font-bold tracking-tighter mb-10">Who It's For</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <a class="bg-[#121c32] hover:bg-[#1a2640] rounded-2xl p-6 transition-colors flex items-center justify-center text-center min-h-[100px] [text-decoration:none]" href="/faith-communities/"><span class="text-white font-medium">Faith Communities</span></a>
+                <a class="bg-[#121c32] hover:bg-[#1a2640] rounded-2xl p-6 transition-colors flex items-center justify-center text-center min-h-[100px] [text-decoration:none]" href="/schools-youth/"><span class="text-white font-medium">Schools &amp; Youth Groups</span></a>
+                <a class="bg-[#121c32] hover:bg-[#1a2640] rounded-2xl p-6 transition-colors flex items-center justify-center text-center min-h-[100px] [text-decoration:none]" href="/animal-rescues/"><span class="text-white font-medium">Animal Rescues</span></a>
+                <a class="bg-[#121c32] hover:bg-[#1a2640] rounded-2xl p-6 transition-colors flex items-center justify-center text-center min-h-[100px] [text-decoration:none]" href="/arts-culture/"><span class="text-white font-medium">Arts &amp; Culture Organizations</span></a>
+                <a class="bg-[#121c32] hover:bg-[#1a2640] rounded-2xl p-6 transition-colors flex items-center justify-center text-center min-h-[100px] [text-decoration:none]" href="/community-groups/"><span class="text-white font-medium">Community Groups</span></a>
+                <a class="bg-[#121c32] hover:bg-[#1a2640] rounded-2xl p-6 transition-colors flex items-center justify-center text-center min-h-[100px] [text-decoration:none]" href="/environmental-causes/"><span class="text-white font-medium">Environmental Causes</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATFORM MODULES -->
+    <section id="modules" class="py-12 md:py-24 bg-black/50 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-8 md:mb-16">
+                <h2 class="heading-font text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">9 Powerful Modules.<br/>One breathtaking platform.</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-[#00E6C3]"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">👥</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Volunteer Management</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Self-service portal, QR check-ins, skill matching, hours tracking that auto-feeds your 990.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/volunteer-management/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-violet-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">🎟️</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Event Management</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Unified hub, dynamic ticketing, multi-day schedules, volunteer sync.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/event-management/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-amber-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">💰</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Fundraising</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Auctions, pledges, donations, contests, sponsorships.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/fundraising/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden ring-1 ring-[#00E6C3]/40">
+                    <div class="h-2 bg-teal-400"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">🏛️</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Board Management</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Roster, committees, meetings, documents, votes, COI compliance, tasks, and board portal.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/board-management/">You're here →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-emerald-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">📇</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Donors &amp; Contacts</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Rich profiles, history, smart folders, custom blasts.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/donors-and-contacts/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-rose-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">📊</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Finances</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">GAAP charts, auto 990 &amp; CHAR500, restricted funds.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/finances/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-sky-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">👔</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">HR Solutions</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Onboarding, reviews, time-off, nonprofit-specific.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/hr-solutions/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-indigo-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">📋</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Policies &amp; Procedures</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Acknowledgment tracking and living policy libraries.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/policies-and-procedures/">Explore →</a>
+                    </div>
+                </div>
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                    <div class="h-2 bg-fuchsia-500"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">🎓</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Training Tracking</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Required trainings, completion, and renewals.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/training-tracking/">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIDE / SHOW MODULES -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-black to-[#0A1428] border-t border-white/10">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-2 text-[#00E6C3] text-sm font-semibold tracking-wide mb-4"><i class="fas fa-shield-alt"></i> FUTURE-PROOF FROM DAY ONE</div>
+                    <h2 class="heading-font text-2xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight">
+                        Even if you don't need every module today,<br/><span class="text-[#00E6C3]">you're still ready for tomorrow.</span>
+                    </h2>
+                    <p class="text-base md:text-xl text-white/80 mt-6 md:mt-10">Start with only what you need. Simply hide the rest – they disappear from your dashboard.</p>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="bg-[#0A1428] border border-white/10 rounded-3xl p-5 md:p-8">
+                        <div class="text-sm uppercase tracking-widest text-white/60 mb-4 md:mb-6">Your clean dashboard today</div>
+                        <div class="grid grid-cols-2 gap-3 md:gap-4">
+                            <div class="bg-white/10 rounded-2xl p-4 md:p-6 text-center">
+                                <div class="text-3xl md:text-4xl mb-2 md:mb-3">🏛️</div>
+                                <div class="font-semibold text-sm md:text-base">Board Mgmt</div>
+                                <div class="text-xs text-[#00E6C3] mt-1">ACTIVE</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 md:p-6 text-center">
+                                <div class="text-3xl md:text-4xl mb-2 md:mb-3">👥</div>
+                                <div class="font-semibold text-sm md:text-base">Volunteer Mgmt</div>
+                                <div class="text-xs text-[#00E6C3] mt-1">ACTIVE</div>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-4 md:p-6 text-center opacity-40">
+                                <div class="text-3xl md:text-4xl mb-2 md:mb-3">💰</div>
+                                <div class="font-semibold text-sm md:text-base">Fundraising</div>
+                                <div class="text-xs text-white/40 mt-1">HIDDEN – tap to activate</div>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-4 md:p-6 text-center opacity-40">
+                                <div class="text-3xl md:text-4xl mb-2 md:mb-3">📊</div>
+                                <div class="font-semibold text-sm md:text-base">Finances</div>
+                                <div class="text-xs text-white/40 mt-1">HIDDEN – tap to activate</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 md:mt-10 text-center text-sm text-[#00E6C3] font-medium">Grow at your pace. One platform forever.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section class="py-24 bg-[#050914] text-white border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <span class="text-5xl inline-block mb-4" aria-hidden="true">🚀</span>
+                <h2 class="heading-font text-5xl md:text-6xl font-bold tracking-tighter mb-6">Founders Program</h2>
+                <p class="text-xl md:text-2xl text-white/90">Be among the first 250 nonprofits to lock in the lowest rate ever offered.</p>
+            </div>
+            <div class="bg-[#0A1428] rounded-3xl p-10 md:p-14 border border-white/10 max-w-2xl mx-auto shadow-2xl">
+                <div class="mb-8 block">
+                    <span class="text-[#00E6C3] text-6xl md:text-7xl font-bold tracking-tighter">$499</span>
+                </div>
+                <p class="text-white/80 text-lg mb-10 font-medium tracking-wide">/month • locked for first 12 months</p>
+                <a class="inline-block text-center w-full bg-white text-[#0A1428] text-lg font-bold py-5 rounded-xl hover:bg-[#00E6C3] transition-colors shadow-lg [text-decoration:none]" href="/contact-us/">Secure My Founders Spot Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="bg-[#00E6C3] text-[#0A1428] py-12 md:py-24 text-center">
+        <div class="max-w-2xl mx-auto px-4 md:px-6">
+            <h2 class="heading-font text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">Ready for one governance hub your board will actually use?</h2>
+            <p class="text-lg md:text-2xl mt-4 md:mt-6">Book a free demo—we'll walk through Board, committees, COI, votes, and the member portal.</p>
+            <a class="block text-center [text-decoration:none] cursor-pointer mt-8 md:mt-12 px-8 py-4 md:px-16 md:py-8 bg-[#0A1428] text-white text-base md:text-2xl font-semibold rounded-3xl hover:scale-105 transition-all" href="/contact-us/">Book Your Free Demo Today</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-20">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid md:grid-cols-5 gap-12">
+                <div>
+                    <a href="/" class="flex items-center mb-6 [text-decoration:none]">
+                        <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-16 w-auto object-contain" width="160" height="64">
+                    </a>
+                    <p class="text-white/60 text-sm">The operating system for world-changing nonprofits.</p>
+                    <div class="mt-8 text-xs text-white/40">© 2026 HelpOne Software, Inc.</div>
+                </div>
+                <div>
+                    <div class="font-medium mb-6 text-[#00E6C3]">Platform</div>
+                    <div class="space-y-3 text-sm text-white/70">
+                        <a href="/volunteer-management/" class="block hover:text-white">Volunteer Management</a>
+                        <a href="/event-management/" class="block hover:text-white">Event Management</a>
+                        <a href="/fundraising/" class="block hover:text-white">Fundraising</a>
+                        <a href="/board-management/" class="block hover:text-white text-white">Board Management</a>
+                        <a href="/participants/" class="block hover:text-white">Participants</a>
+                        <a href="/donors-and-contacts/" class="block hover:text-white">Donors &amp; Contacts</a>
+                        <a href="/finances/" class="block hover:text-white">Finances</a>
+                        <a href="/hr-solutions/" class="block hover:text-white">HR Solutions</a>
+                        <a href="/policies-and-procedures/" class="block hover:text-white">Policies &amp; Procedures</a>
+                        <a href="/training-tracking/" class="block hover:text-white">Training Tracking</a>
+                        <a href="/payments/" class="block hover:text-white">Payments</a>
+                        <a href="/switching-to-helpone-payments/" class="block hover:text-white">Switching to HelpOne Payments</a>
+                        <a href="/getting-started/" class="block hover:text-white">Getting Started</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-medium mb-6 text-[#00E6C3]">Who It's For</div>
+                    <div class="space-y-3 text-sm text-white/70">
+                        <a href="/faith-communities/" class="block hover:text-white">Faith Communities</a>
+                        <a href="/schools-youth/" class="block hover:text-white">Schools &amp; Youth</a>
+                        <a href="/animal-rescues/" class="block hover:text-white">Animal Rescues</a>
+                        <a href="/arts-culture/" class="block hover:text-white">Arts &amp; Culture</a>
+                        <a href="/community-groups/" class="block hover:text-white">Community Groups</a>
+                        <a href="/small-nonprofits/" class="block hover:text-white">Small Nonprofits</a>
+                        <a href="/environmental-causes/" class="block hover:text-white">Environmental Causes</a>
+                        <a href="/nycon/" class="block hover:text-white">NYCON Members</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-medium mb-6 text-[#00E6C3]">Company | Resources</div>
+                    <div class="space-y-3 text-sm text-white/70">
+                        <a href="/getting-started/" class="block hover:text-white">Getting Started</a>
+                        <a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block hover:text-white">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a>
+                        <a href="/faq/" class="block hover:text-white">FAQs</a>
+                        <a href="/about-us/" class="block hover:text-white">About Us</a>
+                        <a href="/compare/" class="block hover:text-white">Compare</a>
+                        <a href="/partners/" class="block hover:text-white">Partners</a>
+                        <a href="/affiliations/" class="block hover:text-white">Affiliations</a>
+                        <a href="/security/" class="block hover:text-white">Security</a>
+                        <a href="/terms-and-conditions/" class="block hover:text-white">Terms &amp; Conditions</a>
+                        <a href="/privacy-policy/" class="block hover:text-white">Privacy Policy</a>
+                        <a href="/contact-us/" class="block hover:text-white">Contact Us</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-medium mb-6 text-[#00E6C3]">Get in touch</div>
+                    <a href="mailto:hello@helponesoftware.com" class="text-sm text-white/70 hover:text-[#00E6C3] transition-colors mb-6 block [text-decoration:none]">hello@helponesoftware.com</a>
+                    <a href="/contact-us/" class="block w-full py-4 text-center border border-white/30 hover:bg-white/10 rounded-2xl text-sm font-medium text-white transition-colors [text-decoration:none]">Book a Free Demo</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBackdrop = document.getElementById('mobile-backdrop');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('show');
+            mobileBackdrop.classList.add('show');
+        }
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('show');
+            mobileBackdrop.classList.remove('show');
+        }
+        hamburger.addEventListener('click', openMobileMenu);
+        mobileBackdrop.addEventListener('click', closeMobileMenu);
+    </script>
+</body>
+</html>
