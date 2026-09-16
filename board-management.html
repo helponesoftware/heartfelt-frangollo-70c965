@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<html la<div class="module-card bg-white/5 rounded-3xl overflow-hidden board-mgmt-center ring-1 ring-[#00E6C3]/40 md:col-start-2">
-                    <div class="board-mgmt-topbar" style="height:0.5rem;background:#00E6C3;width:100%;"></div>
-                    <div class="p-5 md:p-8">
-                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">🏛️</div>
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Board Management</h3>
-                        <p class="text-white/70 text-sm leading-relaxed">Roster, committees, meetings, documents, votes, COI compliance, tasks, and board portal.</p>
-                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/board-management/">You're here →</a>
-                    </div>
-                </div>ng="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,9 +70,6 @@
         }
         .shot-frame img { width: 100%; height: auto; display: block; }
     </style>
-<style id="board-mgmt-center-style">
-@media (min-width: 768px) { .board-mgmt-center { grid-column-start: 2; } }
-</style>
 </head>
 <body class="bg-[#0A1428] text-white overflow-x-hidden">
 
@@ -538,7 +527,15 @@
                         <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/fundraising/">Explore →</a>
                     </div>
                 </div>
-                
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden ring-1 ring-[#00E6C3]/40">
+                    <div class="h-2 bg-teal-400"></div>
+                    <div class="p-5 md:p-8">
+                        <div class="text-4xl md:text-5xl mb-4 md:mb-6">🏛️</div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 md:mb-3">Board Management</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">Roster, committees, meetings, documents, votes, COI compliance, tasks, and board portal.</p>
+                        <a class="mt-5 md:mt-8 inline-flex items-center text-[#00E6C3] text-sm font-medium hover:underline [text-decoration:none]" href="/board-management/">You're here →</a>
+                    </div>
+                </div>
                 <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
                     <div class="h-2 bg-emerald-500"></div>
                     <div class="p-5 md:p-8">
@@ -585,7 +582,7 @@
                     </div>
                 </div>
 
-                <div class="module-card bg-white/5 rounded-3xl overflow-hidden">
+                <div class="module-card bg-white/5 rounded-3xl overflow-hidden md:col-start-2">
                     <div class="h-2 bg-cyan-500"></div>
                     <div class="p-5 md:p-8">
                         <div class="text-4xl md:text-5xl mb-4 md:mb-6">💻</div>
