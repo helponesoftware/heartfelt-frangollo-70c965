@@ -1,0 +1,65 @@
+# HelpOne
+
+> HelpOne (HelpOne Software, Inc., Somers, NY) is all-in-one nonprofit software: one login for volunteer management, event management, fundraising, donors & contacts (CRM), finances (auto Form 990 & NY CHAR500), HR, policies & procedures, training tracking, participant breakdown and board management. Unlimited users and records on a flat monthly price, with no per-seat or per-record fees.
+
+Key facts (from this website):
+
+- Built exclusively for nonprofits; the platform is live and in a Founders / early-access phase.
+- Pricing: Founders Program $499/month, locked for the first 12 months, plus a permanent 20% lifetime discount. Growth plan $599/month after the Founders period. Scale plan (full white-label, dedicated support, custom development) by custom quote. All plans include all modules and unlimited records, events, transactions, forms and reports. No setup fees, no contracts, cancel anytime.
+- NYCON members: $399/month for the first year, then $449/month.
+- Payments: flat rate $1.75/transaction + $15/month when you bring your own processor, or interchange-plus (IC+) when HelpOne handles processing. A HelpOne subscription is not required to use HelpOne Payments.
+- Security: SOC 2 Type II certified; card payments run through a PCI DSS Level 1 processor partner; AES-256 encryption; GDPR-aligned data practices.
+- Onboarding: free data migration and setup help; most organizations are up and running within 2–4 weeks.
+- Founder & CEO: Edward Zaremba. Strategic technology partner: Citinet Solutions.
+- Memberships: New York Council of Nonprofits (NYCON), Nonprofit New York, Nonprofit Westchester, Business Council of Westchester.
+- Contact: hello@helponesoftware.com (general), sales@helponesoftware.com (demos & sales), support@helponesoftware.com (support).
+
+## Platform modules
+
+- [Volunteer Management](https://www.helponesoftware.com/volunteer-management): Self-service portal, QR check-ins, skill matching, shifts, background checks, and hours tracking that feeds Form 990.
+- [Event Management](https://www.helponesoftware.com/event-management): Unified event hub, dynamic ticketing, multi-day schedules and volunteer sync.
+- [Fundraising](https://www.helponesoftware.com/fundraising): Auctions, pledges, donations, contests and sponsorships with real-time P&L and automatic volunteer-hour valuation for Form 990.
+- [Donors & Contacts](https://www.helponesoftware.com/donors-and-contacts): Donor CRM with rich profiles, giving history, smart folders and custom blasts.
+- [Finances](https://www.helponesoftware.com/finances): Nonprofit chart of accounts, real-time P&L, restricted funds, auto Form 990 and CHAR500.
+- [HR Solutions](https://www.helponesoftware.com/hr-solutions): Nonprofit HR: onboarding, reviews and time off.
+- [Policies & Procedures](https://www.helponesoftware.com/policies-and-procedures): Living policy books, approvals and instant PDF export.
+- [Training Tracking](https://www.helponesoftware.com/training-tracking): Training assignments, reminders and progress dashboards.
+- [Participants](https://www.helponesoftware.com/participants): Participant breakdown with engagement scoring, real-time segmentation and activity breakdowns.
+- [Board Management](https://www.helponesoftware.com/board-management): Board members, committees, meetings, documents, votes, conflict-of-interest compliance, tasks and a board member portal.
+- [My HelpOne](https://www.helponesoftware.com/my-helpone): Personal dashboard for staff: action items, events, calendar, timesheets and time-off requests.
+- [Payments](https://www.helponesoftware.com/payments): Flat-rate or IC+ payment processing with text-to-give, QR codes, hosted pages and embeddable forms.
+- [Switching to HelpOne Payments](https://www.helponesoftware.com/switching-to-helpone-payments): How to move payment processing to HelpOne.
+
+## Pricing and getting started
+
+- [Pricing](https://www.helponesoftware.com/pricing): Founders, Growth and Scale plans.
+- [NYCON member pricing](https://www.helponesoftware.com/nycon): Member pricing for New York Council of Nonprofits members.
+- [Getting Started](https://www.helponesoftware.com/getting-started): Migration and onboarding plan for the first 30 days.
+- [Compare](https://www.helponesoftware.com/compare): HelpOne compared with Bloomerang, QuickBooks and VolunteerHub.
+- [FAQ](https://www.helponesoftware.com/faq): Common questions about pricing, payments, features and security.
+- [Security](https://www.helponesoftware.com/security): Plain-English security and compliance overview.
+
+## Who it's for
+
+- [Faith Communities](https://www.helponesoftware.com/faith-communities)
+- [Schools & Youth](https://www.helponesoftware.com/schools-youth)
+- [Animal Rescues](https://www.helponesoftware.com/animal-rescues)
+- [Arts & Culture](https://www.helponesoftware.com/arts-culture)
+- [Community Groups](https://www.helponesoftware.com/community-groups)
+- [Small Nonprofits](https://www.helponesoftware.com/small-nonprofits)
+- [Environmental Causes](https://www.helponesoftware.com/environmental-causes)
+
+## Company
+
+- [About Us](https://www.helponesoftware.com/about-us): Why HelpOne was built and who is behind it.
+- [Affiliations](https://www.helponesoftware.com/affiliations): HelpOne's nonprofit association memberships.
+- [Partners](https://www.helponesoftware.com/partners): Technology and referral partner program.
+- [Contact Us](https://www.helponesoftware.com/contact-us): Book a demo or reach the team.
+
+## Optional
+
+- [Knowledge Base](https://helpone.knowledgeowl.com/help): Product help articles.
+- [YouTube](https://www.youtube.com/@HelpOneSoftware): Product videos.
+- [LinkedIn](https://www.linkedin.com/company/helpone-software): Company page.
+- [Privacy Policy](https://www.helponesoftware.com/privacy-policy)
+- [Terms & Conditions](https://www.helponesoftware.com/terms-and-conditions)

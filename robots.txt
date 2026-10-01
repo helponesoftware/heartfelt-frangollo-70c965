@@ -1,4 +1,6 @@
 User-Agent: *
 Allow: /
 
+# Plain-text site summary for AI assistants and LLMs: https://www.helponesoftware.com/llms.txt
+
 Sitemap: https://www.helponesoftware.com/sitemap.xml
