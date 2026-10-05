@@ -20,27 +20,7 @@
   if (window.__helponeGa4Conversions) return;
   window.__helponeGa4Conversions = true;
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  // Prefer the real gtag from the page snippet when present
-  function send(eventName, params) {
-    try {
-      var payload = {
-        form_id: params.form_id || "",
-        form_name: params.form_name || "",
-        page_path: params.page_path || pagePath(),
-      };
-      if (typeof window.gtag === "function") {
-        window.gtag("event", eventName, payload);
-      } else {
-        gtag("event", eventName, payload);
-      }
-    } catch (err) {
-      console.warn("HelpOne GA4 conversion skipped", err);
-    }
-  }
+  var MEASUREMENT_ID = "G-JGSKFEED8X";
 
   function pagePath() {
     try {
@@ -51,6 +31,38 @@
     } catch (e) {
       return "";
     }
+  }
+
+  function send(eventName, params) {
+    var payload = {
+      send_to: MEASUREMENT_ID,
+      form_id: params.form_id || "",
+      form_name: params.form_name || "",
+      page_path: params.page_path || pagePath(),
+    };
+
+    function attempt() {
+      try {
+        window.dataLayer = window.dataLayer || [];
+        if (typeof window.gtag === "function") {
+          window.gtag("event", eventName, payload);
+          return true;
+        }
+        // Queue in dataLayer until gtag.js defines gtag
+        window.dataLayer.push(["event", eventName, payload]);
+        return false;
+      } catch (err) {
+        console.warn("HelpOne GA4 conversion skipped", err);
+        return false;
+      }
+    }
+
+    if (attempt()) return;
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries += 1;
+      if (attempt() || tries >= 40) clearInterval(timer);
+    }, 250);
   }
 
   function fireLeadAndSubmit(formId, formName) {
@@ -71,11 +83,16 @@
     },
   };
   if (thanksPaths[path]) {
-    fireLeadAndSubmit(thanksPaths[path].form_id, thanksPaths[path].form_name);
+    // Defer slightly so the page's gtag('config') has run and gtag.js can attach
+    var fireThanks = function () {
+      fireLeadAndSubmit(thanksPaths[path].form_id, thanksPaths[path].form_name);
+    };
+    if (document.readyState === "complete") setTimeout(fireThanks, 0);
+    else window.addEventListener("load", function () { setTimeout(fireThanks, 0); });
   }
 
   function isContactPath(p) {
-    return p === "/contact-us" || p === "/contact-us/";
+    return p === "/contact-us";
   }
 
   if (isContactPath(path) && typeof window.fetch === "function") {
