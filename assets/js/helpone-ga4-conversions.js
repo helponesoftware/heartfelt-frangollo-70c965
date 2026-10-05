@@ -56,7 +56,9 @@
     send("form_submit", base);
   }
 
-  var path = (pagePath().replace(/\/+$/, "") || "/");
+  // Normalize: strip trailing slash and optional .html (local static / Netlify clean URLs)
+  var path = pagePath().replace(/\/+$/, "") || "/";
+  if (/\.html$/i.test(path)) path = path.replace(/\.html$/i, "");
   var thanksPaths = {
     "/partner-apply-thanks": {
       form_id: "partner-application",
