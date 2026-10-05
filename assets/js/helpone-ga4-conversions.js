@@ -44,7 +44,10 @@
 
   function pagePath() {
     try {
-      return window.location.pathname || "";
+      var p = window.location.pathname || "";
+      p = p.replace(/\/+$/, "") || "/";
+      if (/\.html$/i.test(p)) p = p.replace(/\.html$/i, "");
+      return p;
     } catch (e) {
       return "";
     }
@@ -56,9 +59,7 @@
     send("form_submit", base);
   }
 
-  // Normalize: strip trailing slash and optional .html (local static / Netlify clean URLs)
-  var path = pagePath().replace(/\/+$/, "") || "/";
-  if (/\.html$/i.test(path)) path = path.replace(/\.html$/i, "");
+  var path = pagePath();
   var thanksPaths = {
     "/partner-apply-thanks": {
       form_id: "partner-application",
