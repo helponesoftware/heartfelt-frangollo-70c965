@@ -119,20 +119,7 @@
     if (heroDemo) {
       heroDemo.setAttribute('aria-label', 'Book a free demo');
       var row = heroDemo.parentElement;
-      if (row && !document.getElementById('helpone-home-pricing-link')) {
-        var pricing = document.createElement('a');
-        pricing.id = 'helpone-home-pricing-link';
-        pricing.href = '/pricing';
-        pricing.className = 'w-full sm:w-auto px-8 py-4 md:px-10 md:py-5 bg-transparent border border-white/60 hover:border-[#00E6C3] hover:bg-white/5 text-white text-base md:text-lg font-semibold rounded-2xl flex items-center justify-center gap-2 transition-all [text-decoration:none]';
-        pricing.textContent = 'See pricing';
-        var watch = row.querySelector('a[href="/#video"]');
-        if (watch && watch.parentElement === row) {
-          if (watch.nextSibling) row.insertBefore(pricing, watch.nextSibling);
-          else row.appendChild(pricing);
-        } else {
-          row.appendChild(pricing);
-        }
-      }
+      /* 'See pricing' hero button removed per Ed (PR #41) */
     }
 
     if (document.getElementById('helpone-home-solutions-strip')) return;
