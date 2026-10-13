@@ -254,12 +254,26 @@
     }
   }
 
+  // Hero secondary CTA -> /calculator (re-added after hydration; static copy lives in index.html)
+  function ensureCalcButton() {
+    if (document.getElementById("helpone-hero-calc-btn")) return;
+    var video = document.querySelector('a[href="/#video"]');
+    if (!video || !video.parentNode) return;
+    var a = document.createElement("a");
+    a.id = "helpone-hero-calc-btn";
+    a.className = video.className;
+    a.href = "/calculator";
+    a.textContent = "Calculate Your Savings";
+    video.parentNode.insertBefore(a, video.nextSibling);
+  }
+
   function applyPhase1() {
     try {
       patchHero();
       patchProblem();
       patchFinalCta();
       ensureBoardCard();
+      ensureCalcButton();
     } catch (err) {
       console.warn("HelpOne Phase-1 hydrate patch skipped", err);
     }
