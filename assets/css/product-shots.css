@@ -4,3 +4,18 @@
 .h1shot-bar span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.22)}
 .h1shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left}
 .h1shot figcaption{padding:10px 14px;font-size:.85rem;line-height:1.4;color:rgba(255,255,255,.65);border-top:1px solid rgba(255,255,255,.08);text-align:left}
+/* Lightbox */
+.h1shot{cursor:zoom-in}
+.h1shot img:focus-visible{outline:3px solid #00E6C3;outline-offset:-3px}
+.h1shot-zoom{position:absolute;top:36px;right:8px;width:28px;height:28px;border-radius:8px;background:rgba(10,20,40,.75);color:#fff;font-size:16px;line-height:28px;text-align:center;pointer-events:none}
+.h1lb{position:fixed;inset:0;z-index:1000;background:rgba(5,10,22,.92);display:flex;align-items:center;justify-content:center;padding:48px 56px;overflow:auto}
+.h1lb[hidden]{display:none}
+.h1lb-f{margin:0;max-width:1440px;width:100%}
+.h1lb-f img{display:block;width:100%;height:auto;max-height:calc(100vh - 140px);object-fit:contain;border-radius:12px}
+.h1lb-f figcaption{color:rgba(255,255,255,.8);text-align:center;padding:12px 8px 0;font-size:.95rem}
+.h1lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:44px;height:44px;font-size:28px;line-height:44px;cursor:pointer}
+.h1lb button:focus-visible{outline:3px solid #00E6C3}
+.h1lb-x{top:12px;right:12px}.h1lb-p{left:8px;top:50%}.h1lb-n{right:8px;top:50%}
+.h1lb button[hidden]{display:none}
+html.h1lb-open{overflow:hidden}
+@media (max-width:640px){.h1lb{padding:56px 8px}.h1lb-p,.h1lb-n{top:auto;bottom:12px}}
