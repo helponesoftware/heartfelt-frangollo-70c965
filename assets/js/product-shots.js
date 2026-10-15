@@ -108,6 +108,108 @@
   "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"timesheets\" data-full-alt=\"Weekly timesheet form beside submitted entries\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/timesheets-1440.webp\" srcset=\"/assets/product-shots/timesheets-960.webp 960w, /assets/product-shots/timesheets-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Weekly timesheet form beside submitted entries\"/><figcaption>Log hours in seconds and send them for approval.</figcaption></figure>"
  },
  {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/Volunteer Onboarding.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-onboarding\" data-full-alt=\"Volunteer sign-up form settings with question checkboxes and an invite link\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-onboarding-1440.webp\" srcset=\"/assets/product-shots/volunteer-onboarding-960.webp 960w, /assets/product-shots/volunteer-onboarding-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer sign-up form settings with question checkboxes and an invite link\"/><figcaption>Choose what your sign-up form asks and share one link.</figcaption></figure>"
+ },
+ {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/Hours Approval Workflow.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-hours-approval\" data-full-alt=\"Volunteer hours waiting for approval above approved hours\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-hours-approval-1440.webp\" srcset=\"/assets/product-shots/volunteer-hours-approval-960.webp 960w, /assets/product-shots/volunteer-hours-approval-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer hours waiting for approval above approved hours\"/><figcaption>Approve logged hours or send them back with a note.</figcaption></figure>"
+ },
+ {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/Native Checkr - Compliance.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-background-checks\" data-full-alt=\"Volunteer screening pipeline with a queue of volunteers and check settings\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-background-checks-1440.webp\" srcset=\"/assets/product-shots/volunteer-background-checks-960.webp 960w, /assets/product-shots/volunteer-background-checks-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer screening pipeline with a queue of volunteers and check settings\"/><figcaption>Background checks tracked from start to clear, with who pays and how long a check lasts.</figcaption></figure>"
+ },
+ {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/990-Ready Hours.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-990-hours\" data-full-alt=\"Volunteer compliance report with verified hours, in-kind value by program and PDF and CSV downloads\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-990-hours-1440.webp\" srcset=\"/assets/product-shots/volunteer-990-hours-960.webp 960w, /assets/product-shots/volunteer-990-hours-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer compliance report with verified hours, in-kind value by program and PDF and CSV downloads\"/><figcaption>Verified volunteer hours and their estimated value, ready for Form 990 and grant reports.</figcaption></figure>"
+ },
+ {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/Certifications & Extra Checks.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-certifications\" data-full-alt=\"Volunteer portal training list with finished dates, documents and impact certificate\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-certifications-1440.webp\" srcset=\"/assets/product-shots/volunteer-certifications-960.webp 960w, /assets/product-shots/volunteer-certifications-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal training list with finished dates, documents and impact certificate\"/><figcaption>Each volunteer sees their trainings and marks them done.</figcaption></figure>"
+ },
+ {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/Communication Hub.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-communication\" data-full-alt=\"Volunteer message picker beside a thank-you email preview\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-communication-1440.webp\" srcset=\"/assets/product-shots/volunteer-communication-960.webp 960w, /assets/product-shots/volunteer-communication-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer message picker beside a thank-you email preview\"/><figcaption>Thank-you notes and shift reminders, filled in for you.</figcaption></figure>"
+ },
+ {
+  "p": "volunteer-management",
+  "old": "/assets/volunteer-management/My Availability.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"volunteer-hours\" data-full-alt=\"Volunteer portal hours form beside a list of approved hours\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-hours-1440.webp\" srcset=\"/assets/product-shots/volunteer-hours-960.webp 960w, /assets/product-shots/volunteer-hours-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal hours form beside a list of approved hours\"/><figcaption>Volunteers log their own hours and see what was approved.</figcaption></figure>"
+ },
+ {
+  "p": "fundraising",
+  "old": "/_next/static/media/01.2f8b271c.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"auctions\" data-full-alt=\"Event auctions table with donors, items, winning bids and fair market value\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/auctions-1440.webp\" srcset=\"/assets/product-shots/auctions-960.webp 960w, /assets/product-shots/auctions-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Event auctions table with donors, items, winning bids and fair market value\"/><figcaption>Auction items with donor, winner, bid and deductible amount.</figcaption></figure>"
+ },
+ {
+  "p": "fundraising",
+  "old": "/_next/static/media/03.78602b02.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"expenses\" data-full-alt=\"Expense form above a list of staff expenses with approve and reimbursed states\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/expenses-1440.webp\" srcset=\"/assets/product-shots/expenses-960.webp 960w, /assets/product-shots/expenses-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Expense form above a list of staff expenses with approve and reimbursed states\"/><figcaption>Log an expense, then approve and reimburse it in one list.</figcaption></figure>"
+ },
+ {
+  "p": "donors-and-contacts",
+  "old": "/_next/static/media/Powerful Email Campaigns.70d20e4a.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"email-campaigns\" data-full-alt=\"Email group with member contacts, companies and a Send email button\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/email-campaigns-1440.webp\" srcset=\"/assets/product-shots/email-campaigns-960.webp 960w, /assets/product-shots/email-campaigns-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Email group with member contacts, companies and a Send email button\"/><figcaption>Build a mailing list from contacts and companies, then email it.</figcaption></figure>"
+ },
+ {
+  "p": "board-management",
+  "old": "/assets/board-management/meetings.png",
+  "mode": "figure",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"board-meetings\" data-full-alt=\"Board meeting record with date, time, organizer and purpose\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/board-meetings-1440.webp\" srcset=\"/assets/product-shots/board-meetings-960.webp 960w, /assets/product-shots/board-meetings-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Board meeting record with date, time, organizer and purpose\"/><figcaption>Schedule meetings with agenda, location and calendar links.</figcaption></figure>"
+ },
+ {
+  "p": "board-management",
+  "old": "/assets/board-management/documents.png",
+  "mode": "figure",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"board-documents\" data-full-alt=\"Board document record with version history table\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/board-documents-1440.webp\" srcset=\"/assets/product-shots/board-documents-960.webp 960w, /assets/product-shots/board-documents-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Board document record with version history table\"/><figcaption>Policies and board packets with versions and review dates.</figcaption></figure>"
+ },
+ {
+  "p": "board-management",
+  "old": "/assets/board-management/tasks.png",
+  "mode": "figure",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"board-tasks\" data-full-alt=\"Board task record with priority, assignee, due date and subtasks\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/board-tasks-1440.webp\" srcset=\"/assets/product-shots/board-tasks-960.webp 960w, /assets/product-shots/board-tasks-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Board task record with priority, assignee, due date and subtasks\"/><figcaption>Action items with owners, due dates and progress notes.</figcaption></figure>"
+ },
+ {
+  "p": "board-management",
+  "old": "/assets/board-management/compliance.png",
+  "mode": "figure",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"board-portal\" data-full-alt=\"Board member home with next meeting, open votes and tasks\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/board-portal-1440.webp\" srcset=\"/assets/product-shots/board-portal-960.webp 960w, /assets/product-shots/board-portal-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Board member home with next meeting, open votes and tasks\"/><figcaption>Directors see their meetings, votes and tasks. Nothing else.</figcaption></figure>"
+ },
+ {
+  "p": "hr-solutions",
+  "old": "/_next/static/media/02.c81b0844.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"hr-policies\" data-full-alt=\"Policy status bar chart above a list of policy books\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/hr-policies-1440.webp\" srcset=\"/assets/product-shots/hr-policies-960.webp 960w, /assets/product-shots/hr-policies-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Policy status bar chart above a list of policy books\"/><figcaption>See which policies are approved, under review or expired.</figcaption></figure>"
+ },
+ {
+  "p": "policies-and-procedures",
+  "old": "/_next/static/media/01.aafa7955.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"policies\" data-full-alt=\"Policy book editor with chapters, sections and text\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/policies-1440.webp\" srcset=\"/assets/product-shots/policies-960.webp 960w, /assets/product-shots/policies-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Policy book editor with chapters, sections and text\"/><figcaption>Write policy books by chapter and publish them.</figcaption></figure>"
+ },
+ {
+  "p": "training-tracking",
+  "old": "/_next/static/media/01.69d54065.png",
+  "mode": "img",
+  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"training\" data-full-alt=\"Training list by course with people, dates and completion status\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/training-1440.webp\" srcset=\"/assets/product-shots/training-960.webp 960w, /assets/product-shots/training-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Training list by course with people, dates and completion status\"/><figcaption>Who has finished each training, and who is still due.</figcaption></figure>"
+ },
+ {
   "p": "my-helpone",
   "old": "/assets/otherfiles/myHelpOne.png",
   "mode": "fill",
