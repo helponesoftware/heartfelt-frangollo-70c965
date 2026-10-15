@@ -19,3 +19,5 @@
 .h1lb button[hidden]{display:none}
 html.h1lb-open{overflow:hidden}
 @media (max-width:640px){.h1lb{padding:56px 8px}.h1lb-p,.h1lb-n{top:auto;bottom:12px}}
+/* Teaser crops: show the crop as-is; lightbox opens the full shot */
+.h1shot--teaser img{aspect-ratio:auto;object-fit:contain;background:#fff;max-height:520px}
