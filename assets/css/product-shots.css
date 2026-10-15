@@ -19,5 +19,9 @@
 .h1lb button[hidden]{display:none}
 html.h1lb-open{overflow:hidden}
 @media (max-width:640px){.h1lb{padding:56px 8px}.h1lb-p,.h1lb-n{top:auto;bottom:12px}}
-/* Teaser crops: show the crop as-is; lightbox opens the full shot */
-.h1shot--teaser img{aspect-ratio:auto;object-fit:contain;background:#fff;max-height:520px}
+/* Layout: primary shots span the full content width; card shots sit in a 2-col grid */
+.grid>figure.h1shot--wide,.grid>:has(>figure.h1shot--wide),.grid>:has(>*>figure.h1shot--wide){grid-column:1/-1!important;width:100%;max-width:none;order:-1}
+figure.h1shot--wide{width:100%;max-width:100%}
+.grid:has(>*>figure.h1shot--card),.grid:has(>*>*>figure.h1shot--card),.grid:has(>*>*>*>figure.h1shot--card){grid-template-columns:repeat(2,minmax(0,1fr))!important}
+figure.h1shot--card{width:100%;margin:0 0 16px}
+@media (max-width:767px){.grid:has(>*>figure.h1shot--card),.grid:has(>*>*>figure.h1shot--card),.grid:has(>*>*>*>figure.h1shot--card){grid-template-columns:1fr!important}}
