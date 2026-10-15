@@ -1,0 +1,6 @@
+/* Shared product screenshot frame (module pages) */
+.h1shot{margin:0;border-radius:16px;overflow:hidden;background:#0d1a33;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px -12px rgba(0,0,0,.55),0 8px 20px -8px rgba(0,0,0,.4);position:relative;z-index:10}
+.h1shot-bar{display:flex;gap:6px;align-items:center;height:28px;padding:0 12px;background:#14213d;border-bottom:1px solid rgba(255,255,255,.08)}
+.h1shot-bar span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.22)}
+.h1shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+.h1shot figcaption{padding:10px 14px;font-size:.85rem;line-height:1.4;color:rgba(255,255,255,.65);border-top:1px solid rgba(255,255,255,.08);text-align:left}
