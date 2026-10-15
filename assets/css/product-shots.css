@@ -25,3 +25,7 @@ figure.h1shot--wide{width:100%;max-width:100%}
 .grid:has(>*>figure.h1shot--card),.grid:has(>*>*>figure.h1shot--card),.grid:has(>*>*>*>figure.h1shot--card){grid-template-columns:repeat(2,minmax(0,1fr))!important}
 figure.h1shot--card{width:100%;margin:0 0 16px}
 @media (max-width:767px){.grid:has(>*>figure.h1shot--card),.grid:has(>*>*>figure.h1shot--card),.grid:has(>*>*>*>figure.h1shot--card){grid-template-columns:1fr!important}}
+/* Small feature-card shots keep the card's original image size */
+.h1shot--small{margin:0 auto 16px;max-width:100%}
+.h1shot--small img{aspect-ratio:auto;object-fit:cover;object-position:top left}
+.h1shot--small figcaption{font-size:.78rem;padding:8px 10px}
