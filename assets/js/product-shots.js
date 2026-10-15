@@ -7,27 +7,21 @@
   var MAP = [
  {
   "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Self-Service Portal - small.png",
+  "old": "/assets/volunteer-management/My Availability.png",
   "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"myhelpone-volunteer\" data-full-alt=\"Volunteer portal home with next shift, impact numbers and to-dos\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/myhelpone-volunteer-1440.webp\" srcset=\"/assets/product-shots/myhelpone-volunteer-960.webp 960w, /assets/product-shots/myhelpone-volunteer-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal home with next shift, impact numbers and to-dos\"/><figcaption>Volunteers get their own simple home: shifts, hours, to-dos.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Smart Availability.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-shifts\" data-full-alt=\"Shift list with assigned volunteer avatars and an assign picker\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-shifts-1440.webp\" srcset=\"/assets/product-shots/volunteer-shifts-960.webp 960w, /assets/product-shots/volunteer-shifts-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Shift list with assigned volunteer avatars and an assign picker\"/><figcaption>Fill shifts and see who's on them.</figcaption></figure>"
+  "html": "<figure class=\"h1shot h1shot--side\" data-h1shot=\"myhelpone-volunteer\" data-full-alt=\"Volunteer portal home with next shift, impact numbers and to-dos\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/myhelpone-volunteer-1440.webp\" srcset=\"/assets/product-shots/myhelpone-volunteer-960.webp 960w, /assets/product-shots/myhelpone-volunteer-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal home with next shift, impact numbers and to-dos\"/><figcaption>Volunteers get their own simple home: shifts, hours, to-dos.</figcaption></figure>"
  },
  {
   "p": "volunteer-management",
   "old": "/assets/volunteer-management/Admin Master Dashboard.png",
   "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"volunteers\" data-full-alt=\"Volunteer review queue with approve and background check buttons\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteers-1440.webp\" srcset=\"/assets/product-shots/volunteers-960.webp 960w, /assets/product-shots/volunteers-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer review queue with approve and background check buttons\"/><figcaption>Approve new volunteers and start checks in one click.</figcaption></figure>"
+  "html": "<figure class=\"h1shot h1shot--side\" data-h1shot=\"volunteers\" data-full-alt=\"Volunteer review queue with approve and background check buttons\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteers-1440.webp\" srcset=\"/assets/product-shots/volunteers-960.webp 960w, /assets/product-shots/volunteers-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer review queue with approve and background check buttons\"/><figcaption>Approve new volunteers and start checks in one click.</figcaption></figure>"
  },
  {
   "p": "volunteer-management",
   "old": "/assets/volunteer-management/Background Screening Done Right.png",
   "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"screening\" data-full-alt=\"Screening pipeline with a queue of volunteers and statuses\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/screening-1440.webp\" srcset=\"/assets/product-shots/screening-960.webp 960w, /assets/product-shots/screening-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Screening pipeline with a queue of volunteers and statuses\"/><figcaption>Background checks tracked from start to clear.</figcaption></figure>"
+  "html": "<figure class=\"h1shot h1shot--side\" data-h1shot=\"screening\" data-full-alt=\"Screening pipeline with a queue of volunteers and statuses\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/screening-1440.webp\" srcset=\"/assets/product-shots/screening-960.webp 960w, /assets/product-shots/screening-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Screening pipeline with a queue of volunteers and statuses\"/><figcaption>Background checks tracked from start to clear.</figcaption></figure>"
  },
  {
   "p": "event-management",
@@ -106,48 +100,6 @@
   "old": "/_next/static/media/03.ff19ce76.png",
   "mode": "img",
   "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"timesheets\" data-full-alt=\"Weekly timesheet form beside submitted entries\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/timesheets-1440.webp\" srcset=\"/assets/product-shots/timesheets-960.webp 960w, /assets/product-shots/timesheets-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Weekly timesheet form beside submitted entries\"/><figcaption>Log hours in seconds and send them for approval.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Volunteer Onboarding.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-onboarding\" data-full-alt=\"Volunteer sign-up form settings with question checkboxes and an invite link\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-onboarding-1440.webp\" srcset=\"/assets/product-shots/volunteer-onboarding-960.webp 960w, /assets/product-shots/volunteer-onboarding-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer sign-up form settings with question checkboxes and an invite link\"/><figcaption>Choose what your sign-up form asks and share one link.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Hours Approval Workflow.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-hours-approval\" data-full-alt=\"Volunteer hours waiting for approval above approved hours\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-hours-approval-1440.webp\" srcset=\"/assets/product-shots/volunteer-hours-approval-960.webp 960w, /assets/product-shots/volunteer-hours-approval-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer hours waiting for approval above approved hours\"/><figcaption>Approve logged hours or send them back with a note.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Native Checkr - Compliance.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-background-checks\" data-full-alt=\"Volunteer screening pipeline with a queue of volunteers and check settings\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-background-checks-1440.webp\" srcset=\"/assets/product-shots/volunteer-background-checks-960.webp 960w, /assets/product-shots/volunteer-background-checks-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer screening pipeline with a queue of volunteers and check settings\"/><figcaption>Background checks tracked from start to clear, with who pays and how long a check lasts.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/990-Ready Hours.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-990-hours\" data-full-alt=\"Volunteer compliance report with verified hours, in-kind value by program and PDF and CSV downloads\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-990-hours-1440.webp\" srcset=\"/assets/product-shots/volunteer-990-hours-960.webp 960w, /assets/product-shots/volunteer-990-hours-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer compliance report with verified hours, in-kind value by program and PDF and CSV downloads\"/><figcaption>Verified volunteer hours and their estimated value, ready for Form 990 and grant reports.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Certifications & Extra Checks.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-certifications\" data-full-alt=\"Volunteer portal training list with finished dates, documents and impact certificate\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-certifications-1440.webp\" srcset=\"/assets/product-shots/volunteer-certifications-960.webp 960w, /assets/product-shots/volunteer-certifications-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal training list with finished dates, documents and impact certificate\"/><figcaption>Each volunteer sees their trainings and marks them done.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/Communication Hub.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--card\" data-h1shot=\"volunteer-communication\" data-full-alt=\"Volunteer message picker beside a thank-you email preview\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-communication-1440.webp\" srcset=\"/assets/product-shots/volunteer-communication-960.webp 960w, /assets/product-shots/volunteer-communication-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer message picker beside a thank-you email preview\"/><figcaption>Thank-you notes and shift reminders, filled in for you.</figcaption></figure>"
- },
- {
-  "p": "volunteer-management",
-  "old": "/assets/volunteer-management/My Availability.png",
-  "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--wide\" data-h1shot=\"volunteer-hours\" data-full-alt=\"Volunteer portal hours form beside a list of approved hours\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/volunteer-hours-1440.webp\" srcset=\"/assets/product-shots/volunteer-hours-960.webp 960w, /assets/product-shots/volunteer-hours-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal hours form beside a list of approved hours\"/><figcaption>Volunteers log their own hours and see what was approved.</figcaption></figure>"
  },
  {
   "p": "fundraising",
