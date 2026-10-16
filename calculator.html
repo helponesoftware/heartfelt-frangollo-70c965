@@ -96,6 +96,7 @@
 .h1calc-trust li{border:1px solid var(--c-line);border-radius:14px;padding:14px 16px;background:var(--c-card);font-size:.93rem;color:rgba(255,255,255,.85)}
 .h1calc-trust li::before{content:"✓ ";color:var(--c-acc);font-weight:700}
 .h1calc-trust a{color:var(--c-acc)}
+.h1calc-sum{border-top:1px solid var(--c-line);margin-top:16px;padding-top:14px}.h1calc-sum-h{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;margin:0 0 8px;color:#fff}.h1calc-sum-l{margin:0 0 4px;font-size:.95rem;color:rgba(255,255,255,.85)}
 .h1calc-disc{font-size:.82rem;color:rgba(255,255,255,.5);max-width:960px;margin:28px 0 0}
 </style>
 <section class="h1calc" id="h1calc" aria-labelledby="h1calc-title">
@@ -165,7 +166,13 @@
 </div>
 <p class="h1calc-min">With the services used above, this is the minimum you would pay.</p>
 <p class="h1calc-help">Real costs are often higher once overages, implementation, training, and extra modules are included.</p>
-<div class="h1calc-ctas" style="margin-top:16px"><a class="h1calc-btn h1calc-btn--primary" href="/contact-us">Book a Free Demo →</a></div>
+<div class="h1calc-sum" id="h1calc-sum">
+<p class="h1calc-sum-h" id="h1calc-s-head"></p>
+<p class="h1calc-sum-l" id="h1calc-s-tools"></p>
+<p class="h1calc-sum-l" id="h1calc-s-hours"></p>
+<p class="h1calc-sum-l" id="h1calc-s-cost"></p>
+</div>
+<div class="h1calc-ctas" style="margin-top:16px"><a class="h1calc-btn h1calc-btn--primary" href="/contact-us">Book a free demo</a></div>
 <p class="h1calc-fine" style="margin-bottom:0">No credit card required. Takes about 60 seconds.</p>
 </aside>
 </div>
@@ -228,6 +235,12 @@ function calc(){
  $("h1calc-r-mo").textContent=money(sav)+"/mo";$("h1calc-r-yr").textContent=money(sav*12);
  $("h1calc-savelbl").textContent=sav>=0?"Estimated monthly savings":"HelpOne would cost more by";
  $("h1calc-savebox").className="h1calc-save"+(sav<0?" is-neg":"");
+ var tools=0;MODS.forEach(function(m){if(num($("h1calc-cost-"+m.id))>0)tools++});
+ var hrs=num($("h1calc-xhrs"))+5;
+ $("h1calc-s-head").textContent=sav>=0?"By switching to HelpOne, you'd save about "+money(Math.round(sav*12))+" a year.":"With these numbers, HelpOne would cost about "+money(Math.round(-sav*12))+" more a year.";
+ $("h1calc-s-tools").textContent="Tools replaced: "+tools;
+ $("h1calc-s-hours").textContent="Hours saved per month: "+(Math.round(hrs*10)/10)+" ("+num($("h1calc-xhrs"))+" spreadsheet + 5 accountant)";
+ $("h1calc-s-cost").textContent="Monthly cost: "+money(cur)+" now vs "+money(h1)+" with HelpOne";
 }
 document.querySelectorAll(".h1calc-toggle button").forEach(function(b){b.addEventListener("click",function(){plan=b.getAttribute("data-plan");document.querySelectorAll(".h1calc-toggle button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});calc()})});
 document.querySelector(".h1calc").addEventListener("input",calc);
