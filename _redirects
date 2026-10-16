@@ -5,3 +5,7 @@
 /partners/apply-thanks    /partner-apply-thanks    301!
 /partners/apply-thanks/   /partner-apply-thanks    301!
 /partners/apply-thanks.html    /partner-apply-thanks    301!
+
+# App-relative legal links
+/privacy    /privacy-policy    301
+/terms    /terms-and-conditions    301

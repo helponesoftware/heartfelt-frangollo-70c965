@@ -1,55 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security &amp; Compliance | SOC 2 Type II | HelpOne</title><meta name="robots" content="index, follow"/><meta name="keywords" content="HelpOne security, SOC 2 Type II nonprofit software, PCI DSS payments, AES-256 encryption, GDPR nonprofit platform"/>
-    <meta name="description" content="Plain-English HelpOne security: SOC 2 Type II certified, card payments via a PCI DSS Level 1 processor, AES-256 encryption, and GDPR-aligned practices."><meta property="og:title" content="Security &amp; Compliance | SOC 2 Type II | HelpOne"/><meta property="og:description" content="SOC 2 Type II certified. Payments via PCI DSS Level 1 processor. AES-256 encryption. Clear about what’s certified vs how payments work."/><meta property="og:url" content="https://www.helponesoftware.com/security"/><meta property="og:type" content="website"/><meta property="og:site_name" content="HelpOne"/><meta property="og:image" content="https://www.helponesoftware.com/assets/Logo-06.png"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Security &amp; Compliance | SOC 2 Type II | HelpOne"/><meta name="twitter:description" content="SOC 2 Type II certified. Payments via PCI DSS Level 1 processor. AES-256 encryption. Clear about what’s certified vs how payments work."/><meta name="twitter:image" content="https://www.helponesoftware.com/assets/Logo-06.png"/>
-    <link rel="canonical" href="https://www.helponesoftware.com/security">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .heading-font { font-family: 'Space Grotesk', sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #0A1428 0%, #1A2338 100%); }
-        .module-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .module-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgb(0 230 195 / 0.2); }
-        .nav-link { position: relative; }
-        .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #00E6C3; transition: width 0.3s ease; }
-        .nav-link:hover:after { width: 100%; }
-        .dropdown { position: relative; }
-        .dropdown-content { 
-            display: none; 
-            position: absolute; 
-            top: 100%; 
-            left: 0; 
-            background-color: #0A1428; 
-            border: 1px solid rgba(255,255,255,0.1); 
-            border-radius: 24px; 
-            padding: 24px; 
-            width: 520px; 
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5); 
-            z-index: 50; 
-        }
-        .dropdown:hover .dropdown-content { display: block; }
-        #mobile-menu {
-            position: fixed;
-            top: 0; right: 0; bottom: 0;
-            width: min(100%, 24rem);
-            z-index: 50;
-            transform: translateX(100%);
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow-y: auto;
-            pointer-events: none;
-        }
-        #mobile-menu.show { transform: translateX(0); pointer-events: auto; }
-        .mobile-backdrop {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 45;
-            display: none; opacity: 0; transition: opacity 0.3s ease;
-        }
-        .mobile-backdrop.show { display: block; opacity: 1; }
-    </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="/_next/static/css/65aa3619a1925c9d.css" data-precedence="next"/>
+<link rel="stylesheet" href="/_next/static/css/5e086725f59f99d1.css" data-precedence="next"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="icon" href="/assets/favicon/favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="/assets/favicon/favicon.png"/>
+<meta name="theme-color" content="#0A1428"/>
+<title>Security | HelpOne</title>
+<meta name="description" content="Plain-English HelpOne security: PCI DSS Level 1 payment processing, encryption in transit and at rest, access controls, monitoring and backups."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.helponesoftware.com/security"/>
+<meta property="og:title" content="Security | HelpOne"/>
+<meta property="og:description" content="Plain-English HelpOne security: PCI DSS Level 1 payment processing, encryption in transit and at rest, access controls, monitoring and backups."/>
+<meta property="og:url" content="https://www.helponesoftware.com/security"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://www.helponesoftware.com/assets/Logo-06.png"/>
+<style>
+  a { color: inherit; }
+  /* keep nav/footer usable without Next JS */
+  .dropdown { position: relative; }
+  .dropdown-content { display:none; position:absolute; top:100%; left:0; min-width:220px; background:#0A1428; border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:12px; z-index:60; }
+  .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display:block; }
+  .nav-link { color:#fff; background:none; border:0; cursor:pointer; }
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGSKFEED8X"></script>
 <script>
@@ -58,313 +34,53 @@
   gtag('js', new Date());
   gtag('config', 'G-JGSKFEED8X');
 </script>
-<script type="application/ld+json" data-helpone="seo-schema">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://www.helponesoftware.com/security#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.helponesoftware.com"},{"@type":"ListItem","position":2,"name":"Security","item":"https://www.helponesoftware.com/security"}]}]}</script></head>
-<body class="bg-[#0A1428] text-white overflow-x-hidden">
-
-    <!-- NAVBAR -->
-    <nav class="sticky top-0 z-50 py-4 bg-[#0A1428]/95 backdrop-blur-lg border-b border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-6 py-3 flex items-center justify-between h-14 min-h-0">
-            <a href="/" class="flex items-center gap-3 [text-decoration:none]">
-                <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-16 w-auto object-contain" width="160" height="64">
-            </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium flex-nowrap whitespace-nowrap">
-                <div class="dropdown">
-                    <button class="nav-link flex items-center gap-1.5">Platform <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
-                    <div class="dropdown-content">
-                        <div class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
-                            <a href="/volunteer-management/" class="hover:text-[#00E6C3]">Volunteer Management</a>
-                            <a href="/event-management/" class="hover:text-[#00E6C3]">Event Management</a>
-                            <a href="/fundraising/" class="hover:text-[#00E6C3]">Fundraising</a>
-                            <a href="/board-management/" class="hover:text-[#00E6C3]">Board Management</a>
-                            <a href="/participants/" class="hover:text-[#00E6C3]">Participants</a>
-                            <a href="/donors-and-contacts/" class="hover:text-[#00E6C3]">Donors & Contacts</a>
-                            <a href="/finances/" class="hover:text-[#00E6C3]">Finances</a>
-                            <a href="/hr-solutions/" class="hover:text-[#00E6C3]">HR Solutions</a>
-                            <a href="/policies-and-procedures/" class="hover:text-[#00E6C3]">Policies & Procedures</a>
-                            <a href="/training-tracking/" class="hover:text-[#00E6C3]">Training Tracking</a>
-                            <a href="/my-helpone/" class="hover:text-[#00E6C3]">My HelpOne</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="nav-link flex items-center gap-1.5">Who It's For <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
-                    <div class="dropdown-content w-80">
-                        <a href="/faith-communities/" class="block py-2 hover:text-[#00E6C3]">Faith Communities</a>
-                        <a href="/schools-youth/" class="block py-2 hover:text-[#00E6C3]">Schools & Youth</a>
-                        <a href="/animal-rescues/" class="block py-2 hover:text-[#00E6C3]">Animal Rescues</a>
-                        <a href="/arts-culture/" class="block py-2 hover:text-[#00E6C3]">Arts & Culture</a>
-                        <a href="/community-groups/" class="block py-2 hover:text-[#00E6C3]">Community Groups</a>
-                        <a href="/small-nonprofits/" class="block py-2 hover:text-[#00E6C3]">Small Nonprofits</a>
-                        <a href="/environmental-causes/" class="block py-2 hover:text-[#00E6C3]">Environmental Causes</a>
-                        <a href="/nycon/" class="block py-2 hover:text-[#00E6C3]">NYCON Members</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="nav-link flex items-center gap-1.5">Payments <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
-                    <div class="dropdown-content w-80">
-                        <a href="/payments/" class="block py-2 hover:text-[#00E6C3]">Payments</a>
-                        <a href="/switching-to-helpone-payments/" class="block py-2 hover:text-[#00E6C3]">Switching to HelpOne Payments</a>
-                    </div>
-                </div>
-                <a href="/pricing/" class="nav-link">Pricing</a>
-                <div class="dropdown">
-                    <button class="nav-link flex items-center gap-1.5">Resources <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
-                    <div class="dropdown-content w-64">
-                        <a href="/getting-started/" class="block py-2 hover:text-[#00E6C3]">Getting Started</a>
-                        <a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block py-2 hover:text-[#00E6C3]">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a>
-                        <a href="/faq/" class="block py-2 hover:text-[#00E6C3]">FAQs</a>
-                        <a href="/affiliations/" class="block py-2 hover:text-[#00E6C3]">Affiliations</a>
-                        <a href="/contact-us/" class="block py-2 hover:text-[#00E6C3]">Contact Us</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="nav-link flex items-center gap-1.5">Company <i class="fas fa-chevron-down text-xs mt-0.5"></i></button>
-                    <div class="dropdown-content w-64">
-                        <a href="/about-us/" class="block py-2 hover:text-[#00E6C3]">About Us</a>
-                        <a href="/compare/" class="block py-2 hover:text-[#00E6C3]">Compare</a>
-                        <a href="/partners/" class="block py-2 hover:text-[#00E6C3]">Partners</a>
-                        <a href="/affiliations/" class="block py-2 hover:text-[#00E6C3]">Affiliations</a>
-                        <a href="/security/" class="block py-2 hover:text-[#00E6C3]">Security</a>
-                        <a href="/terms-and-conditions/" class="block py-2 hover:text-[#00E6C3]">Terms & Conditions</a>
-                        <a href="/privacy-policy/" class="block py-2 hover:text-[#00E6C3]">Privacy Policy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hidden md:flex items-center gap-4">
-                <a href="/#video" class="p-4 text-sm font-semibold border border-white/30 hover:border-white rounded-xl transition-all text-white flex items-center gap-2 [text-decoration:none]">
-                    <i class="fas fa-play text-xs text-[#00E6C3]"></i> Watch 2-min video
-                </a>
-                <a href="/contact-us/" class="p-4 text-sm bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-xl flex items-center gap-2 transition-all [text-decoration:none]">
-                    <i class="fas fa-calendar"></i> Book Free Demo
-                </a>
-            </div>
-            <button id="hamburger" class="md:hidden text-3xl p-2" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-    <div id="mobile-backdrop" class="mobile-backdrop" onclick="closeMobileMenu()"></div>
-    <div id="mobile-menu" class="bg-[#0A1428] border-l border-white/10 px-6 py-8 text-lg shadow-2xl">
-            <div class="flex justify-end mb-6">
-                <button onclick="closeMobileMenu()" class="text-4xl text-white/70 hover:text-white" aria-label="Close menu"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="flex flex-col gap-6">
-                <a href="/volunteer-management/" class="hover:text-[#00E6C3]">Volunteer Management</a>
-                <a href="/pricing/" class="hover:text-[#00E6C3]">Pricing</a>
-                <a href="/getting-started/" class="hover:text-[#00E6C3]">Getting Started</a>
-                <a href="/nycon/" class="hover:text-[#00E6C3]">NYCON Members</a>
-                <a href="/affiliations/" class="hover:text-[#00E6C3]">Affiliations</a>
-                <a href="/faq/" class="hover:text-[#00E6C3]">FAQs</a>
-                <a href="/contact-us/" class="hover:text-[#00E6C3]">Contact Us</a>
-                <a href="/contact-us/" class="mt-4 p-4 text-sm bg-[#00E6C3] text-[#0A1428] font-semibold rounded-xl text-center flex items-center justify-center gap-2 [text-decoration:none]"><i class="fas fa-calendar"></i> Book Free Demo</a>
-            </div>
-    </div>
+<script src="/assets/js/site-fixes.js" defer></script></head>
+<body class="bg-[#0A1428] text-white">
+<nav class="sticky top-0 z-50 py-4 bg-[#0A1428]/95 backdrop-blur-lg border-b border-white/10"><div class="max-w-screen-2xl mx-auto px-6 py-3 flex items-center justify-between h-14"><div class="flex items-center gap-3"><a href="/"><img alt="HelpOne Logo" loading="lazy" width="160" height="64" decoding="async" data-nimg="1" class="h-16 w-auto object-contain" style="color:transparent" src="/assets/Logo-06.png"/></a></div><div class="hidden md:flex items-center gap-8 text-sm font-medium text-white"><div class="dropdown "><button class="nav-link flex items-center gap-1.5 focus:outline-none" aria-label="Open Platform Menu">Platform <i class="fas fa-chevron-down text-xs mt-0.5 transition-transform duration-300 "></i></button><div class="dropdown-content"><div class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm"><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/volunteer-management">Volunteer Management</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/event-management">Event Management</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/fundraising">Fundraising</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/board-management">Board Management</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/participants">Participants</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/donors-and-contacts">Donors &amp; Contacts</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/finances">Finances</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/hr-solutions">HR Solutions</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/policies-and-procedures">Policies &amp; Procedures</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/training-tracking">Training Tracking</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/my-helpone">My HelpOne</a></div></div></div><div class="dropdown "><button class="nav-link flex items-center gap-1.5 focus:outline-none" aria-label="Open Who It&#x27;s For Menu">Who It&#x27;s For <i class="fas fa-chevron-down text-xs mt-0.5 transition-transform duration-300 "></i></button><div class="dropdown-content"><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/faith-communities">Faith Communities</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/schools-youth">Schools &amp; Youth</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/animal-rescues">Animal Rescues</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/arts-culture">Arts &amp; Culture</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/community-groups">Community Groups</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/small-nonprofits">Small Nonprofits</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/environmental-causes">Environmental Causes</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/nycon">NYCON Members</a></div></div><div class="dropdown "><button class="nav-link flex items-center gap-1.5 focus:outline-none" aria-label="Open Payments Menu">Payments <i class="fas fa-chevron-down text-xs mt-0.5 transition-transform duration-300 "></i></button><div class="dropdown-content"><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/payments">Payments</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/switching-to-helpone-payments">Switching to HelpOne Payments</a></div></div><a class="nav-link" href="/pricing">Pricing</a><div class="dropdown "><button class="nav-link flex items-center gap-1.5 focus:outline-none" aria-label="Open Resources Menu">Resources <i class="fas fa-chevron-down text-xs mt-0.5 transition-transform duration-300 "></i></button><div class="dropdown-content w-64"><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/getting-started">Getting Started</a><a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors flex items-center justify-between">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/faq">FAQs</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/affiliations">Affiliations</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/contact-us">Contact Us</a></div></div><div class="dropdown "><button class="nav-link flex items-center gap-1.5 focus:outline-none" aria-label="Open Company Menu">Company <i class="fas fa-chevron-down text-xs mt-0.5 transition-transform duration-300 "></i></button><div class="dropdown-content"><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/about-us">About Us</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/compare">Compare</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/partners">Partners</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/security">Security</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/terms-and-conditions">Terms &amp; Conditions</a><a class="block py-2 px-3 rounded-lg hover:bg-white/5 hover:text-[#00E6C3] transition-colors" href="/privacy-policy">Privacy Policy</a></div></div></div><div class="hidden md:flex items-center gap-4"><button class="p-4 text-sm font-semibold border border-white/30 hover:border-white rounded-xl transition-all text-white flex items-center gap-2 cursor-pointer"><i class="fas fa-play text-xs text-[#00E6C3]"></i> Watch 2-min video</button><a class="p-4 text-sm bg-[#00E6C3] hover:bg-[#00E6C3]/90 text-[#0A1428] font-semibold rounded-xl flex items-center gap-2 transition-all [text-decoration:none]" href="/contact-us"><i class="fas fa-calendar"></i> Book Free Demo</a></div><button id="hamburger" class="md:hidden text-3xl p-2 text-white" aria-label="Open menu"><i class="fas fa-bars"></i></button></div></nav>
+<main><style>
+.h1legal{max-width:860px;margin:0 auto;padding:64px 24px 96px;color:rgba(255,255,255,.85);line-height:1.7;font-size:1rem}
+.h1legal h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;margin:0 0 8px;letter-spacing:-.02em;line-height:1.1}
+.h1legal h2{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin:40px 0 12px}
+.h1legal h3{font-size:1.1rem;font-weight:600;color:#fff;margin:24px 0 8px}
+.h1legal p{margin:0 0 16px}.h1legal ul,.h1legal ol{margin:0 0 16px;padding-left:1.4em}.h1legal ul{list-style:disc}.h1legal ol{list-style:decimal}.h1legal li{margin:0 0 8px}
+.h1legal a{color:#00E6C3;text-decoration:underline}.h1legal strong{color:#fff}
+.h1legal table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:.92rem;display:block;overflow-x:auto}.h1legal th,.h1legal td{border:1px solid rgba(255,255,255,.15);padding:8px;text-align:left}
+</style><article class="h1legal"><h1>Security</h1>
+<p>Last updated: October 16, 2026</p>
+<p>Nonprofits deserve straight answers about security. Here's how <strong>HelpOne Software, LLC</strong> protects your mission data, how payments work, and what we practice every day, without overselling.</p>
+<h2>1. How it works today</h2>
+<ul>
+<li><strong>Payments (PCI DSS)</strong>: card payments run through PCI DSS Level 1 payment processors, and card details are entered into the processor's secure fields. HelpOne is not designed to store full card numbers (PAN) on our systems.</li>
+<li><strong>Encryption</strong>: data is protected with modern encryption in transit (TLS) and at rest using industry-standard AES-256 approaches.</li>
+<li><strong>GDPR-aligned practices</strong>: we follow GDPR-aligned data handling practices (access, retention, and deletion requests). This is not a separate "GDPR certificate".</li>
+<li><strong>HIPAA</strong>: HelpOne can support nonprofits that handle sensitive operational data, but we do not claim a blanket HIPAA certification. Ask us if you need a BAA discussion for your use case.</li>
+</ul>
+<h2>2. Day-to-day protections</h2>
+<ul>
+<li><strong>Access controls</strong>: role-based access so staff only see what they need. You control who is in your organization's account.</li>
+<li><strong>Data separation</strong>: each organization's data is kept separate from every other organization's in the database.</li>
+<li><strong>Account security</strong>: passwords are stored only as secure hashes, sign-in attempts are rate-limited, and connection credentials for other services are encrypted.</li>
+<li><strong>Monitoring and backups</strong>: continuous monitoring of our environment and regular backups, so recovery is part of the plan, not an afterthought.</li>
+<li><strong>Your data, your exit</strong>: export when you need to. We don't trap nonprofit data behind scare tactics; portability is part of trust.</li>
+</ul>
+<h2>3. If something goes wrong</h2>
+<p>If a security incident affects your data, we will tell affected customers without undue delay, and within 72 hours of confirming it, with the information you need to respond. To report a security concern, email hello@helponesoftware.com with "Security" in the subject line and we will treat it as urgent.</p>
+<h2>4. Questions and diligence</h2>
+<p>Questions about security reviews or questionnaires? Email <a href="mailto:hello@helponesoftware.com">hello@helponesoftware.com</a>; we're happy to walk through diligence. See also our <a href="/privacy-policy">Privacy Policy</a> and <a href="/dpa">Data Processing Addendum</a>.</p></article></main>
 
 
-    <!-- HERO -->
-    <section class="hero-bg min-h-[50vh] flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-[0.07]" style="background-image:radial-gradient(circle at 20% 20%, #00E6C3 0%, transparent 40%), radial-gradient(circle at 80% 60%, #3B82F6 0%, transparent 35%);"></div>
-        <div class="max-w-screen-2xl mx-auto px-6 pt-16 pb-14 relative z-10 w-full">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-[#1a2640]/60 border border-white/10 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-8">
-                    <div class="w-2 h-2 bg-[#00E6C3] rounded-full animate-pulse"></div>
-                    <span class="font-medium text-white/90">Security • Plain English</span>
-                </div>
-                <h1 class="heading-font text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.95] tracking-tighter mb-6">
-                    Protecting your mission<br/><span class="text-[#00E6C3]">data—clearly.</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-white/75 max-w-2xl mb-8 leading-relaxed">
-                    Nonprofits deserve straight answers about security. Here’s what’s certified today, how payments work, and what we practice every day—without overselling.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/contact-us/" class="px-8 py-4 bg-[#00E6C3] hover:bg-white text-[#0A1428] font-semibold rounded-2xl text-center [text-decoration:none]">Book a free demo</a>
-                    <a href="/#video" class="px-8 py-4 border border-white/40 hover:border-[#00E6C3] text-white font-semibold rounded-2xl text-center [text-decoration:none]">Watch 2-min video</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="bg-black/50 py-4 md:py-5 border-y border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-xs md:text-sm text-center text-white/80">
-            <div><span class="text-[#00E6C3] font-semibold">SOC 2 Type II</span><br/>Certified</div>
-            <div><span class="text-[#00E6C3] font-semibold">PCI DSS Level 1</span><br/>Payment processor</div>
-            <div><span class="text-[#00E6C3] font-semibold">AES-256</span><br/>Encryption</div>
-            <div><span class="text-[#00E6C3] font-semibold">GDPR-aligned</span><br/>Data practices</div>
-        </div>
-    </div>
-
-    <!-- STATUS TABLE -->
-    <section class="py-16 md:py-24 bg-[#0A1428]" id="status">
-        <div class="max-w-screen-xl mx-auto px-6 md:px-10">
-            <h2 class="heading-font text-3xl md:text-5xl font-bold tracking-tighter mb-4">Certified today vs. how it works</h2>
-            <p class="text-white/60 text-lg mb-10 max-w-3xl">We separate formal certifications from architecture choices so you can diligence us without guessing.</p>
-            <div class="overflow-x-auto rounded-3xl border border-white/10">
-                <table class="w-full text-left text-sm md:text-base">
-                    <thead class="bg-white/5 text-[#00E6C3] uppercase text-xs tracking-wider">
-                        <tr>
-                            <th class="px-5 py-4 font-semibold">Topic</th>
-                            <th class="px-5 py-4 font-semibold">Status today</th>
-                            <th class="px-5 py-4 font-semibold">What that means</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/10 text-white/80">
-                        <tr class="bg-[#0A1428]">
-                            <td class="px-5 py-5 font-medium text-white">SOC 2 Type II</td>
-                            <td class="px-5 py-5"><span class="inline-flex px-3 py-1 rounded-full bg-[#00E6C3]/15 text-[#00E6C3] text-xs font-semibold">Certified</span></td>
-                            <td class="px-5 py-5">Independent audit of our security controls over time—not just a point-in-time checklist.</td>
-                        </tr>
-                        <tr class="bg-black/20">
-                            <td class="px-5 py-5 font-medium text-white">PCI DSS Level 1</td>
-                            <td class="px-5 py-5"><span class="inline-flex px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-semibold">Via payment processor</span></td>
-                            <td class="px-5 py-5">Card payments run through our PCI DSS Level 1 processor partner (NMI). HelpOne is not designed to store full card numbers (PAN) on our systems.</td>
-                        </tr>
-                        <tr class="bg-[#0A1428]">
-                            <td class="px-5 py-5 font-medium text-white">AES-256 encryption</td>
-                            <td class="px-5 py-5"><span class="inline-flex px-3 py-1 rounded-full bg-[#00E6C3]/15 text-[#00E6C3] text-xs font-semibold">In practice</span></td>
-                            <td class="px-5 py-5">Data is protected with modern encryption in transit (TLS) and at rest using industry-standard AES-256 approaches.</td>
-                        </tr>
-                        <tr class="bg-black/20">
-                            <td class="px-5 py-5 font-medium text-white">GDPR</td>
-                            <td class="px-5 py-5"><span class="inline-flex px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-semibold">Aligned practices</span></td>
-                            <td class="px-5 py-5">We follow GDPR-aligned data handling practices (access, retention, deletion requests). This is not a separate “GDPR certificate.”</td>
-                        </tr>
-                        <tr class="bg-[#0A1428]">
-                            <td class="px-5 py-5 font-medium text-white">HIPAA</td>
-                            <td class="px-5 py-5"><span class="inline-flex px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 text-xs font-semibold">Not a HIPAA claim</span></td>
-                            <td class="px-5 py-5">HelpOne can support nonprofits that handle sensitive operational data, but we do not market a blanket HIPAA certification on this page. Ask us if you need a BAA discussion for your use case.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-white/45 text-sm mt-6">Questions about reports or questionnaires? Email <a class="text-[#00E6C3] hover:underline" href="mailto:edward@helponesoftware.com">edward@helponesoftware.com</a> — we’re happy to walk through diligence.</p>
-        </div>
-    </section>
-
-    <!-- PRACTICES -->
-    <section class="py-16 md:py-24 bg-black/40 border-t border-white/10">
-        <div class="max-w-screen-xl mx-auto px-6 md:px-10">
-            <h2 class="heading-font text-3xl md:text-5xl font-bold tracking-tighter mb-10">Day-to-day protections</h2>
-            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-                <div class="rounded-3xl border border-white/10 bg-[#121c33] p-8">
-                    <div class="text-[#00E6C3] text-2xl mb-4"><i class="fas fa-lock"></i></div>
-                    <h3 class="text-xl font-semibold mb-3">Access controls</h3>
-                    <p class="text-white/65 leading-relaxed text-sm md:text-base">Role-based access so staff only see what they need. You control who is in your org account.</p>
-                </div>
-                <div class="rounded-3xl border border-white/10 bg-[#121c33] p-8">
-                    <div class="text-[#00E6C3] text-2xl mb-4"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="text-xl font-semibold mb-3">Monitoring &amp; backups</h3>
-                    <p class="text-white/65 leading-relaxed text-sm md:text-base">Continuous monitoring of our environment and regular backups so recovery is part of the plan—not an afterthought.</p>
-                </div>
-                <div class="rounded-3xl border border-white/10 bg-[#121c33] p-8">
-                    <div class="text-[#00E6C3] text-2xl mb-4"><i class="fas fa-file-export"></i></div>
-                    <h3 class="text-xl font-semibold mb-3">Your data, your exit</h3>
-                    <p class="text-white/65 leading-relaxed text-sm md:text-base">Export when you need to. We don’t trap nonprofit data behind scare tactics—portability is part of trust.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-16 md:py-20 border-t border-white/10">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="heading-font text-3xl md:text-4xl font-bold tracking-tighter mb-4">Want the diligence packet?</h2>
-            <p class="text-white/65 text-lg mb-8">Book a demo and we’ll cover security questions with the same candor as product fit.</p>
-            <a href="/contact-us/" class="inline-flex items-center gap-3 px-10 py-5 bg-[#00E6C3] hover:bg-white text-[#0A1428] text-lg font-semibold rounded-2xl [text-decoration:none]">
-                <i class="fas fa-calendar"></i> Book Free Demo
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-black py-20">
-        <div class="max-w-screen-2xl mx-auto px-6">
-            <div class="grid md:grid-cols-5 gap-12">
-                <div>
-                    <a href="/" class="flex items-center mb-6 [text-decoration:none]">
-                        <img src="/assets/Logo-06.png" alt="HelpOne Logo" class="h-16 w-auto object-contain" width="160" height="64">
-                    </a>
-                    <p class="text-white/60 text-sm">The operating system for world-changing nonprofits.</p><div class="mt-6 flex items-center gap-4"><a href="https://www.youtube.com/@HelpOneSoftware" target="_blank" rel="noopener noreferrer" aria-label="HelpOne on YouTube" class="text-white/60 hover:text-[#00E6C3] transition-colors text-xl"><i class="fab fa-youtube" aria-hidden="true"></i></a><a href="https://www.linkedin.com/company/helpone-software" target="_blank" rel="noopener noreferrer" aria-label="HelpOne on LinkedIn" class="text-white/60 hover:text-[#00E6C3] transition-colors text-xl"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></div><div class="mt-8 text-xs text-white/40">© 2026 HelpOne Software, Inc.</div>
-                </div>
-                <div>
-                    <div class="font-medium mb-6 text-[#00E6C3]">Platform</div>
-                    <div class="space-y-3 text-sm text-white/70">
-                        <a href="/volunteer-management/" class="block hover:text-white">Volunteer Management</a>
-                        <a href="/event-management/" class="block hover:text-white">Event Management</a>
-                        <a href="/fundraising/" class="block hover:text-white">Fundraising</a>
-                        <a href="/board-management/" class="block hover:text-white">Board Management</a>
-                        <a href="/participants/" class="block hover:text-white">Participants</a>
-                        <a href="/donors-and-contacts/" class="block hover:text-white">Donors & Contacts</a>
-                        <a href="/finances/" class="block hover:text-white">Finances</a>
-                        <a href="/hr-solutions/" class="block hover:text-white">HR Solutions</a>
-                        <a href="/policies-and-procedures/" class="block hover:text-white">Policies & Procedures</a>
-                        <a href="/training-tracking/" class="block hover:text-white">Training Tracking</a>
-                        <a href="/payments/" class="block hover:text-white">Payments</a>
-                        <a href="/switching-to-helpone-payments/" class="block hover:text-white">Switching to HelpOne Payments</a>
-                        <a href="/getting-started/" class="block hover:text-white">Getting Started</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="font-medium mb-6 text-[#00E6C3]">Who It's For</div>
-                    <div class="space-y-3 text-sm text-white/70">
-                        <a href="/faith-communities/" class="block hover:text-white">Faith Communities</a>
-                        <a href="/schools-youth/" class="block hover:text-white">Schools & Youth</a>
-                        <a href="/animal-rescues/" class="block hover:text-white">Animal Rescues</a>
-                        <a href="/arts-culture/" class="block hover:text-white">Arts & Culture</a>
-                        <a href="/community-groups/" class="block hover:text-white">Community Groups</a>
-                        <a href="/small-nonprofits/" class="block hover:text-white">Small Nonprofits</a>
-                        <a href="/environmental-causes/" class="block hover:text-white">Environmental Causes</a>
-                        <a href="/nycon/" class="block hover:text-white">NYCON Members</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="font-medium mb-6 text-[#00E6C3]">Company | Resources</div>
-                    <div class="space-y-3 text-sm text-white/70">
-                        <a href="/getting-started/" class="block hover:text-white">Getting Started</a>
-                        <a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block hover:text-white">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a>
-                        <a href="/faq/" class="block hover:text-white">FAQs</a>
-                        <a href="/about-us/" class="block hover:text-white">About Us</a>
-                        <a href="/compare/" class="block hover:text-white">Compare</a>
-                        <a href="/partners/" class="block hover:text-white">Partners</a>
-                        <a href="/affiliations/" class="block hover:text-white">Affiliations</a>
-                        <a href="/security/" class="block hover:text-white">Security</a>
-                        <a href="/terms-and-conditions/" class="block hover:text-white">Terms & Conditions</a>
-                        <a href="/privacy-policy/" class="block hover:text-white">Privacy Policy</a>
-                        <a href="/contact-us/" class="block hover:text-white">Contact Us</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="font-medium mb-6 text-[#00E6C3]">Get in touch</div>
-                    <a href="mailto:hello@helponesoftware.com" class="text-sm text-white/70 hover:text-[#00E6C3] transition-colors mb-6 block [text-decoration:none]">hello@helponesoftware.com</a>
-                    <a href="/contact-us/" class="block w-full py-4 text-center border border-white/30 hover:bg-white/10 rounded-2xl text-sm font-medium text-white transition-colors [text-decoration:none]">Book a Free Demo</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileBackdrop = document.getElementById('mobile-backdrop');
-
-        function openMobileMenu() {
-            mobileMenu.classList.add('show');
-            mobileBackdrop.classList.add('show');
-        }
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('show');
-            mobileBackdrop.classList.remove('show');
-        }
-        hamburger.addEventListener('click', openMobileMenu);
-        mobileBackdrop.addEventListener('click', closeMobileMenu);
-
-        function bookSession() {
-            window.location.href = "/contact-us/";
-        }
-    </script>
-
-
-<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="d89bae14-3399-4c55-a3fd-235eaf41fdb8" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiZDg5YmFlMTQtMzM5OS00YzU1LWEzZmQtMjM1ZWFmNDFmZGI4IiwiYWNjb3VudF9pZCI6IjY5OThiNWNkZmVlMjMzMTU5YzkxMmZhZSIsImRlcGxveV9pZCI6IjZhOTliNGE2ZmE3ZTcyMDAwOTJjZTY5ZiIsImlzc3VlciI6Im5mc2VydmVyIn0.siykMrGNgVacpDlVk2BrsiGHVNc7o4ETSZzu5k4hBSs"></script>
-
-<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="d89bae14-3399-4c55-a3fd-235eaf41fdb8" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiZDg5YmFlMTQtMzM5OS00YzU1LWEzZmQtMjM1ZWFmNDFmZGI4IiwiYWNjb3VudF9pZCI6IjY5OThiNWNkZmVlMjMzMTU5YzkxMmZhZSIsImRlcGxveV9pZCI6IjZhOTliNjA1Yjg5N2NhMDAwODIyMDg4NSIsImlzc3VlciI6Im5mc2VydmVyIn0.znsVep6SNC-fQoWuPWLP3yB3VDsjBxkQWlt5FD71EMI"></script>
+<footer class="bg-black py-20"><div class="max-w-screen-2xl mx-auto px-6"><div class="grid md:grid-cols-5 gap-12"><div data-aos="fade-up"><div class="flex items-center mb-6 -m-5"><a href="/"><img alt="HelpOne Logo" loading="lazy" width="160" height="64" decoding="async" data-nimg="1" class="h-20 w-auto object-contain" style="color:transparent" src="/assets/Logo-06.png"/></a></div><p class="text-white/60 text-sm">The operating system for world-changing nonprofits.</p><div class="mt-6 flex items-center gap-4"><a href="https://www.youtube.com/@HelpOneSoftware" target="_blank" rel="noopener noreferrer" aria-label="HelpOne on YouTube" class="text-white/60 hover:text-[#00E6C3] transition-colors text-xl"><i class="fab fa-youtube" aria-hidden="true"></i></a><a href="https://www.linkedin.com/company/helpone-software" target="_blank" rel="noopener noreferrer" aria-label="HelpOne on LinkedIn" class="text-white/60 hover:text-[#00E6C3] transition-colors text-xl"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></div><div class="mt-8 text-xs text-white/40">© 2026 HelpOne Software, LLC</div></div><div data-aos="fade-up" data-aos-delay="100"><div class="font-medium mb-6 text-[#00E6C3]">Platform</div><div class="space-y-3 text-sm text-white/70"><a class="block hover:text-white" href="/volunteer-management">Volunteer Management</a><a class="block hover:text-white" href="/event-management">Event Management</a><a class="block hover:text-white" href="/fundraising">Fundraising</a><a class="block hover:text-white" href="/board-management">Board Management</a><a class="block hover:text-white" href="/participants">Participants</a><a class="block hover:text-white" href="/donors-and-contacts">Donors &amp; Contacts</a><a class="block hover:text-white" href="/finances">Finances</a><a class="block hover:text-white" href="/hr-solutions">HR Solutions</a><a class="block hover:text-white" href="/policies-and-procedures">Policies &amp; Procedures</a><a class="block hover:text-white" href="/training-tracking">Training Tracking</a><a class="block hover:text-white" href="/payments">Payments</a><a class="block hover:text-white" href="/switching-to-helpone-payments">Switching to HelpOne Payments</a><a class="block hover:text-white" href="/getting-started">Getting Started</a></div></div><div data-aos="fade-up" data-aos-delay="200"><div class="font-medium mb-6 text-[#00E6C3]">Who It&#x27;s For</div><div class="space-y-3 text-sm text-white/70"><a class="block hover:text-white" href="/faith-communities">Faith Communities</a><a class="block hover:text-white" href="/schools-youth">Schools &amp; Youth</a><a class="block hover:text-white" href="/animal-rescues">Animal Rescues</a><a class="block hover:text-white" href="/arts-culture">Arts &amp; Culture</a><a class="block hover:text-white" href="/community-groups">Community Groups</a><a class="block hover:text-white" href="/small-nonprofits">Small Nonprofits</a><a class="block hover:text-white" href="/environmental-causes">Environmental Causes</a><a class="block hover:text-white" href="/nycon">NYCON Members</a></div></div><div data-aos="fade-up" data-aos-delay="300"><div class="font-medium mb-6 text-[#00E6C3]">Company | Resources</div><div class="space-y-3 text-sm text-white/70"><a class="block hover:text-white" href="/getting-started">Getting Started</a><a href="https://helpone.knowledgeowl.com/help" target="_blank" rel="noopener noreferrer" class="block hover:text-white flex items-center justify-between">Knowledge Base <i class="fas fa-external-link-alt text-xs text-white/40"></i></a><a class="block hover:text-white" href="/faq">FAQs</a><a class="block hover:text-white" href="/about-us">About Us</a><a class="block hover:text-white" href="/compare">Compare</a><a class="block hover:text-white" href="/partners">Partners</a><a class="block hover:text-white" href="/affiliations">Affiliations</a><a class="block hover:text-white" href="/security">Security</a><a class="block hover:text-white" href="/terms-and-conditions">Terms &amp; Conditions</a><a class="block hover:text-white" href="/privacy-policy">Privacy Policy</a><a class="block hover:text-white" href="/contact-us">Contact Us</a></div></div><div data-aos="fade-up" data-aos-delay="400"><div class="font-medium mb-6 text-[#00E6C3]">Get in touch</div><a href="mailto:hello@helponesoftware.com" class="text-sm text-white/70 hover:text-[#00E6C3] transition-colors mb-6 block [text-decoration:none]">hello@helponesoftware.com</a><a class="block w-full py-4 text-center border border-white/30 hover:bg-white/10 rounded-2xl text-sm font-medium text-white transition-colors [text-decoration:none]" href="/contact-us">Book a Free Demo</a></div></div></div></footer>
+<script>
+  // minimal mobile menu toggle if hamburger exists
+  (function(){
+    var btn=document.getElementById('hamburger');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var nav=document.querySelector('nav .hidden.md\\:flex');
+      // no-op safe: mobile drawer not ported; hamburger stays visual only
+    });
+  })();
+</script>
+<script src="/assets/js/mobile-nav.js" defer></script>
 </body>
 </html>
