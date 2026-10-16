@@ -1,6 +1,6 @@
 # HelpOne
 
-> HelpOne (HelpOne Software, Inc., Somers, NY) is all-in-one nonprofit software: one login for volunteer management, event management, fundraising, donors & contacts (CRM), finances (auto Form 990 & NY CHAR500), HR, policies & procedures, training tracking, participant breakdown and board management. Unlimited users and records on a flat monthly price, with no per-seat or per-record fees.
+> HelpOne (HelpOne Software, LLC, Somers, NY) is all-in-one nonprofit software: one login for volunteer management, event management, fundraising, donors & contacts (CRM), finances (auto Form 990 & NY CHAR500), HR, policies & procedures, training tracking, participant breakdown and board management. Unlimited users and records on a flat monthly price, with no per-seat or per-record fees.
 
 Key facts (from this website):
 
@@ -8,7 +8,7 @@ Key facts (from this website):
 - Pricing: Founders Program $499/month, locked for the first 12 months, plus a permanent 20% lifetime discount. Growth plan $599/month after the Founders period. Scale plan (full white-label, dedicated support, custom development) by custom quote. All plans include all modules and unlimited records, events, transactions, forms and reports. No setup fees, no contracts, cancel anytime.
 - NYCON members: $399/month for the first year, then $449/month.
 - Payments: flat rate $1.75/transaction + $15/month when you bring your own processor, or interchange-plus (IC+) when HelpOne handles processing. A HelpOne subscription is not required to use HelpOne Payments.
-- Security: SOC 2 Type II certified; card payments run through a PCI DSS Level 1 processor partner; AES-256 encryption; GDPR-aligned data practices.
+- Security: card payments run through PCI DSS Level 1 payment processors; AES-256 encryption; GDPR-aligned data practices.
 - Onboarding: free data migration and setup help; most organizations are up and running within 2–4 weeks.
 - Founder & CEO: Edward Zaremba. Strategic technology partner: Citinet Solutions.
 - Memberships: New York Council of Nonprofits (NYCON), Nonprofit New York, Nonprofit Westchester, Business Council of Westchester.
