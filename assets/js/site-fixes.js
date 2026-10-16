@@ -8,7 +8,8 @@
     [/SOC 2 • /g, ""],
     [/Are you SOC 2 and PCI compliant\?/g, "Are you PCI compliant?"],
     [/HelpOne is built to meet SOC 2 Type II and PCI Level 1 standards\./g, "Card payments run through PCI DSS Level 1 payment processors."],
-    [/HelpOne Software, Inc\./g, "HelpOne Software, LLC"]
+    [/HelpOne Software, Inc\./g, "HelpOne Software, LLC"],
+    [/edward@helponesoftware\.com/g, "hello@helponesoftware.com"]
   ];
   var DROP = /^\s*(SOC 2( Type II)?( Certified)?|SOC II)\s*$/;
   function fixText(n) {
@@ -21,9 +22,9 @@
     }
   }
   function walk(root) {
-    if (!root || !/SOC|Inc\./.test(root.textContent || "")) return;
+    if (!root || !/SOC|Inc\.|edward@/.test(root.textContent || "")) return;
     var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, list = [];
-    while ((n = w.nextNode())) if (/SOC|Inc\./.test(n.nodeValue)) list.push(n);
+    while ((n = w.nextNode())) if (/SOC|Inc\.|edward@/.test(n.nodeValue)) list.push(n);
     list.forEach(fixText);
   }
   var queued = false;
@@ -35,7 +36,11 @@
         a[i].innerHTML = "HelpOne Software, LLC<br/>108 Village Square, Suite 189<br/>Somers, NY 10589<br/>United States";
     }
   }
-  function run() { queued = false; walk(document.body); fixAddress(); }
+  function fixMailto() {
+    var a = document.querySelectorAll('a[href*="edward@helponesoftware.com"]');
+    for (var i = 0; i < a.length; i++) a[i].href = a[i].getAttribute("href").replace("edward@helponesoftware.com", "hello@helponesoftware.com");
+  }
+  function run() { queued = false; walk(document.body); fixAddress(); fixMailto(); }
   function queue() { if (!queued) { queued = true; setTimeout(run, 50); } }
   function start() {
     run();
