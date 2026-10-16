@@ -57,7 +57,7 @@
   "p": "volunteer-management",
   "old": "/assets/volunteer-management/My Availability.png",
   "mode": "img",
-  "html": "<figure class=\"h1shot h1shot--side\" data-h1shot=\"portal-home\" data-full-alt=\"Volunteer portal home with the next shift card, a cleared status, impact numbers, to-dos and latest messages\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/portal-home-1440.webp\" srcset=\"/assets/product-shots/portal-home-960.webp 960w, /assets/product-shots/portal-home-1440.webp 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal home with the next shift card, a cleared status, impact numbers, to-dos and latest messages\"/><figcaption>Volunteers open the portal and see their next shift, status and hours.</figcaption></figure>"
+  "html": "<figure class=\"h1shot h1shot--side\" data-h1shot=\"portal-home\" data-full-alt=\"Volunteer portal home with the next shift card, a cleared status, impact numbers, to-dos and latest messages\"><div class=\"h1shot-bar\" aria-hidden=\"true\"><span></span><span></span><span></span></div><img src=\"/assets/product-shots/portal-home-1440.webp?v=2\" srcset=\"/assets/product-shots/portal-home-960.webp?v=2 960w, /assets/product-shots/portal-home-1440.webp?v=2 1440w\" sizes=\"(min-width:1024px) 680px, 100vw\" width=\"1440\" height=\"900\" loading=\"lazy\" decoding=\"async\" alt=\"Volunteer portal home with the next shift card, a cleared status, impact numbers, to-dos and latest messages\"/><figcaption>Volunteers open the portal and see their next shift, status and hours.</figcaption></figure>"
  },
  {
   "p": "volunteer-management",
