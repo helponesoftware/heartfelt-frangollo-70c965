@@ -139,22 +139,12 @@
       guilt.setAttribute("data-aos", "fade-up");
       guilt.className =
         "mt-10 md:mt-12 text-center text-white/80 text-base md:text-lg";
-      var a = document.createElement("a");
-      a.href = "/back-to-mission";
-      a.className =
-        "hover:text-[#00E6C3] transition-colors underline-offset-4 hover:underline";
-      a.textContent = GUILT_TEXT;
-      guilt.appendChild(a);
+      guilt.textContent = GUILT_TEXT;
       var inner = section.querySelector(".max-w-screen-2xl") || section;
       inner.appendChild(guilt);
     } else {
-      var link = guilt.querySelector("a") || guilt;
-      if (link.tagName === "A") {
-        link.setAttribute("href", "/back-to-mission");
-        link.textContent = GUILT_TEXT;
-      } else {
-        guilt.textContent = GUILT_TEXT;
-      }
+      // /back-to-mission is not published yet: keep the line as plain text
+      if (guilt.textContent !== GUILT_TEXT || guilt.querySelector("a")) guilt.textContent = GUILT_TEXT;
     }
   }
 
