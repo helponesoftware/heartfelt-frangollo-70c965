@@ -12,3 +12,8 @@
 
 # Free trial shortcut (site uses the full app URL; this catches /demo links)
 /demo    https://app.helponesoftware.com/demo    302
+
+# /platform was folded into /product
+/platform    /product    301
+/platform/   /product    301
+/platform.html    /product    301
