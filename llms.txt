@@ -4,6 +4,9 @@
 
 Key facts (from this website):
 
+- Home page in one line: "Your whole nonprofit. One login." Volunteers, donors, events, HR, finances and your board in one place, $299 a month with everything included. Start free trial: https://app.helponesoftware.com/demo. Book a demo: https://www.helponesoftware.com/contact-us.
+- Typical cost of the separate tools HelpOne replaces (volunteer management, donor CRM, events, HR, e-signatures, scheduling, timesheets, IT tracking, background-check ordering, email and text outreach): $330–$1,750 a month for small and mid-size nonprofits (estimates; costs vary).
+- Cancelling: no contracts; cancel anytime in two clicks from the Account page and take your data with you.
 - Built exclusively for nonprofits; the platform is live.
 - Pricing: one plan, HelpOne, $299/month or $2,990/year (two months free). Every module included: volunteers, donors & contacts, events, fundraising, finances, grants, HR & onboarding, e-signatures, timesheets, time off, training, policies, board, IT & software, calendar. Unlimited users, volunteers, contacts, donors and events; unlimited emails; 1,000 texts a month included (fair use, contact us for more). 14-day free trial, no card: when it ends, everything is saved and read-only until you choose a plan. No setup fees, no contracts, cancel anytime, export your data anytime. Start a trial at https://app.helponesoftware.com/demo; log in at https://app.helponesoftware.com.
 - White label (HelpOne under your name, for associations, networks and consultants): contact us. See https://www.helponesoftware.com/white-label.
@@ -11,13 +14,14 @@ Key facts (from this website):
 - NYCON members: $399/month for the first year, then $449/month.
 - Payments: flat rate $1.75/transaction + $15/month when you bring your own processor, or interchange-plus (IC+) when HelpOne handles processing. A HelpOne subscription is not required to use HelpOne Payments.
 - Security: card payments run through PCI DSS Level 1 payment processors; AES-256 encryption; GDPR-aligned data practices.
-- Onboarding: free data migration and setup help; most organizations are up and running within 2–4 weeks.
+- Onboarding: start with the 14-day free trial (no card), or book a demo and we'll walk you through it; most organizations are up and running within 2–4 weeks.
 - Founder & CEO: Edward Zaremba. Strategic technology partner: Citinet Solutions.
 - Memberships: New York Council of Nonprofits (NYCON), Nonprofit New York, Nonprofit Westchester, Business Council of Westchester.
 - Contact: hello@helponesoftware.com (general), sales@helponesoftware.com (demos & sales), support@helponesoftware.com (support).
 
 ## Platform modules
 
+- [All modules](https://www.helponesoftware.com/platform): Every HelpOne module on one page, all included in the one plan.
 - [Volunteer Management](https://www.helponesoftware.com/volunteer-management): Self-service portal, QR check-ins, skill matching, shifts, background checks, and hours tracking that feeds Form 990.
 - [Event Management](https://www.helponesoftware.com/event-management): Unified event hub, dynamic ticketing, multi-day schedules and volunteer sync.
 - [Fundraising](https://www.helponesoftware.com/fundraising): Auctions, pledges, donations, contests and sponsorships with real-time P&L and automatic volunteer-hour valuation for Form 990.
