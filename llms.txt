@@ -21,7 +21,7 @@ Key facts (from this website):
 
 ## Platform modules
 
-- [All modules](https://www.helponesoftware.com/platform): Every HelpOne module on one page, all included in the one plan.
+- [Product](https://www.helponesoftware.com/product): Everything in HelpOne, module by module: the problem each one solves and what it does. All included in the one plan.
 - [Volunteer Management](https://www.helponesoftware.com/volunteer-management): Self-service portal, QR check-ins, skill matching, shifts, background checks, and hours tracking that feeds Form 990.
 - [Event Management](https://www.helponesoftware.com/event-management): Unified event hub, dynamic ticketing, multi-day schedules and volunteer sync.
 - [Fundraising](https://www.helponesoftware.com/fundraising): Auctions, pledges, donations, contests and sponsorships with real-time P&L and automatic volunteer-hour valuation for Form 990.
