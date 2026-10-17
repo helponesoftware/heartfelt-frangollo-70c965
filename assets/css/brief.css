@@ -304,3 +304,13 @@ nav.h1-oldnav{padding:0!important;border:0!important;background:transparent!impo
 .h1pr-grid i{position:absolute;right:18px;top:20px;font-style:normal;color:#00E6C3}
 @media (max-width:959px){.h1pr-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.h1pr-pages{padding:56px 20px}.h1pr-grid{grid-template-columns:1fr}}
+/* pricing: everything included */
+.h1ei{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 32px;max-width:1120px;margin:36px auto 0}
+.h1ei-g h3{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600;margin:0 0 10px}
+.h1ei-g h3 a{color:inherit!important;text-decoration:none!important}
+.h1ei-g h3 a:hover{color:#00a88e!important}
+.h1ei-g ul{list-style:none;margin:0;padding:0}
+.h1ei-g li{position:relative;padding:4px 0 4px 24px;font-size:.93rem;line-height:1.5;opacity:.85}
+.h1ei-g li::before{content:"✓";position:absolute;left:0;top:4px;color:#00b89c;font-weight:700}
+@media (max-width:959px){.h1ei{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.h1ei{grid-template-columns:1fr;gap:20px}}
