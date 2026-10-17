@@ -254,3 +254,10 @@ nav.h1-oldnav{padding:0!important;border:0!important;background:transparent!impo
 .h1hm-dark{width:100%}
 }
 @media (min-width:768px){#modules .module-card:last-child:nth-child(3n+1){grid-column:2}}
+/* Home only: Element 46 news banner (scrolls away; the header stays sticky) */
+.h1e46{background:#FFD84D;color:#0A1428;text-align:center;padding:9px 16px;font-size:.9rem;line-height:1.4}
+.h1e46 p{margin:0}
+.h1e46 a{color:#0A1428!important;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.h1e46 a:hover{text-decoration-thickness:2px}
+.h1e46 a:focus-visible{outline:2px solid #0A1428;outline-offset:2px;border-radius:2px}
+@media (max-width:767px){.h1e46{font-size:.8rem;padding:8px 14px}}
