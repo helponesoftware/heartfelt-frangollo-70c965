@@ -1,6 +1,6 @@
 /**
  * HelpOne mobile nav for standalone static pages (no Next.js runtime),
- * e.g. /calculator and /partner-apply. Builds a drawer from the desktop nav
+ * e.g. /calculator, /partner-apply and the pages served as plain HTML. Builds a drawer from the desktop nav
  * links and toggles it from #hamburger. Vanilla JS, no RSC edits.
  */
 (function () {
@@ -19,6 +19,7 @@
       "#h1nav-drawer a{display:block;padding:9px 0;color:#fff;text-decoration:none;font-size:1rem}" +
       "#h1nav-drawer a:hover{color:#00E6C3}" +
       "#h1nav-drawer .h1nav-cta{margin-top:18px;text-align:center;background:#00E6C3;color:#0A1428;font-weight:600;border-radius:14px;padding:13px}" +
+      "#h1nav-drawer .h1nav-cta--ghost{margin-top:10px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}" +
       "@media (min-width:768px){#h1nav-drawer{display:none!important}}";
     document.head.appendChild(css);
 
@@ -52,9 +53,18 @@
         Array.prototype.forEach.call(links, function (a) { addLink(drawer, a); });
       }
     });
+    var login = document.createElement("a");
+    login.href = "https://app.helponesoftware.com";
+    login.textContent = "Log in";
+    drawer.appendChild(login);
+    var trial = document.createElement("a");
+    trial.href = "https://app.helponesoftware.com/demo";
+    trial.className = "h1nav-cta";
+    trial.textContent = "Start free trial";
+    drawer.appendChild(trial);
     var cta = document.createElement("a");
     cta.href = "/contact-us";
-    cta.className = "h1nav-cta";
+    cta.className = "h1nav-cta h1nav-cta--ghost";
     cta.textContent = "Book Free Demo";
     drawer.appendChild(cta);
     if (getComputedStyle(nav).position === "static") nav.style.position = "relative";

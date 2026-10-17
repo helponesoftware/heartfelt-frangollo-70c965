@@ -9,3 +9,6 @@
 # App-relative legal links
 /privacy    /privacy-policy    301
 /terms    /terms-and-conditions    301
+
+# Free trial shortcut (site uses the full app URL; this catches /demo links)
+/demo    https://app.helponesoftware.com/demo    302
