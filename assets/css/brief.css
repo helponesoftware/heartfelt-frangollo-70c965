@@ -111,3 +111,6 @@ a.h1hdr-demo:hover{border-color:#fff}
 .h1-hero-btns a{white-space:nowrap}
 .h1-hero-watch{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:rgba(255,255,255,.75);font-weight:600;text-decoration:none}
 .h1-hero-watch:hover{color:#00E6C3}
+.h1b-cancel-note{margin:6px 0 0;font-size:.85rem;color:rgba(255,255,255,.55)}
+.h1p-card .h1b-cancel-note{margin:-18px 0 24px}
+.h1p-card .h1b-yearly-note+.h1b-cancel-note{margin-top:-20px}
