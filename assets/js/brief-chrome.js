@@ -1,24 +1,12 @@
-/* Header/footer links for the pages that still run Next.js (/contact-us, 404):
-   "Log in", "Start free trial" and the footer "White label" link. Static pages
-   have these in their HTML already; this is a no-op there. Never edits self.__next_f. */
+/* Footer links for the pages that still run Next.js (/contact-us, 404): "White label",
+   "Start free trial" and "Log in". The header on those pages comes from site-header.js.
+   Static pages have all of this in their HTML already; this is a no-op there. Never edits self.__next_f. */
 (function () {
   var TRIAL = "https://app.helponesoftware.com/demo", LOGIN = "https://app.helponesoftware.com";
   function el(tag, cls, href, txt, style) {
     var a = document.createElement(tag); if (cls) a.className = cls; a.href = href; a.textContent = txt; if (style) a.setAttribute("style", style); return a;
   }
   function apply() {
-    var nav = document.querySelector("nav");
-    if (nav && !nav.querySelector(".h1hdr-trial")) {
-      var boxes = nav.querySelectorAll(".hidden.md\\:flex");
-      var right = boxes[boxes.length - 1];
-      var demo = right && right.querySelector('a[href="/contact-us"]');
-      if (demo) {
-        var vid = right.querySelector("button"); if (vid) vid.classList.add("h1hdr-video");
-        demo.classList.add("h1hdr-demo");
-        right.insertBefore(el("a", "h1hdr-login", LOGIN, "Log in"), demo);
-        right.appendChild(el("a", "h1hdr-trial", TRIAL, "Start free trial"));
-      }
-    }
     var foot = document.querySelector("footer");
     if (foot && !foot.querySelector('a[href="/white-label"]')) {
       var p = foot.querySelector('a[href="/partners"]');
