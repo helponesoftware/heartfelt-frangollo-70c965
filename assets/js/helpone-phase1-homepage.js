@@ -15,7 +15,7 @@
   var HERO_SUB =
     "You took this job for the mission, not for eight logins and a Tuesday-night spreadsheet. HelpOne brings volunteers, donors, events, finances and payments into one place, so you can set the weight down.";
   var MICRO =
-    "Flat monthly price · Unlimited everything · Payments built in · Free migration";
+    "Flat monthly price · Unlimited users, volunteers, contacts and events · Payments built in · Free migration";
   var PROBLEM_H2 = "It's 10:40 on a Tuesday. You're still here.";
   var PROBLEM_SUB =
     "Sign-ups in one tool, hours in another, donors in a third, money in QuickBooks, and a spreadsheet that holds it all together that lives with you. None of these tools are bad. They just don't talk to each other, so you do the talking.";
