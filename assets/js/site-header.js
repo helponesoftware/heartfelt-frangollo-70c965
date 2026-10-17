@@ -3,6 +3,7 @@
 (function () {
   var INNER = "<div class=\"h1h-in\"><a class=\"h1h-logo\" href=\"/\" aria-label=\"HelpOne home\"><img class=\"h1h-logoimg\" src=\"/assets/logo-h96.webp\" width=\"171\" height=\"36\" alt=\"HelpOne\" decoding=\"async\"/></a><ul class=\"h1h-menu\"><li class=\"h1h-dd\"><a class=\"h1h-top h1h-top--link\" href=\"/product\">Product</a><button type=\"button\" class=\"h1h-top h1h-caret\" aria-expanded=\"false\" aria-controls=\"h1h-p-product\" aria-label=\"Product menu\"><svg aria-hidden=\"true\" viewBox=\"0 0 12 12\" width=\"10\" height=\"10\"><path d=\"M2 4l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></button><div class=\"h1h-panel h1h-panel--wide\" id=\"h1h-p-product\" hidden><a class=\"h1h-all\" href=\"/product\">Everything in HelpOne</a><a href=\"/volunteer-management\">Volunteer Management</a><a href=\"/event-management\">Event Management</a><a href=\"/fundraising\">Fundraising</a><a href=\"/donors-and-contacts\">Donors &amp; Contacts</a><a href=\"/participants\">Participants</a><a href=\"/finances\">Finances</a><a href=\"/hr-solutions\">HR Solutions</a><a href=\"/policies-and-procedures\">Policies &amp; Procedures</a><a href=\"/training-tracking\">Training Tracking</a><a href=\"/board-management\">Board Management</a><a href=\"/it-asset-tracking-management\">IT &amp; Operations</a><a href=\"/my-helpone\">My HelpOne</a></div></li><li><a class=\"h1h-top\" href=\"/pricing\">Pricing</a></li><li class=\"h1h-dd\"><button type=\"button\" class=\"h1h-top\" aria-expanded=\"false\" aria-controls=\"h1h-p-who\">Who it&#x27;s for<svg aria-hidden=\"true\" viewBox=\"0 0 12 12\" width=\"10\" height=\"10\"><path d=\"M2 4l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></button><div class=\"h1h-panel\" id=\"h1h-p-who\" hidden><a href=\"/small-nonprofits\">Small Nonprofits</a><a href=\"/faith-communities\">Faith Communities</a><a href=\"/schools-youth\">Schools &amp; Youth</a><a href=\"/animal-rescues\">Animal Rescues</a><a href=\"/arts-culture\">Arts &amp; Culture</a><a href=\"/community-groups\">Community Groups</a><a href=\"/environmental-causes\">Environmental Causes</a><a href=\"/nycon\">NYCON Members</a><a href=\"/white-label\">Networks &amp; associations</a></div></li><li class=\"h1h-dd\"><button type=\"button\" class=\"h1h-top\" aria-expanded=\"false\" aria-controls=\"h1h-p-help\">Help<svg aria-hidden=\"true\" viewBox=\"0 0 12 12\" width=\"10\" height=\"10\"><path d=\"M2 4l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></button><div class=\"h1h-panel\" id=\"h1h-p-help\" hidden><a href=\"/getting-started\">Getting Started</a><a href=\"https://helpone.knowledgeowl.com/help\" target=\"_blank\" rel=\"noopener\">Help center</a><a href=\"/faq\">FAQ</a><a href=\"/contact-us\">Contact us</a></div></li></ul><div class=\"h1h-right\"><a class=\"h1h-login\" href=\"https://app.helponesoftware.com\">Log in</a><a class=\"h1h-trial\" href=\"https://app.helponesoftware.com/demo\">Start free trial</a></div><button type=\"button\" class=\"h1h-burger\" aria-expanded=\"false\" aria-controls=\"h1h-drawer\" aria-label=\"Open menu\"><span></span><span></span><span></span></button></div><div class=\"h1h-drawer\" id=\"h1h-drawer\" hidden><details class=\"h1h-grp\"><summary>Product</summary><div><a href=\"/product\">Everything in HelpOne</a><a href=\"/volunteer-management\">Volunteer Management</a><a href=\"/event-management\">Event Management</a><a href=\"/fundraising\">Fundraising</a><a href=\"/donors-and-contacts\">Donors &amp; Contacts</a><a href=\"/participants\">Participants</a><a href=\"/finances\">Finances</a><a href=\"/hr-solutions\">HR Solutions</a><a href=\"/policies-and-procedures\">Policies &amp; Procedures</a><a href=\"/training-tracking\">Training Tracking</a><a href=\"/board-management\">Board Management</a><a href=\"/it-asset-tracking-management\">IT &amp; Operations</a><a href=\"/my-helpone\">My HelpOne</a></div></details><a class=\"h1h-dlink\" href=\"/pricing\">Pricing</a><details class=\"h1h-grp\"><summary>Who it&#x27;s for</summary><div><a href=\"/small-nonprofits\">Small Nonprofits</a><a href=\"/faith-communities\">Faith Communities</a><a href=\"/schools-youth\">Schools &amp; Youth</a><a href=\"/animal-rescues\">Animal Rescues</a><a href=\"/arts-culture\">Arts &amp; Culture</a><a href=\"/community-groups\">Community Groups</a><a href=\"/environmental-causes\">Environmental Causes</a><a href=\"/nycon\">NYCON Members</a><a href=\"/white-label\">Networks &amp; associations</a></div></details><details class=\"h1h-grp\"><summary>Help</summary><div><a href=\"/getting-started\">Getting Started</a><a href=\"https://helpone.knowledgeowl.com/help\" target=\"_blank\" rel=\"noopener\">Help center</a><a href=\"/faq\">FAQ</a><a href=\"/contact-us\">Contact us</a></div></details><a class=\"h1h-dlink\" href=\"https://app.helponesoftware.com\">Log in</a><a class=\"h1h-dcta\" href=\"https://app.helponesoftware.com/demo\">Start free trial</a><a class=\"h1h-dcta h1h-dcta--ghost\" href=\"/contact-us\">Book a demo</a></div>";
   var TRIAL = "https://app.helponesoftware.com/demo";
+  var HELP = "https://helpone.knowledgeowl.com/help";
   var TAG = "All-in-one nonprofit software.";
   var TRUST = "<p class=\"h1f-trust\">PCI Level 1 payment processors \u00b7 AES-256 encryption \u00b7 GDPR-aligned \u00b7 Built only for nonprofits</p>";
   function inject() {
@@ -83,31 +84,46 @@
   window.addEventListener("resize", function () { if (window.innerWidth >= 960) setDrawer(false); });
 
   // Mobile "Start free trial" bar: phones only, after the first scroll, hidden over the footer and while the menu is open.
-  var mbar, footVisible = false;
+  var mbar, footVisible = false, typing = false, wired = false;
   function bar() {
     if (!mbar) return;
     var d = document.getElementById("h1h-drawer");
-    var on = window.scrollY > 160 && !footVisible && !(d && !d.hidden);
+    var on = window.scrollY > 160 && !footVisible && !typing && !(d && !d.hidden);
     mbar.classList.toggle("is-on", on);
     mbar.setAttribute("aria-hidden", on ? "false" : "true");
     var a = mbar.querySelector("a"); if (a) a.tabIndex = on ? 0 : -1;
   }
   function makeBar() {
-    if (document.querySelector(".h1mbar") || /^\/contact-us/.test(location.pathname)) return;
+    if (document.querySelector(".h1mbar")) return;
     mbar = document.createElement("div");
     mbar.className = "h1mbar";
     mbar.innerHTML = '<span>14 days free. No card.</span><a href="' + TRIAL + '">Start free trial</a>';
     document.body.appendChild(mbar);
     var f = document.querySelector("footer");
     if (f && "IntersectionObserver" in window) new IntersectionObserver(function (en) { footVisible = en[0].isIntersecting; bar(); }).observe(f);
-    window.addEventListener("scroll", bar, { passive: true });
+    if (!wired) {
+      wired = true;
+      window.addEventListener("scroll", bar, { passive: true });
+      // keep out of the way while someone fills in a form (e.g. /contact-us)
+      document.addEventListener("focusin", function (e) { if (e.target.closest && e.target.closest("input,textarea,select")) { typing = true; bar(); } });
+      document.addEventListener("focusout", function () { typing = false; setTimeout(bar, 50); });
+    }
     bar();
   }
+  // Next's bare 404 page: add a way back
+  function notFound() {
+    var e = document.querySelector("h1.next-error-h1");
+    if (!e || document.querySelector(".h1-404")) return;
+    var box = e.parentNode && e.parentNode.parentNode; if (!box) return;
+    box.insertAdjacentHTML("beforeend", '<div class="h1-404"><p>The page you asked for isn&#x27;t here. Try one of these:</p><ul>' +
+      '<li><a href="/">Home</a></li><li><a href="/product">Product</a></li><li><a href="/pricing">Pricing</a></li>' +
+      '<li><a href="' + HELP + '" target="_blank" rel="noopener">Help center</a></li><li><a href="/contact-us">Contact us</a></li></ul></div>');
+  }
   function start() {
-    inject(); footer(); makeBar();
+    inject(); footer(); makeBar(); notFound();
     if (document.querySelector(".h1-oldnav")) {
       var q = false;
-      new MutationObserver(function () { if (q) return; q = true; setTimeout(function () { q = false; inject(); footer(); }, 60); })
+      new MutationObserver(function () { if (q) return; q = true; setTimeout(function () { q = false; inject(); footer(); makeBar(); notFound(); }, 60); })
         .observe(document.body, { childList: true, subtree: true });
     }
   }

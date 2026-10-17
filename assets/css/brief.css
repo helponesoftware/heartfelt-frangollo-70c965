@@ -314,3 +314,9 @@ nav.h1-oldnav{padding:0!important;border:0!important;background:transparent!impo
 .h1ei-g li::before{content:"✓";position:absolute;left:0;top:4px;color:#00b89c;font-weight:700}
 @media (max-width:959px){.h1ei{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.h1ei{grid-template-columns:1fr;gap:20px}}
+/* Next 404: way back */
+.h1-404{max-width:520px;margin:28px auto 0;padding:0 24px;text-align:center;font-family:Inter,system-ui,sans-serif;color:#0A1428}
+.h1-404 p{margin:0 0 14px;opacity:.75}
+.h1-404 ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.h1-404 a{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid rgba(10,20,40,.18);color:#0A1428!important;text-decoration:none!important;font-size:.95rem}
+.h1-404 a:hover{border-color:#00b89c;color:#00806c!important}
