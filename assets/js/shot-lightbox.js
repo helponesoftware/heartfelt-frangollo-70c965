@@ -2,7 +2,7 @@
 (function(){
 var ov,img,cap,list=[],idx=0,last=null;
 function shots(){return [].slice.call(document.querySelectorAll("figure.h1shot img"));}
-function prep(){shots().forEach(function(i){if(i.dataset.lb)return;i.dataset.lb=1;i.tabIndex=0;i.setAttribute("role","button");i.setAttribute("aria-haspopup","dialog");i.title="Click to enlarge";var f=i.closest("figure");if(!f.querySelector(".h1shot-zoom")){var s=document.createElement("span");s.className="h1shot-zoom";s.setAttribute("aria-hidden","true");s.textContent="\u2922";f.appendChild(s);}});}
+function prep(){shots().forEach(function(i){if(i.dataset.lb)return;i.dataset.lb=1;i.tabIndex=0;i.setAttribute("role","button");i.setAttribute("aria-haspopup","dialog");i.title="Click to enlarge";var f=i.closest("figure");if(!f.querySelector(".h1shot-zoom")){var s=document.createElement("span");s.className="h1shot-zoom";s.setAttribute("aria-hidden","true");s.innerHTML="<b>\u2922</b><em>Click to enlarge</em>";f.appendChild(s);}});}
 function build(){ov=document.createElement("div");ov.className="h1lb";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label","Product screenshot");ov.hidden=true;
 ov.innerHTML='<button type="button" class="h1lb-x" aria-label="Close">\u00d7</button><button type="button" class="h1lb-p" aria-label="Previous screenshot">\u2039</button><figure class="h1lb-f"><img alt=""/><figcaption></figcaption></figure><button type="button" class="h1lb-n" aria-label="Next screenshot">\u203a</button>';
 document.body.appendChild(ov);img=ov.querySelector("img");cap=ov.querySelector("figcaption");
