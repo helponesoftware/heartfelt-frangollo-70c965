@@ -7,7 +7,11 @@
 /* Lightbox */
 .h1shot{cursor:zoom-in}
 .h1shot img:focus-visible{outline:3px solid #00E6C3;outline-offset:-3px}
-.h1shot-zoom{position:absolute;top:36px;right:8px;width:28px;height:28px;border-radius:8px;background:rgba(10,20,40,.75);color:#fff;font-size:16px;line-height:28px;text-align:center;pointer-events:none}
+.h1shot-zoom{position:absolute;top:36px;right:8px;display:flex;align-items:center;gap:0;height:28px;min-width:28px;padding:0 7px;border-radius:8px;background:rgba(10,20,40,.78);color:#fff;font-size:16px;line-height:28px;pointer-events:none;transition:background .2s}
+.h1shot-zoom b{font-weight:400}.h1shot-zoom em{font-style:normal;font-size:.78rem;max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .25s,opacity .2s}
+.h1shot:hover .h1shot-zoom,.h1shot:focus-within .h1shot-zoom{background:rgba(0,0,0,.85)}
+.h1shot:hover .h1shot-zoom em,.h1shot:focus-within .h1shot-zoom em{max-width:140px;opacity:1;margin-left:6px}
+.h1hm-shot .h1shot-zoom{top:40px}
 .h1lb{position:fixed;inset:0;z-index:1000;background:rgba(5,10,22,.92);display:flex;align-items:center;justify-content:center;padding:48px 56px;overflow:auto}
 .h1lb[hidden]{display:none}
 .h1lb-f{margin:0;max-width:1440px;width:100%}
@@ -19,9 +23,11 @@
 .h1lb button[hidden]{display:none}
 html.h1lb-open{overflow:hidden}
 @media (max-width:640px){.h1lb{padding:56px 8px}.h1lb-p,.h1lb-n{top:auto;bottom:12px}}
-/* Layout: primary shots span the full content width; card shots sit in a 2-col grid */
-.grid>figure.h1shot--wide,.grid>:has(>figure.h1shot--wide),.grid>:has(>*>figure.h1shot--wide){grid-column:1/-1!important;width:100%;max-width:none;order:-1}
+/* Layout: a screenshot sits beside the cards it explains (one column each, alternating as in the markup).
+   Below 1024px everything stacks: the cards first, then their screenshot. */
 figure.h1shot--wide{width:100%;max-width:100%}
+.grid>figure.h1shot--wide,.grid>:has(>figure.h1shot--wide){align-self:center}
+@media (max-width:1023px){.grid>figure.h1shot--wide,.grid>:has(>figure.h1shot--wide),.grid>:has(>*>figure.h1shot--wide){order:2}}
 .grid:has(>*>figure.h1shot--card),.grid:has(>*>*>figure.h1shot--card),.grid:has(>*>*>*>figure.h1shot--card){grid-template-columns:repeat(2,minmax(0,1fr))!important}
 figure.h1shot--card{width:100%;margin:0 0 16px}
 @media (max-width:767px){.grid:has(>*>figure.h1shot--card),.grid:has(>*>*>figure.h1shot--card),.grid:has(>*>*>*>figure.h1shot--card){grid-template-columns:1fr!important}}
