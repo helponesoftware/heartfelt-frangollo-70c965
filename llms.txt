@@ -4,9 +4,9 @@
 
 Key facts (from this website):
 
-- Home page in one line: "Your whole nonprofit. One login." Volunteers, donors, events, HR, finances and your board in one place, $299 a month with everything included. Start free trial: https://app.helponesoftware.com/demo. Book a demo: https://www.helponesoftware.com/contact-us.
+- Tagline: "Your whole nonprofit. One login." Volunteers, donors, events, HR, finances and your board in one place, $299 a month with everything included. Start free trial: https://app.helponesoftware.com/demo. Book a demo: https://www.helponesoftware.com/contact-us.
 - Typical cost of the separate tools HelpOne replaces (volunteer management, donor CRM, events, HR, e-signatures, scheduling, timesheets, IT tracking, background-check ordering, email and text outreach): $330–$1,750 a month for small and mid-size nonprofits (estimates; costs vary).
-- Cancelling: no contracts; cancel anytime in two clicks from the Account page and take your data with you.
+- Cancelling: "No contracts. Cancel anytime in two clicks, and take your data with you." (from the Account page).
 - Built exclusively for nonprofits; the platform is live.
 - Pricing: one plan, HelpOne, $299/month or $2,990/year (two months free). Every module included: volunteers, donors & contacts, events, fundraising, finances, grants, HR & onboarding, e-signatures, timesheets, time off, training, policies, board, IT & software, calendar. Unlimited users, volunteers, contacts, donors and events; unlimited emails; 1,000 texts a month included (fair use, contact us for more). 14-day free trial, no card: when it ends, everything is saved and read-only until you choose a plan. No setup fees, no contracts, cancel anytime, export your data anytime. Start a trial at https://app.helponesoftware.com/demo; log in at https://app.helponesoftware.com.
 - White label (HelpOne under your name, for associations, networks and consultants): contact us. See https://www.helponesoftware.com/white-label.
@@ -17,6 +17,9 @@ Key facts (from this website):
 - Onboarding: start with the 14-day free trial (no card), or book a demo and we'll walk you through it; most organizations are up and running within 2–4 weeks.
 - Founder & CEO: Edward Zaremba. Strategic technology partner: Citinet Solutions.
 - Memberships: New York Council of Nonprofits (NYCON), Nonprofit New York, Nonprofit Westchester, Business Council of Westchester.
+- NYCON: HelpOne is a NYCON Corporate Partner.
+- Element 46: HelpOne was selected for the Element 46 tech accelerator fall cohort (Westchester County, NY).
+- Legal entity: HelpOne Software, LLC, Somers, NY. No SOC 2 report is claimed.
 - Contact: hello@helponesoftware.com (general), sales@helponesoftware.com (demos & sales), support@helponesoftware.com (support).
 
 ## Platform modules
@@ -26,7 +29,7 @@ Key facts (from this website):
 - [Event Management](https://www.helponesoftware.com/event-management): Free RSVPs with QR codes, tickets and gifts in each person's giving history, and event P&L.
 - [Fundraising](https://www.helponesoftware.com/fundraising): Gifts, pledges, auctions and sponsorships, with company sponsors credited to the company.
 - [Donors & Contacts](https://www.helponesoftware.com/donors-and-contacts): One record per person with giving and hours, notes and follow-ups, duplicate merge, and groups synced to Mailchimp.
-- [Finances](https://www.helponesoftware.com/finances): Nonprofit reports: gifts with benefits, Schedule B, Schedule G Part II, fund balances, deposits and giving statements, with Excel export.
+- [Finances](https://www.helponesoftware.com/finances): Nonprofit reports: gifts with benefits, Schedule B, Schedule G Part II, fund balances, deposits and giving statements, with Excel export. Includes an auto-filled Form 990.
 - [HR Solutions](https://www.helponesoftware.com/hr-solutions): Onboarding documents with e-sign, reviews, time off and pay visibility limited to HR, the manager and the person.
 - [Policies & Procedures](https://www.helponesoftware.com/policies-and-procedures): Policy books, approvals and signed copies.
 - [Training Tracking](https://www.helponesoftware.com/training-tracking): Training assignments, reminders, completion certificates and overdue flags on the calendar.
@@ -70,6 +73,7 @@ Key facts (from this website):
 - [Knowledge Base](https://helpone.knowledgeowl.com/help): Product help articles.
 - [YouTube](https://www.youtube.com/@HelpOneSoftware): Product videos.
 - [LinkedIn](https://www.linkedin.com/company/helpone-software): Company page.
+- [Instagram](https://www.instagram.com/helponesoftware): Company page.
 - [Privacy Policy](https://www.helponesoftware.com/privacy-policy)
 - [Terms & Conditions](https://www.helponesoftware.com/terms-and-conditions)
 - [SMS Terms](https://www.helponesoftware.com/sms-terms): How volunteer shift texts work, opt-in, STOP and HELP.
