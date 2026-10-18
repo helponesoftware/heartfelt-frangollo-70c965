@@ -72,3 +72,4 @@ Key facts (from this website):
 - [LinkedIn](https://www.linkedin.com/company/helpone-software): Company page.
 - [Privacy Policy](https://www.helponesoftware.com/privacy-policy)
 - [Terms & Conditions](https://www.helponesoftware.com/terms-and-conditions)
+- [SMS Terms](https://www.helponesoftware.com/sms-terms): How volunteer shift texts work, opt-in, STOP and HELP.
