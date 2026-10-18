@@ -320,3 +320,33 @@ nav.h1-oldnav{padding:0!important;border:0!important;background:transparent!impo
 .h1-404 ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .h1-404 a{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid rgba(10,20,40,.18);color:#0A1428!important;text-decoration:none!important;font-size:.95rem}
 .h1-404 a:hover{border-color:#00b89c;color:#00806c!important}
+/* ---- Layout pass: screenshot beside the card it explains ---- */
+.h1rows{display:flex!important;flex-direction:column;gap:28px!important;max-width:1200px;margin-left:auto;margin-right:auto}
+.h1row{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
+.h1row>.h1row-copy{display:flex;flex-direction:column;min-width:0}
+.h1row>.h1row-copy>*:last-child{margin-bottom:0}
+.h1row>.h1row-media{margin:0!important;min-width:0;width:100%}
+.h1row--flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.h1row--flip>.h1row-copy{order:2}
+.h1row img:not(figure img){max-width:100%;height:auto}
+@media (max-width:1023px){.h1row,.h1row--flip{grid-template-columns:1fr;gap:24px}.h1row--flip>.h1row-copy{order:0}}
+.h1side{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center;max-width:1200px;margin:0 auto}
+.h1side-lead{font-size:1.15rem;line-height:1.6;color:rgba(255,255,255,.85);margin:0 0 18px}
+.h1side .h1b-plain{margin:0}
+@media (max-width:1023px){.h1side{grid-template-columns:1fr;gap:28px}}
+/* hero buttons on module and industry pages: same pair as the home page */
+.h1-herobtns{justify-content:flex-start;margin-top:8px}
+.h1-herosmall{margin-top:16px}
+.h1-watchbtn{background:none;border:0;padding:0;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.text-center .h1-herobtns{justify-content:center}
+.h1row-media figure.h1shot{width:100%;max-width:100%;margin:0}
+/* volunteer portal tabs: screenshot beside its text */
+[data-h1pane]{display:flex;flex-direction:column}
+[data-h1pane]>[data-h1pane-media]{order:5;margin:20px 0 0!important}
+@media (min-width:1024px){
+[data-h1pane]{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:1fr auto auto auto 1fr;column-gap:48px;text-align:left;max-width:1200px!important}
+[data-h1pane]>[data-h1pane-media]{grid-column:1;grid-row:1/-1;margin:0!important}
+[data-h1pane]>[data-h1pane-title]{grid-column:2;grid-row:2}
+[data-h1pane]>[data-h1pane-desc]{grid-column:2;grid-row:3;margin-left:0;font-size:1.1rem}
+[data-h1pane]>[data-h1pane-out]{grid-column:2;grid-row:4}}
+@media (max-width:1023px){.grid>img[src*="/_next/static/media/"]{order:2}}
