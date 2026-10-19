@@ -5,7 +5,7 @@
   var TRIAL = "https://app.helponesoftware.com/demo";
   var HELP = "https://helpone.knowledgeowl.com/help";
   var TAG = "All-in-one nonprofit software.";
-  var TRUST = "<p class=\"h1f-trust\">PCI Level 1 payment processors \u00b7 AES-256 encryption \u00b7 GDPR-aligned \u00b7 Built only for nonprofits</p>";
+  var TRUST = "<p class=\"h1f-trust\">Card data handled by our payment processor\u2019s secure hosted fields \u00b7 AES-256 encryption \u00b7 GDPR-aligned \u00b7 Built only for nonprofits</p>";
   function inject() {
     if (document.querySelector(".h1h")) return;
     var nav = document.querySelector("nav");

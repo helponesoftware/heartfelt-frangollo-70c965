@@ -2,12 +2,12 @@
    remove SOC 2 claims and use the correct legal entity. Never edits self.__next_f. */
 (function () {
   var RULES = [
-    [/\s*SOC 2 • PCI Level 1 • GDPR compliant/g, " PCI Level 1 • GDPR compliant"],
+    [/\s*SOC 2 • PCI Level 1 • GDPR compliant/g, " Secure hosted card fields • GDPR-aligned"],
     [/SOC 2 Type II,\s*/g, ""],
     [/SOC II,\s*/g, ""],
     [/SOC 2 • /g, ""],
-    [/Are you SOC 2 and PCI compliant\?/g, "Are you PCI compliant?"],
-    [/HelpOne is built to meet SOC 2 Type II and PCI Level 1 standards\./g, "Card payments run through PCI DSS Level 1 payment processors."],
+    [/Are you SOC 2 and PCI compliant\?/g, "How do you handle card data?"],
+    [/HelpOne is built to meet SOC 2 Type II and PCI Level 1 standards\./g, "Card details are entered into our payment processor's secure hosted fields."],
     [/HelpOne Software, Inc\./g, "HelpOne Software, LLC"],
     [/edward@helponesoftware\.com/g, "hello@helponesoftware.com"]
   ];
