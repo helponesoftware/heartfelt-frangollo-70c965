@@ -48,6 +48,8 @@ Key facts (from this website):
 - [NYCON members](https://www.helponesoftware.com/nycon): NYCON member rate for New York Council of Nonprofits members: $249/month per organization or $2,490/year, plus free migration.
 - [Getting Started](https://www.helponesoftware.com/getting-started): Your first 14 days: the free trial, from setup to a real week of work.
 - [Compare](https://www.helponesoftware.com/compare): HelpOne compared side by side with the tools nonprofits use today.
+- [HelpOne vs Bloomerang](https://www.helponesoftware.com/helpone-vs-bloomerang): Pricing and features side by side, from both public pricing pages (Bloomerang Giving Platform from $242/month billed annually, constituent-based; HelpOne $299/month flat).
+- [Bloomerang alternative](https://www.helponesoftware.com/bloomerang-alternative): HelpOne and other Bloomerang alternatives, with published prices.
 - [FAQ](https://www.helponesoftware.com/faq): Common questions about pricing, payments, features and security.
 - [Security](https://www.helponesoftware.com/security): Plain-English security and compliance overview.
 
