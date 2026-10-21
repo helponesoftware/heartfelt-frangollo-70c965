@@ -2,7 +2,7 @@
    provide on pages served as plain HTML (no Next.js runtime, no RSC payload).
    Video modal, FAQ accordion, volunteer portal tabs, "HelpOne replaces" calculator. */
 (function () {
-  var VIDEOS = { header: "3WDJsZBQXn0", "event-management": "yQnNMijYgdg", "getting-started": "jNdoSInTI8w", "volunteer-management": "cPIaTTqqDm0", fundraising: "beMQOK1IQqY" };
+  var VIDEOS = { header: "E4edyISWMpY", "event-management": "yQnNMijYgdg", "getting-started": "QH8OtYKa_sw", "volunteer-management": "cPIaTTqqDm0", fundraising: "beMQOK1IQqY" };
   var page = location.pathname.replace(/^\/|\.html$|\/$/g, "") || "index";
   var modal, lastFocus;
   function openVideo(id) {
