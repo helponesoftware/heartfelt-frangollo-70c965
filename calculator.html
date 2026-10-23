@@ -180,7 +180,7 @@
 <script>
 (function(){
 var MODS=[
-{id:"crm",name:"Donor CRM",def:0,opts:[["Bloomerang CRM",125,""],["Little Green Light",45,""],["DonorPerfect",99,""],["Neon CRM",99,"est."],["None / not needed",0,""]]},
+{id:"crm",name:"Donor CRM",def:0,opts:[["Bloomerang CRM",125,""],["Little Green Light",45,""],["DonorPerfect (quote-based; enter your quote)",0,"quote"],["Neon CRM",99,"est."],["None / not needed",0,""]]},
 {id:"vol",name:"Volunteer Management",def:0,opts:[["VolunteerHub Plus",143,"+ setup fee"],["Bloomerang Volunteer",119,""],["Better Impact",50,"est."],["None / not needed",0,""]]},
 {id:"evt",name:"Events & Ticketing",def:0,opts:[["Eventbrite / Humanitix / Givebutter (fees + add-ons)",50,"est."],["Dedicated event platform",150,"est."],["None / not needed",0,""]]},
 {id:"fund",name:"Fundraising & Online Giving",def:0,opts:[["Bloomerang Fundraising",40,""],["Donorbox Pro",139,"est."],["Givebutter Plus",29,"est."],["Zeffy (free; donor tips)",0,""],["Classy / OneCause",200,"est., from"],["None / not needed",0,""]]},
@@ -198,7 +198,7 @@ function num(el){var v=parseFloat(el.value);return isFinite(v)&&v>0?v:0}
 var host=$("h1calc-mods");
 MODS.forEach(function(m,mi){
  var d=document.createElement("details");d.className="h1calc-mod";if(mi===0)d.open=true;
- var rows=m.opts.map(function(o,i){var rid="h1calc-"+m.id+"-"+i;return '<tr><td><label for="'+rid+'"><input type="radio" name="h1calc-'+m.id+'" id="'+rid+'" value="'+o[1]+'"'+(i===m.def?" checked":"")+'/>'+o[0]+'</label></td><td>'+(o[1]?"$"+o[1]+"/mo":"$0")+(o[2]?'<span class="h1calc-est">'+o[2]+'</span>':"")+'</td></tr>'}).join("");
+ var rows=m.opts.map(function(o,i){var rid="h1calc-"+m.id+"-"+i;return '<tr><td><label for="'+rid+'"><input type="radio" name="h1calc-'+m.id+'" id="'+rid+'" value="'+o[1]+'"'+(i===m.def?" checked":"")+'/>'+o[0]+'</label></td><td>'+(o[2]==="quote"?"":(o[1]?"$"+o[1]+"/mo":"$0"))+(o[2]?'<span class="h1calc-est">'+(o[2]==="quote"?"quote":o[2])+'</span>':"")+'</td></tr>'}).join("");
  d.innerHTML='<summary><span>'+m.name+'</span><span><span class="h1calc-amt" id="h1calc-amt-'+m.id+'"></span> <span class="h1calc-chev" aria-hidden="true">›</span></span></summary><div class="h1calc-body"><table class="h1calc-table"><thead><tr><th scope="col">Top alternatives</th><th scope="col">Typical rate</th></tr></thead><tbody>'+rows+'</tbody></table><div class="h1calc-field"><label for="h1calc-cost-'+m.id+'">Your monthly cost</label><span class="h1calc-input"><span>$</span><input type="number" min="0" step="1" id="h1calc-cost-'+m.id+'" value="'+m.opts[m.def][1]+'" inputmode="decimal"/></span></div></div>';
  host.appendChild(d);
  d.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener("change",function(){$("h1calc-cost-"+m.id).value=r.value;calc()})});
