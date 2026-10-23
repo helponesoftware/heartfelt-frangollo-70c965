@@ -5,7 +5,7 @@
 Key facts (from this website):
 
 - Tagline: "Your whole nonprofit. One login." Volunteers, donors, events, HR, finances and your board in one place, $299 a month with everything included. Start free trial: https://app.helponesoftware.com/demo. Book a demo: https://www.helponesoftware.com/contact-us.
-- Typical cost of the separate tools HelpOne replaces (volunteer management, donor CRM, events, HR, e-signatures, scheduling, timesheets, IT tracking, background-check ordering, email and text outreach): $330–$1,750 a month for small and mid-size nonprofits (estimates; costs vary).
+- Typical cost of the separate tools HelpOne replaces (volunteer management, donor CRM, events, HR, e-signatures, scheduling, timesheets, IT tracking, background-check ordering, email and text outreach): about $1,500 a month on average for small and mid-size nonprofits (an estimate; costs vary).
 - Cancelling: "No contracts. Cancel anytime in two clicks, and take your data with you." (from the Account page).
 - Built exclusively for nonprofits; the platform is live.
 - Pricing: one plan, HelpOne, $299/month or $2,990/year (two months free). Every module included: volunteers, donors & contacts, events, fundraising, finances, grants, HR & onboarding, e-signatures, timesheets, time off, training, policies, board, IT & software, calendar. Unlimited users, volunteers, contacts, donors and events; unlimited emails; 1,000 texts a month included (fair use, contact us for more). 14-day free trial, no card: when it ends, everything is saved and read-only until you choose a plan. No setup fees, no contracts, cancel anytime, export your data anytime. Start a trial at https://app.helponesoftware.com/demo; log in at https://app.helponesoftware.com.
@@ -19,7 +19,7 @@ Key facts (from this website):
 - Memberships: New York Council of Nonprofits (NYCON), Nonprofit New York, Nonprofit Westchester, Business Council of Westchester.
 - NYCON: HelpOne is a NYCON Corporate Partner.
 - Element 46: HelpOne was selected for the Element 46 tech accelerator fall cohort (Westchester County, NY).
-- Legal entity: HelpOne Software, LLC, Somers, NY. No SOC 2 report is claimed.
+- Legal entity: HelpOne Software, LLC, Somers, NY.
 - Contact: hello@helponesoftware.com (general), sales@helponesoftware.com (demos & sales), support@helponesoftware.com (support).
 
 ## Platform modules
