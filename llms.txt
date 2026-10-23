@@ -53,6 +53,7 @@ Key facts (from this website):
 - [Neon CRM alternative](https://www.helponesoftware.com/neon-crm-alternative): HelpOne and Neon CRM compared from Neon One's own pages (Neon CRM starts at $99/month, based on revenue; HelpOne $299/month flat). Pricing as of Oct 2026.
 - [Little Green Light alternative](https://www.helponesoftware.com/little-green-light-alternative): HelpOne and Little Green Light compared from its pricing page (Little Green Light $45 to $135/month by constituent count; HelpOne $299/month flat). Pricing as of Oct 2026.
 - [Salesforce nonprofit alternative](https://www.helponesoftware.com/salesforce-nonprofit-alternative): HelpOne and Salesforce Nonprofit Cloud and NPSP compared from Salesforce's own pages (Nonprofit Cloud Core from $70 per user per month, billed annually; HelpOne $299/month flat, unlimited users). Pricing as of Oct 2026.
+- [Best donor management software for small nonprofits](https://www.helponesoftware.com/best-donor-management-software-small-nonprofits): A plain buyer's guide with a checklist and published prices by size for HelpOne, Little Green Light, Neon CRM, Bloomerang, Salesforce Nonprofit Cloud, DonorPerfect and Virtuous, from each company's own pages. Pricing as of Oct 2026.
 - [FAQ](https://www.helponesoftware.com/faq): Common questions about pricing, payments, features and security.
 - [Security](https://www.helponesoftware.com/security): Plain-English security and compliance overview.
 
