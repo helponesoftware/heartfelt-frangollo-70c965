@@ -73,7 +73,7 @@ Key facts (from this website):
 
 - [About Us](https://www.helponesoftware.com/about-us): Why HelpOne was built and who is behind it.
 - [Affiliations](https://www.helponesoftware.com/affiliations): HelpOne's nonprofit association memberships.
-- [Partners](https://www.helponesoftware.com/partners): Technology and referral partner program.
+- [Partners](https://www.helponesoftware.com/partners): Technology and integration partner program.
 - [Contact Us](https://www.helponesoftware.com/contact-us): Book a demo or reach the team.
 
 ## Optional
