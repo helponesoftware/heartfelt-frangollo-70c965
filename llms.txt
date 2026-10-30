@@ -37,7 +37,7 @@ Key facts (from this website):
 - [Board Management](https://www.helponesoftware.com/board-management): Board members, committees, meetings, documents, votes, conflict-of-interest compliance, tasks and a board member portal.
 - [IT & Operations](https://www.helponesoftware.com/it-asset-tracking-management): Equipment and subscription tracking, plus operations: grants timesheets and budget vs actual, access groups, editable pick lists, Mailchimp sync.
 - [My HelpOne](https://www.helponesoftware.com/my-helpone): Personal dashboard for staff: action items, events, calendar, timesheets and time-off requests.
-- [Payments](https://www.helponesoftware.com/payments): Flat-rate or IC+ payment processing with QR codes, hosted pages and embeddable forms.
+- [Payments](https://www.helponesoftware.com/payments): Coming soon. Planned flat-rate or IC+ payment processing with QR codes, hosted pages and embeddable forms.
 - [Switching to HelpOne Payments](https://www.helponesoftware.com/switching-to-helpone-payments): How switching payment processing to HelpOne will work once payments launch (coming soon).
 
 ## Pricing and getting started
