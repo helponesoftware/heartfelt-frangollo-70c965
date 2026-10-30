@@ -12,8 +12,8 @@ Key facts (from this website):
 - White label (HelpOne under your name, for associations, networks and consultants): contact us. See https://www.helponesoftware.com/white-label.
 - Assistant: "Ask HelpOne" answers plain questions from your own data (only what your login can see); the "Daily brief" lists today's to-dos on the dashboard or by email at 7 AM.
 - NYCON members: $249/month per organization or $2,490/year, plus free migration. Every module included; same 14-day free trial. Mention NYCON when you start, or email hello@helponesoftware.com, to claim the member rate.
-- Payments: flat rate $1.75/transaction + $15/month when you bring your own processor, or interchange-plus (IC+) when HelpOne handles processing. A HelpOne subscription is not required to use HelpOne Payments.
-- Security: card data is handled by our payment processor's secure hosted fields; AES-256 encryption; GDPR-aligned data practices; hashed passwords, rate-limited sign-in and optional Google sign-in (two-factor authentication is on the roadmap); automated security and tenant-isolation tests on every release.
+- Payments: HelpOne Payments is coming soon and is not live yet. Planned pricing at launch: flat rate $1.75/transaction + $15/month when you bring your own processor, or interchange-plus (IC+) when HelpOne handles processing. When it launches, a HelpOne subscription will not be required to use HelpOne Payments.
+- Security: AES-256 encryption; GDPR-aligned data practices; hashed passwords, rate-limited sign-in and optional Google sign-in (two-factor authentication is on the roadmap); automated security and tenant-isolation tests on every release.
 - Onboarding: start with the 14-day free trial (no card), or book a demo and we'll walk you through it; most organizations are up and running within 2–4 weeks.
 - Founder & CEO: Edward Zaremba. Strategic technology partner: Citinet Solutions.
 - Memberships: New York Council of Nonprofits (NYCON), Nonprofit New York, Nonprofit Westchester, Business Council of Westchester.
@@ -38,7 +38,7 @@ Key facts (from this website):
 - [IT & Operations](https://www.helponesoftware.com/it-asset-tracking-management): Equipment and subscription tracking, plus operations: grants timesheets and budget vs actual, access groups, editable pick lists, Mailchimp sync.
 - [My HelpOne](https://www.helponesoftware.com/my-helpone): Personal dashboard for staff: action items, events, calendar, timesheets and time-off requests.
 - [Payments](https://www.helponesoftware.com/payments): Flat-rate or IC+ payment processing with QR codes, hosted pages and embeddable forms.
-- [Switching to HelpOne Payments](https://www.helponesoftware.com/switching-to-helpone-payments): How to move payment processing to HelpOne.
+- [Switching to HelpOne Payments](https://www.helponesoftware.com/switching-to-helpone-payments): How switching payment processing to HelpOne will work once payments launch (coming soon).
 
 ## Pricing and getting started
 
