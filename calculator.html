@@ -121,10 +121,10 @@
 <div class="h1calc-field"><label for="h1calc-vol">Monthly processing volume</label><span class="h1calc-input"><span>$</span><input id="h1calc-vol" type="number" min="0" step="100" value="15000" inputmode="decimal"/></span></div>
 <div class="h1calc-field"><label for="h1calc-avg">Average gift / transaction</label><span class="h1calc-input"><span>$</span><input id="h1calc-avg" type="number" min="1" step="1" value="100" inputmode="decimal"/></span></div>
 <div class="h1calc-field"><label for="h1calc-plat">Extra platform/tip fee</label><span class="h1calc-input"><input id="h1calc-plat" type="number" min="0" step="0.05" value="0" inputmode="decimal"/><span>%</span></span></div>
-<p class="h1calc-help">Current processor assumed at 2.9% + $0.30 per transaction. Some giving platforms add ~1.75–4% on top; enter it if yours does. HelpOne Payments: flat $1.75/transaction + $15/mo (bring your own processor).</p>
+<p class="h1calc-help">Current processor assumed at 2.9% + $0.30 per transaction. Some giving platforms add ~1.75–4% on top; enter it if yours does. HelpOne Payments is coming soon. Planned pricing at launch: flat $1.75/transaction + $15/mo (bring your own processor).</p>
 <div class="h1calc-line"><span>Transactions per month</span><span id="h1calc-txn"></span></div>
 <div class="h1calc-line"><span>Current fees (2.9% + $0.30 + platform %)</span><span id="h1calc-pcur"></span></div>
-<div class="h1calc-line"><span>HelpOne fees ($1.75/tx + $15/mo)</span><span id="h1calc-ph1"></span></div>
+<div class="h1calc-line"><span>HelpOne fees (planned at launch: $1.75/tx + $15/mo)</span><span id="h1calc-ph1"></span></div>
 <div class="h1calc-line is-total"><span>Processing difference</span><span id="h1calc-pdiff"></span></div>
 <p class="h1calc-help" id="h1calc-pnote"></p>
 </div>
@@ -146,7 +146,7 @@
 </div>
 <div class="h1calc-group"><h3>HelpOne</h3>
 <div class="h1calc-line"><span id="h1calc-r-planlbl">Plan</span><span id="h1calc-r-plan"></span></div>
-<div class="h1calc-line"><span>HelpOne processing fees</span><span id="h1calc-r-ph1"></span></div>
+<div class="h1calc-line"><span>HelpOne processing fees (planned)</span><span id="h1calc-r-ph1"></span></div>
 <div class="h1calc-line is-total"><span>HelpOne monthly total</span><span id="h1calc-r-h1"></span></div>
 </div>
 <div class="h1calc-save" id="h1calc-savebox">
@@ -216,7 +216,7 @@ function calc(){
  $("h1calc-pcur").textContent=money(pcur,1);$("h1calc-ph1").textContent=money(ph1,1);
  var pd=$("h1calc-pdiff");pd.textContent=(pdiff>=0?"You save ":"HelpOne costs ")+money(Math.abs(pdiff),1)+"/mo";pd.className=pdiff>=0?"h1calc-pos":"h1calc-neg";
  var be=1.75/0.029;
- $("h1calc-pnote").textContent=pdiff>=0?"At this average gift, HelpOne's flat fee is lower than your percentage-based fees.":"At this average gift, HelpOne's flat $1.75/tx costs more than percentage fees. Flat-rate pricing pays off on larger gifts (break-even around $"+Math.round((1.75-0.30)/(0.029+plat/100))+" per gift).";
+ $("h1calc-pnote").textContent=pdiff>=0?"At this average gift, HelpOne's flat fee is lower than your percentage-based fees.":"At this average gift, HelpOne's planned flat $1.75/tx costs more than percentage fees. Flat-rate pricing pays off on larger gifts (break-even around $"+Math.round((1.75-0.30)/(0.029+plat/100))+" per gift).";
  var P=PLANS[plan];
  var cur=soft+xl+acct+pcur,h1=P.price+ph1,sav=cur-h1;
  $("h1calc-r-soft").textContent=money(soft);$("h1calc-r-xl").textContent=money(xl);$("h1calc-r-acct").textContent=money(acct);$("h1calc-r-pcur").textContent=money(pcur);$("h1calc-r-cur").textContent=money(cur);
