@@ -36,7 +36,7 @@ Key facts (from this website):
 - [Policies & Procedures](https://www.helponesoftware.com/policies-and-procedures): Policy books, approvals and signed copies.
 - [Training Tracking](https://www.helponesoftware.com/training-tracking): Training assignments, reminders, completion certificates and overdue flags on the calendar.
 - [Participants](https://www.helponesoftware.com/participants): The people you serve, in one list.
-- [Board Management](https://www.helponesoftware.com/board-management): Board members, committees, meetings, documents, votes, conflict-of-interest compliance, tasks and a board member portal.
+- [Board Management](https://www.helponesoftware.com/board-management): Board members, committees, meetings with attendance and minutes, access groups, documents with files, votes, e-signatures, conflict-of-interest compliance, tasks and a board member portal.
 - [IT & Operations](https://www.helponesoftware.com/it-asset-tracking-management): Equipment and subscription tracking, plus operations: grants timesheets and budget vs actual, access groups, editable pick lists, Mailchimp sync.
 - [My HelpOne](https://www.helponesoftware.com/my-helpone): Personal dashboard for staff: action items, events, calendar, timesheets and time-off requests.
 - [Payments](https://www.helponesoftware.com/payments): Coming soon. Planned flat-rate or IC+ payment processing with QR codes, hosted pages and embeddable forms.
