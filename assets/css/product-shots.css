@@ -39,5 +39,6 @@ figure.h1shot--card{width:100%;margin:0 0 16px}
 /* Letter / document shots: show the full page, don't crop to 16/10 */
 .h1shot--letter{background:#f4f7fb;width:100%;max-width:100%}
 .h1shot--letter img{aspect-ratio:auto;object-fit:contain;object-position:top center;background:#fff}
+.h1shot--letter figcaption{color:#334155;border-top:1px solid rgba(15,23,42,.1);background:#f4f7fb}
 .grid>figure.h1shot--letter{align-self:center}
 @media (max-width:1023px){.grid>figure.h1shot--letter,.grid>:has(>figure.h1shot--letter){order:2}}
