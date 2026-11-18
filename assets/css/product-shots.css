@@ -35,3 +35,9 @@ figure.h1shot--card{width:100%;margin:0 0 16px}
 .h1shot--small{margin:0 auto 16px;max-width:100%}
 .h1shot--small img{aspect-ratio:auto;object-fit:cover;object-position:top left}
 .h1shot--small figcaption{font-size:.78rem;padding:8px 10px}
+
+/* Letter / document shots: show the full page, don't crop to 16/10 */
+.h1shot--letter{background:#f4f7fb;width:100%;max-width:100%}
+.h1shot--letter img{aspect-ratio:auto;object-fit:contain;object-position:top center;background:#fff}
+.grid>figure.h1shot--letter{align-self:center}
+@media (max-width:1023px){.grid>figure.h1shot--letter,.grid>:has(>figure.h1shot--letter){order:2}}
