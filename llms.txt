@@ -26,7 +26,7 @@ Key facts (from this website):
 
 - [Product](https://www.helponesoftware.com/product): Everything in HelpOne, module by module: the problem each one solves and what it does. All included in the one plan.
 - [Insight](https://www.helponesoftware.com/insight): Built-in board reports. Pick a period and see giving next to last year, where the money came from, how people paid, funds, top donors, new vs returning donors, volunteer hours with a dollar value, events side by side, and a board monthly pack you can export in one click.
-- [Volunteer Management](https://www.helponesoftware.com/volunteer-management): Online sign-up and waivers, shifts and waitlists, self check-in, approved hours for your 990, and signed hours verification letters.
+- [Volunteer Management](https://www.helponesoftware.com/volunteer-management): Online sign-up and waivers, shifts and waitlists, self check-in, approved hours for your 990, and signed hours letters, including a monthly letter volunteers can download in the portal.
 - [Event Management](https://www.helponesoftware.com/event-management): Free RSVPs with QR codes, tickets and gifts in each person's giving history, and event P&L.
 - [Fundraising](https://www.helponesoftware.com/fundraising): Gifts, pledges, auctions and sponsorships, with company sponsors credited to the company.
 - [Donors & Contacts](https://www.helponesoftware.com/donors-and-contacts): One record per person with giving and hours, notes and follow-ups, duplicate merge, and groups synced to Mailchimp.

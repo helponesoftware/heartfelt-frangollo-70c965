@@ -42,3 +42,8 @@ figure.h1shot--card{width:100%;margin:0 0 16px}
 .h1shot--letter figcaption{color:#334155;border-top:1px solid rgba(15,23,42,.1);background:#f4f7fb}
 .grid>figure.h1shot--letter{align-self:center}
 @media (max-width:1023px){.grid>figure.h1shot--letter,.grid>:has(>figure.h1shot--letter){order:2}}
+
+/* Tall UI shots (portal pages): show the full screen, don't crop to 16/10 */
+.h1shot--tall img{aspect-ratio:auto;object-fit:contain;object-position:top center}
+.grid>figure.h1shot--tall{align-self:start}
+@media (max-width:1023px){.grid>figure.h1shot--tall,.grid>:has(>figure.h1shot--tall){order:3}}
