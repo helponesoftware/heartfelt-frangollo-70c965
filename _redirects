@@ -75,3 +75,33 @@
 /insight.html    /insight    301!
 /integrations    /connections    301
 /integrations/   /connections    301
+
+# New guide pages: clean URLs
+/wild-apricot-alternative.html    /wild-apricot-alternative    301!
+/signupgenius-alternative.html    /signupgenius-alternative    301!
+/wildapricot-alternative    /wild-apricot-alternative    301
+/signup-genius-alternative    /signupgenius-alternative    301
+
+# Common guesses that used to 404 (Nov 2026 SEO pass)
+/features    /product    301
+/contact    /contact-us    301
+/events    /event-management    301
+/volunteers    /volunteer-management    301
+/blog    /compare    301
+/blog/*    /compare    301
+/donors    /donors-and-contacts    301
+/membership    /memberships    301
+/members    /memberships    301
+/board    /board-management    301
+/hr    /hr-solutions    301
+/timesheets    /programs    301
+/grants    /programs    301
+
+# Keyword shortcuts for outreach and listings
+/volunteer-management-software    /volunteer-management    301
+/donor-management-software    /donors-and-contacts    301
+/nonprofit-crm    /donors-and-contacts    301
+/membership-management-software    /memberships    301
+/event-ticketing    /event-management    301
+/board-portal    /board-management    301
+/grant-time-tracking    /programs    301
